@@ -3,10 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/mi_home_change_fragment"
         android:icon="@drawable/ic_change_diary_24px"
         android:title="전환"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/mi_home_setting"
         android:icon="@drawable/ic_setting_24px"
         android:title="설정"
         app:showAsAction="ifRoom" />
