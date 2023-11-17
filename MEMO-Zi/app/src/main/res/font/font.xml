@@ -5,19 +5,19 @@
         android:fontStyle="normal"
         android:fontWeight="400" />
     <font
-        android:font="@font/nanumgothicbold"
+        android:font="@font/nanumgothic_bold"
         android:fontStyle="normal"
         android:fontWeight="400" />
     <font
-        android:font="@font/nanumgothicextrabold"
+        android:font="@font/nanumgothic_extrabold"
         android:fontStyle="normal"
         android:fontWeight="400" />
     <font
-        android:font="@font/nanumgothiclight"
+        android:font="@font/nanumgothic_light"
         android:fontStyle="normal"
         android:fontWeight="400" />
     <font
-        android:font="@font/cafe24ssurroundair"
+        android:font="@font/cafe24ssurround_air"
         android:fontStyle="normal"
         android:fontWeight="400" />
     <font
