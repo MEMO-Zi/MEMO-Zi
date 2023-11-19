@@ -7,6 +7,7 @@
     tools:context=".ui.home.HomeActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@drawable/bg_home_gradation"
@@ -35,14 +36,20 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fcv_home"
-        android:name="com.memo_zi.ui.memo.MemoMainFragment"
+        android:id="@+id/fcv_home_main"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="9dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tb_home" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcv_home_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fcv_home_main" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
