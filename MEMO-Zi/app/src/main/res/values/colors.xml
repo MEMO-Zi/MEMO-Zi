@@ -4,6 +4,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="custom_black">#333333</color>
+    <color name="soft_grey">#6F6F6F</color>
 
     <!-- 사용 색상 -->
     <color name="sub_purple">#D0C3D9</color>
