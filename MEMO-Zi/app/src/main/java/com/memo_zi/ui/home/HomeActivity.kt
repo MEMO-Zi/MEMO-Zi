@@ -5,7 +5,9 @@ import android.os.Bundle
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityHomeBinding
 import com.memo_zi.ui.diary.DiaryFeedFragment
+import com.memo_zi.ui.diary.DiaryMainFragment
 import com.memo_zi.ui.memo.MemoMainFragment
+import com.memo_zi.ui.setting.SettingActivity
 import com.memo_zi.util.base.BaseActivity
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>({ ActivityHomeBinding.inflate(it) }) {
@@ -25,11 +27,10 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>({ ActivityHomeBinding.inf
                 R.id.mi_home_change_fragment -> {
                     if (isShowingFirstFragment) {
                         menuItem.setIcon(R.drawable.ic_change_memo_24px)
-                        replaceFragment()
+                        replaceMainFragment()
                     } else {
                         menuItem.setIcon(R.drawable.ic_change_diary_24px)
-                        replaceFragment()
-
+                        replaceMainFragment()
                     }
                     true
                 }
@@ -47,22 +48,23 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>({ ActivityHomeBinding.inf
     }
 
     private fun initStartFragment() {
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_home)
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_home_main)
         if (currentFragment == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.fcv_home, MemoMainFragment())
+                .add(R.id.fcv_home_main, MemoMainFragment())
                 .commit()
         }
     }
 
-    private fun replaceFragment() {
+    private fun replaceMainFragment() {
         val transaction = supportFragmentManager.beginTransaction()
         if (isShowingFirstFragment) {
-            transaction.replace(R.id.fcv_home, DiaryFeedFragment())
+            transaction.replace(R.id.fcv_home_main, DiaryMainFragment())
+            transaction.replace(R.id.fcv_home_content, DiaryFeedFragment())
         } else {
-            transaction.replace(R.id.fcv_home, MemoMainFragment())
+            transaction.replace(R.id.fcv_home_main, MemoMainFragment())
+            transaction.replace(R.id.fcv_home_content, MemoMainFragment())
         }
-        transaction.addToBackStack(null)
         transaction.commit()
         isShowingFirstFragment = !isShowingFirstFragment
     }
