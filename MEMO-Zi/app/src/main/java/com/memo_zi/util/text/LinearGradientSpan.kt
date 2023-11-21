@@ -1,4 +1,4 @@
-package com.memo_zi.ui.login
+package com.memo_zi.util.text
 
 import android.graphics.LinearGradient
 import android.graphics.Shader
@@ -20,9 +20,9 @@ class LinearGradientSpan(
         var leadingHeight = 0f
         val indexOfTextToStyle = containingText.indexOf(textToStyle)
         if (!containingText.startsWith(textToStyle) && containingText != textToStyle) {
-            leadingHeight = tp.fontSpacing * indexOfTextToStyle
+            leadingHeight = tp.ascent() + tp.descent() * indexOfTextToStyle
         }
-        val gradientHeight = tp.fontSpacing * textToStyle.length
+        val gradientHeight = tp.descent() - tp.ascent()
 
         tp.shader = LinearGradient(
             0f,

@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.text.set
 import androidx.core.text.toSpannable
 import com.memo_zi.R
+import com.memo_zi.util.text.LinearGradientSpan
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
