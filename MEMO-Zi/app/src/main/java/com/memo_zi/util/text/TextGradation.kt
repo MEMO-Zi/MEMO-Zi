@@ -5,7 +5,7 @@ import androidx.annotation.ColorInt
 import androidx.core.text.set
 import androidx.core.text.toSpannable
 
-class TextGradation (
+class TextGradation(
     textView: TextView,
     text: String,
     @ColorInt startColorInt: Int,
@@ -15,7 +15,12 @@ class TextGradation (
 ) {
     init {
         val spannable = text.toSpannable()
-        spannable[startIndex..endIndex] = LinearGradientSpan(text, text.substring(startIndex, endIndex), startColorInt, endColorInt)
+        spannable[startIndex..endIndex] = LinearGradientSpan(
+            text,
+            text.substring(startIndex, endIndex),
+            startColorInt,
+            endColorInt
+        )
         textView.text = spannable
     }
 }
