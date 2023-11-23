@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MEMO-Zi</string>
+    <string name="kakao_app_key">7a6d3cba6554d839acbaa08774fe749f</string>
 </resources>

@@ -6,6 +6,7 @@ import com.memo_zi.R
 import com.memo_zi.databinding.ActivityHomeBinding
 import com.memo_zi.ui.diary.DiaryFeedFragment
 import com.memo_zi.ui.memo.MemoMainFragment
+import com.memo_zi.ui.setting.SettingActivity
 import com.memo_zi.util.base.BaseActivity
 
 class HomeActivity : BaseActivity<ActivityHomeBinding>({ ActivityHomeBinding.inflate(it) }) {
@@ -17,6 +18,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>({ ActivityHomeBinding.inf
 
         initStartFragment()
         initMenuListener()
+
     }
 
     private fun initMenuListener() {
@@ -66,4 +68,5 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>({ ActivityHomeBinding.inf
         transaction.commit()
         isShowingFirstFragment = !isShowingFirstFragment
     }
+
 }
