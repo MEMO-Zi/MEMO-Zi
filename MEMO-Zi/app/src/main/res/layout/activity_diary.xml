@@ -74,7 +74,7 @@
             android:id="@+id/iv_diary_main_feed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_feed_white_17px" />
+            app:srcCompat="@drawable/ic_feed_black_17px" />
 
         <View
             android:id="@+id/icon_bar"
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            app:srcCompat="@drawable/ic_calendar_black_20px" />
+            app:srcCompat="@drawable/ic_calendar_white_20px" />
     </LinearLayout>
 
     <LinearLayout
