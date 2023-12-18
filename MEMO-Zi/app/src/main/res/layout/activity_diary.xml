@@ -49,6 +49,7 @@
         tools:text="차혜빈" />
 
     <TextView
+        android:id="@+id/tv_diary_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nanumgothic"
@@ -74,10 +75,10 @@
             android:id="@+id/iv_diary_feed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_feed_black_17px" />
+            app:srcCompat="@drawable/ic_feed_white_17px" />
 
         <View
-            android:id="@+id/icon_bar"
+            android:id="@+id/view_change_icon_bar"
             android:layout_width="1dp"
             android:layout_height="12dp"
             android:layout_gravity="center_vertical"
@@ -89,11 +90,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            app:srcCompat="@drawable/ic_calendar_white_20px" />
+            app:srcCompat="@drawable/ic_calendar_black_20px" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_diary_add_default"
+        android:id="@+id/ll_diary_default"
         android:layout_width="0dp"
         android:layout_height="115dp"
         android:layout_marginStart="9dp"
@@ -108,14 +109,14 @@
         app:layout_constraintTop_toBottomOf="@id/ll_change_icon">
 
         <ImageView
-            android:id="@+id/iv_diary_plus"
+            android:id="@+id/iv_diary_plus_default"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:src="@drawable/ic_round_plus_34px" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tv_diary_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -140,7 +141,7 @@
         app:layout_constraintTop_toBottomOf="@id/ll_change_icon">
 
         <ImageView
-            android:id="@+id/img_diary"
+            android:id="@+id/iv_diary_add"
             android:layout_width="87dp"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
@@ -153,7 +154,7 @@
             tools:src="@tools:sample/avatars" />
 
         <EditText
-            android:id="@+id/dt_diary_add"
+            android:id="@+id/et_diary_add"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -165,7 +166,7 @@
             android:minHeight="100dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img_diary" />
+            app:layout_constraintTop_toBottomOf="@id/iv_diary_add" />
 
         <ImageView
             android:id="@+id/iv_diary_camera"
@@ -173,7 +174,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="9dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dt_diary_add"
+            app:layout_constraintTop_toBottomOf="@id/et_diary_add"
             app:srcCompat="@drawable/ic_camera_25px" />
 
         <ImageView
@@ -207,7 +208,7 @@
             app:srcCompat="@drawable/ic_question_23px" />
 
         <TextView
-            android:id="@+id/tv_diary_count"
+            android:id="@+id/tv_diary_text_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="6dp"
@@ -227,7 +228,7 @@
             android:textSize="@dimen/text_size_12"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/dt_diary_add" />
+            app:layout_constraintTop_toBottomOf="@id/et_diary_add" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
