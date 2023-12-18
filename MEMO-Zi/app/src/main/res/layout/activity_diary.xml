@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"></LinearLayout>
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tb_diary_main"
+        android:id="@+id/tb_diary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
@@ -28,7 +28,7 @@
         app:menu="@menu/diary_tb">
 
         <ImageView
-            android:id="@+id/iv_diary_main_tb"
+            android:id="@+id/iv_diary_tb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_memo_zi" />
@@ -36,7 +36,7 @@
     </androidx.appcompat.widget.Toolbar>
 
     <TextView
-        android:id="@+id/tv_diary_main_name"
+        android:id="@+id/tv_diary_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -45,7 +45,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tb_diary_main"
+        app:layout_constraintTop_toBottomOf="@id/tb_diary"
         tools:text="차혜빈" />
 
     <TextView
@@ -55,9 +55,9 @@
         android:text="@string/diary_evening"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size_13"
-        app:layout_constraintBottom_toBottomOf="@id/tv_diary_main_name"
-        app:layout_constraintStart_toEndOf="@id/tv_diary_main_name"
-        app:layout_constraintTop_toTopOf="@id/tv_diary_main_name"
+        app:layout_constraintBottom_toBottomOf="@id/tv_diary_name"
+        app:layout_constraintStart_toEndOf="@id/tv_diary_name"
+        app:layout_constraintTop_toTopOf="@id/tv_diary_name"
         tools:text="@string/diary_evening" />
 
     <LinearLayout
@@ -68,10 +68,10 @@
         android:layout_marginTop="12dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_diary_main_name">
+        app:layout_constraintTop_toBottomOf="@id/tv_diary_name">
 
         <ImageView
-            android:id="@+id/iv_diary_main_feed"
+            android:id="@+id/iv_diary_feed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_feed_black_17px" />
@@ -85,7 +85,7 @@
             android:background="@color/white" />
 
         <ImageView
-            android:id="@+id/iv_diary_main_calendar"
+            android:id="@+id/iv_diary_calendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -93,7 +93,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/ll_diary_main_add_default"
+        android:id="@+id/ll_diary_add_default"
         android:layout_width="0dp"
         android:layout_height="115dp"
         android:layout_marginStart="9dp"
@@ -140,7 +140,7 @@
         app:layout_constraintTop_toBottomOf="@id/ll_change_icon">
 
         <ImageView
-            android:id="@+id/img_diary_main"
+            android:id="@+id/img_diary"
             android:layout_width="87dp"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
@@ -165,7 +165,7 @@
             android:minHeight="100dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img_diary_main" />
+            app:layout_constraintTop_toBottomOf="@id/img_diary" />
 
         <ImageView
             android:id="@+id/iv_diary_camera"
@@ -207,7 +207,7 @@
             app:srcCompat="@drawable/ic_question_23px" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_diary_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="6dp"
@@ -241,7 +241,7 @@
         app:layout_constraintTop_toBottomOf="@id/cl_diary_add" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_diary_main"
+        android:id="@+id/rv_diary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
