@@ -8,4 +8,11 @@
         <item name="colorPrimary">@color/sub_purple</item>
     </style>
 
+    <!-- Button -->
+    <style name="Widget.Material3.Button" parent="">
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingHorizontal">22dp</item>
+        <item name="android:background">@drawable/shape_7dp</item>
+    </style>
 </resources>
