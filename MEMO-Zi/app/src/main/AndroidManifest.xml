@@ -13,18 +13,19 @@
         android:theme="@style/Base.Theme.MEMOZi"
         tools:targetApi="31">
         <activity
-            android:name=".ui.setting.SettingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.home.HomeActivity"
+            android:name=".ui.memo.MemoActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.diary.DiaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:exported="false" />
     </application>
-
 </manifest>

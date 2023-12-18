@@ -3,14 +3,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="diary_main_morning">님, 좋은 아침이에요! 오늘도 화이팅! </string>
-    <string name="diary_main_lunch">님, 벌써 점심이네요! 조금만 더 힘내요:)</string>
-    <string name="diary_main_evening">님, 좋은 저녁이에요! 오늘 하루는 어떠셨나요?</string>
+    <string name="diary_morning">님, 좋은 아침이에요! 오늘도 화이팅! </string>
+    <string name="diary_lunch">님, 벌써 점심이네요! 조금만 더 힘내요:)</string>
+    <string name="diary_evening">님, 좋은 저녁이에요! 오늘 하루는 어떠셨나요?</string>
 
-    <string name="diary_main_plus">오늘은 일기를 적지 않으셨어요 !\n오늘의 기억을 적어주세요 :)</string>
+    <string name="diary_plus">오늘은 일기를 적지 않으셨어요 !\n오늘의 기억을 적어주세요 :)</string>
 
-    <string name="ex_date">2023년 11월 10일</string>
-    <string name="ex_day">금요일</string>
-    <string name="ex_location">일본 교토시</string>
-    <string name="ex_diary_content">일본이 너무 가고싶은 날이다. 얼른 종강이 왔으면 좋겠다.</string>
+    <string name="diary_list_ex_date">2023년 11월 10일</string>
+    <string name="diary_list_ex_day">금요일</string>
+    <string name="diary_list_ex_location">일본 교토시</string>
+    <string name="diary_list_ex_diary_content">일본이 너무 가고싶은 날이다. 얼른 종강이 왔으면 좋겠다.</string>
 </resources>
