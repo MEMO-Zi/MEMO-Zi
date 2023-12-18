@@ -166,3 +166,5 @@ fabric.properties
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/firebase,androidstudio,kotlin
+
+app/src/main/res/values/kakao_strings.xml
