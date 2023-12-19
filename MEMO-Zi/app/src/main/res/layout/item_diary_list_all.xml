@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/view_item_diary_list_all_horizontal_bar"
+        android:layout_width="318dp"
+        android:layout_height="1dp"
+        android:background="@color/soft_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_item_diary_feed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_item_diary_list_all_horizontal_bar">
+
+        <TextView
+            android:id="@+id/tv_item_diary_feed_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diary_list_ex_date"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_12" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_item_diary_feed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_item_diary_feed"
+        app:srcCompat="@drawable/img_location_test" />
+
+    <TextView
+        android:id="@+id/tv_item_diary_feed_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:drawableStart="@drawable/ic_location_9px"
+        android:text="@string/diary_list_ex_location"
+        android:textSize="@dimen/text_size_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_item_diary_feed" />
+
+    <TextView
+        android:id="@+id/tv_item_diary_feed_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="6dp"
+        android:fontFamily="@font/nanumgothic"
+        android:text="@string/diary_list_ex_diary_content"
+        android:textSize="@dimen/text_size_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_diary_feed_location" />
+</androidx.constraintlayout.widget.ConstraintLayout>
