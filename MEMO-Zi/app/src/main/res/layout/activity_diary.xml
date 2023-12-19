@@ -110,6 +110,7 @@
             android:layout_marginStart="9dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="9dp"
+            android:layout_marginBottom="28dp"
             android:background="@drawable/shape_diary_background"
             android:elevation="10dp"
             android:orientation="vertical"
@@ -143,9 +144,10 @@
             android:layout_marginStart="9dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="9dp"
+            android:layout_marginBottom="28dp"
             android:background="@drawable/shape_diary_background"
             android:elevation="10dp"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/iv_diary_add"
@@ -177,23 +179,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_diary_add" />
 
-            <ImageView
-                android:id="@+id/iv_diary_location_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
-                android:src="@drawable/ic_location_9px"
-                app:layout_constraintBottom_toBottomOf="@id/tv_diary_location"
-                app:layout_constraintEnd_toStartOf="@id/tv_diary_location"
-                app:layout_constraintTop_toTopOf="@id/tv_diary_location" />
-
             <TextView
                 android:id="@+id/tv_diary_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
+                android:drawableStart="@drawable/ic_location_9px"
                 android:fontFamily="@font/nanumgothic"
                 android:textSize="@dimen/text_size_8"
+                android:visibility="invisible"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/et_diary_add"
                 tools:text="@string/diary_list_ex_location" />
@@ -204,8 +198,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="9dp"
                 android:layout_marginTop="24dp"
+                android:layout_marginBottom="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_diary_location_icon"
+                app:layout_constraintTop_toBottomOf="@id/tv_diary_location"
                 app:srcCompat="@drawable/ic_camera_25px" />
 
             <ImageView
@@ -247,21 +243,22 @@
                 android:text="100"
                 android:textSize="@dimen/text_size_12"
                 app:layout_constraintBottom_toBottomOf="@id/btn_diary_add"
-                app:layout_constraintEnd_toStartOf="@id/btn_diary_add" />
+                app:layout_constraintEnd_toStartOf="@id/btn_diary_add"
+                app:layout_constraintTop_toTopOf="@id/btn_diary_add" />
 
             <Button
                 android:id="@+id/btn_diary_add"
                 style="@style/Widget.Material3.Button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
                 android:layout_marginEnd="9dp"
                 android:fontFamily="@font/cafe24ssurround_air"
                 android:text="등록"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_12"
+                app:layout_constraintBottom_toBottomOf="@id/iv_diary_camera"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_diary_location" />
+                app:layout_constraintTop_toTopOf="@id/iv_diary_camera" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
@@ -269,15 +266,17 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_diary"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="9dp"
-        android:layout_marginTop="26dp"
         android:layout_marginEnd="9dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/shape_diary_background"
         android:elevation="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fl_diary"
-        tools:listitem="@layout/item_diary_list" />
+        tools:listitem="@layout/item_diary_list_all" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
