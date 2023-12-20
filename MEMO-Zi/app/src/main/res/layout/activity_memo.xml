@@ -14,7 +14,7 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_memo"
@@ -32,6 +32,157 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/ic_memo_zi" />
-
     </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/ll_memo_default"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/shape_diary_background"
+        android:elevation="10dp"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/memo_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ll_memo_default"
+            app:queryHint="메모를 검색해 보세요!" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_memo_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ll_memo_default">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"/>
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/Category1"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/ll_memo_default">-->
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/Category1_img"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:importantForAccessibility="no"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:src="@drawable/img_category" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Category1_text"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:fontFamily="@font/cafe24ssurround_air"-->
+<!--                    android:text="투두리스트"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="13sp" />-->
+
+<!--            </RelativeLayout>-->
+<!--        </com.google.android.material.card.MaterialCardView>-->
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/Category2"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/ll_memo_default">-->
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/Category2_img"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:importantForAccessibility="no"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:src="@drawable/img_category" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Category2_text"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:fontFamily="@font/cafe24ssurround_air"-->
+<!--                    android:text="투두리스트"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="13sp" />-->
+
+<!--            </RelativeLayout>-->
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:id="@+id/Category3"-->
+<!--            android:layout_width="150dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/ll_memo_default">-->
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/Category3_img"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:importantForAccessibility="no"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:src="@drawable/img_category" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/Category3_text"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:fontFamily="@font/cafe24ssurround_air"-->
+<!--                    android:text="투두리스트"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="13sp" />-->
+
+<!--            </RelativeLayout>-->
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+        <!--        <androidx.constraintlayout.helper.widget.Carousel-->
+        <!--            android:id="@+id/carousel"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:carousel_backwardTransition="@+id/backward"-->
+        <!--            app:carousel_firstView="@+id/Category1"-->
+        <!--            app:carousel_forwardTransition="@+id/forward"-->
+        <!--            app:carousel_infinite="true"-->
+        <!--            app:carousel_nextState="@+id/next"-->
+        <!--            app:carousel_previousState="@+id/previous"-->
+        <!--            app:constraint_referenced_ids="Category1,Category2,Category3"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/Category1" />-->
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
