@@ -11,7 +11,7 @@ abstract class BindingActivity<T : ViewBinding>(
 ) : AppCompatActivity() {
 
     private var _binding: T? = null
-    val binding get() = _binding!!
+    val binding get() = requireNotNull(_binding!!) { "${this::class.java.simpleName}에서 에러가 발생했습니다." }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
