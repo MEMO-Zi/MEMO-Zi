@@ -2,8 +2,11 @@ package com.memo_zi.ui.diary
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityDiaryBinding
 import com.memo_zi.ui.memo.MemoActivity
@@ -22,21 +25,12 @@ class DiaryActivity :
         super.onCreate(savedInstanceState)
 
         initDiaryFragment()
-        changeDiaryActivity()
+        changeActivity()
         clickDiaryWriting()
         changeDiaryFragment()
     }
 
-    private fun initDiaryFragment() {
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_diary)
-        if (currentFragment == null) {
-            supportFragmentManager.beginTransaction()
-                .add(R.id.fcv_diary, DiaryFeedFragment())
-                .commit()
-        }
-    }
-
-    private fun changeDiaryActivity() {
+    private fun changeActivity() {
         binding.tbDiary.setOnMenuItemClickListener() { menuItem ->
             when (menuItem.itemId) {
                 R.id.item_diary_change -> {
@@ -55,6 +49,15 @@ class DiaryActivity :
 
                 else -> false
             }
+        }
+    }
+
+    private fun initDiaryFragment() {
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_diary)
+        if (currentFragment == null) {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fcv_diary, DiaryFeedFragment())
+                .commit()
         }
     }
 
@@ -81,8 +84,6 @@ class DiaryActivity :
                 replaceFragment(DIARY_CALENDAR)
             }
         }
-
-
     }
 
     private fun replaceFragment(name: String) {
