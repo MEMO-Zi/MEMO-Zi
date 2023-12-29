@@ -17,7 +17,7 @@ class ModelAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModelViewHolder {
         val itemView = LayoutInflater.from(context)
-            .inflate(R.layout.category_item, parent, false)
+            .inflate(R.layout.item_memo_category, parent, false)
         return ModelViewHolder(itemView)
     }
 
@@ -40,7 +40,7 @@ class CategoryAdapter(private val categories: List<MemoCategory>) : RecyclerView
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.category_item, parent, false)
+            .inflate(R.layout.item_memo_category, parent, false)
         return CategoryViewHolder(itemView)
     }
 

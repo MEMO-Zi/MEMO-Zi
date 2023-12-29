@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.hadi.viewpager2carousel.HorizontalMarginItemDecoration
 import com.hadi.viewpager2carousel.ModelAdapter
 import com.memo_zi.R
 import com.memo_zi.data.model.MemoCategory
@@ -31,13 +30,12 @@ class MemoActivity :
 
         // 페이지 간의 간격 설정
         setupCarousel()
-
         changeDiaryActivity()
     }
 
     private fun setupCarousel() {
         val viewPager: ViewPager2 = findViewById(R.id.viewPager)
-        viewPager.offscreenPageLimit = 1
+        viewPager.offscreenPageLimit = 3
 
         val pageMargin = resources.getDimensionPixelOffset(R.dimen.pageMargin)
         val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
@@ -48,11 +46,11 @@ class MemoActivity :
             page.scaleY = scale
         }
         viewPager.setPageTransformer(pageTransformer)
-
         viewPager.clipToPadding = false
         viewPager.clipChildren = false
         viewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
         viewPager.setPadding(pageMargin, 0, pageMargin, 0)
+
     }
 
     private fun changeDiaryActivity() {
