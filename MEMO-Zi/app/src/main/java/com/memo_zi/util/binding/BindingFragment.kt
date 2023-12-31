@@ -9,8 +9,7 @@ import androidx.viewbinding.ViewBinding
 
 abstract class BindingFragment<T : ViewBinding> : Fragment() {
     private var _binding: T? = null
-    val binding: T
-        get() = requireNotNull(_binding) { "Binding Error" }
+    val binding: T get() = requireNotNull(_binding!!) { "${this::class.java.simpleName}에서 에러가 발생했습니다." }
 
     override fun onCreateView(
         inflater: LayoutInflater,
