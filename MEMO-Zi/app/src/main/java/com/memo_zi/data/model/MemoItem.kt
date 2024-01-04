@@ -9,7 +9,8 @@ sealed class MemoItem {
 
     data class Memo(
         val title: String,
-        val text: String
+        val contents: String,
+        val date: String
     ) : MemoItem()
 
 

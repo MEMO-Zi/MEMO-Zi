@@ -1,18 +1,17 @@
 package com.memo_zi.ui.memo
 
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import com.memo_zi.data.model.DiaryItem
-import com.memo_zi.databinding.ItemDiaryListAllBinding
 
-class MemoListViewHolder(private val binding: ItemDiaryListAllBinding) : RecyclerView.ViewHolder(binding.root) {
+import com.memo_zi.data.model.MemoItem
+import com.memo_zi.databinding.ItemMemoListAllBinding
 
-    fun onBind(diaryData: DiaryItem.AllItem) {
+class MemoListViewHolder(private val binding: ItemMemoListAllBinding) :
+    RecyclerView.ViewHolder(binding.root) {
+    fun onBind(memoData: MemoItem.Memo) {
         binding.run {
-            tvItemDiaryFeedDate.text = diaryData.diaryDate
-            ivItemDiaryFeed.load(diaryData.diaryImgUrl)
-            tvItemDiaryFeedLocation.text = diaryData.diaryLocation
-            tvItemDiaryFeedContent.text = diaryData.diaryContent
+//            memoContent.text = memoData.contents
+//            memoDate.text = memoData.date
+//            memoTitle.text = memoData.title
         }
     }
 }

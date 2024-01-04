@@ -10,10 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.memo_zi.R
 import com.memo_zi.data.model.MemoCategory
 
-class ModelAdapter(
+class MemoAdapter(
     private val context: Context,
     private val categories: List<MemoCategory>
-) : RecyclerView.Adapter<ModelAdapter.ModelViewHolder>() {
+) : RecyclerView.Adapter<MemoAdapter.ModelViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModelViewHolder {
         val itemView = LayoutInflater.from(context)
@@ -25,9 +25,7 @@ class ModelAdapter(
         val category = categories[position]
         holder.bind(category)
     }
-
     override fun getItemCount(): Int = categories.size
-
     inner class ModelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(category: MemoCategory) {
             itemView.findViewById<ImageView>(R.id.category_img).setImageResource(category.imageRes)

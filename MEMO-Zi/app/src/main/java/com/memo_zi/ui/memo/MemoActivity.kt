@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.hadi.viewpager2carousel.ModelAdapter
+import com.hadi.viewpager2carousel.MemoAdapter
 import com.memo_zi.R
 import com.memo_zi.data.model.MemoCategory
 import com.memo_zi.databinding.ActivityMemoBinding
@@ -16,6 +16,7 @@ import kotlin.math.absoluteValue
 
 class MemoActivity :
     BindingActivity<ActivityMemoBinding>({ ActivityMemoBinding.inflate(it) }) {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val categories = listOf(
@@ -23,20 +24,18 @@ class MemoActivity :
             MemoCategory(R.drawable.img_category2, "하기싫은것"),
             MemoCategory(R.drawable.img_category, "해야만하는것")
         )
-
         val viewPager: ViewPager2 = findViewById(R.id.viewPager)
-        val modelAdapter = ModelAdapter(this, categories)
+        val modelAdapter = MemoAdapter(this, categories)
         viewPager.adapter = modelAdapter
 
         // 페이지 간의 간격 설정
         setupCarousel()
-        changeDiaryActivity()
+        changeMemoActivity()
     }
 
     private fun setupCarousel() {
         val viewPager: ViewPager2 = findViewById(R.id.viewPager)
         viewPager.offscreenPageLimit = 3
-
         val pageMargin = resources.getDimensionPixelOffset(R.dimen.pageMargin)
         val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
             val offset = position * -2.0f
@@ -53,7 +52,7 @@ class MemoActivity :
 
     }
 
-    private fun changeDiaryActivity() {
+    private fun changeMemoActivity() {
         binding.tbMemo.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.item_memo_change -> {
