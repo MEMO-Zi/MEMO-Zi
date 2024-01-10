@@ -103,4 +103,108 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/memo_edit_contents" />
 
+    <ImageButton
+        android:id="@+id/memo_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:src="@drawable/ic_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+
+    <View
+        android:id="@+id/view_item_memo_edit_vertical_bar"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/memo_button_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/memo_bold"
+        app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+
+    <ImageButton
+        android:id="@+id/memo_italic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:src="@drawable/ic_italic"
+        app:layout_constraintStart_toStartOf="@id/view_item_memo_edit_vertical_bar"
+        app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+
+    <View
+        android:id="@+id/view_item_memo_edit_vertical_bar2"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/memo_button_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/memo_italic"
+        app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+
+    <ImageButton
+        android:id="@+id/memo_strikethrough"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:src="@drawable/ic_strikethrough"
+        app:layout_constraintStart_toStartOf="@id/view_item_memo_edit_vertical_bar2"
+        app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+
+    <View
+        android:id="@+id/view_item_memo_edit_vertical_bar3"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/memo_button_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/memo_strikethrough"
+        app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+
+    <ImageButton
+        android:id="@+id/memo_underline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:src="@drawable/ic_underline"
+        app:layout_constraintStart_toStartOf="@id/view_item_memo_edit_vertical_bar3"
+        app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+
+    <ImageButton
+        android:id="@+id/memo_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="47dp"
+        android:background="@null"
+        android:src="@drawable/ic_check"
+        app:layout_constraintEnd_toStartOf="@+id/memo_list"
+        app:layout_constraintStart_toEndOf="@+id/memo_underline"
+        app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+
+    <ImageButton
+        android:id="@+id/memo_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="36dp"
+        android:background="@null"
+        android:src="@drawable/ic_orderedlist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
