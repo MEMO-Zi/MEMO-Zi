@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
+
     <LinearLayout
-        android:id="@+id/memo_Title"
+        android:id="@+id/memo_title_ll"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -12,17 +13,17 @@
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <View
             android:id="@+id/memo_Title_bar"
             android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="1dp"
-            android:background="@color/memo_title_color">
-        </View>
-        <!--    todo 최대길이 제한-->
+            android:background="@color/memo_title_color"></View>
+
         <TextView
-            android:id="@+id/memo_title"
+            android:id="@+id/memo_Title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
@@ -53,7 +54,7 @@
         android:text="하루정도는 계획없는 날이 있는게 진정한 힙 아닐까? 그냥 한번 써보는말 밥도 안정하고 길가다가 맛있어보이는 집에 들어가면 좋을거 같아 그리고 알람 안맞추고 낮잠을 조금 자고 나"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/memo_Title" />
+        app:layout_constraintTop_toBottomOf="@+id/memo_title_ll" />
 
     <View
         android:id="@+id/view_item_memo_list_horizontal_bar"

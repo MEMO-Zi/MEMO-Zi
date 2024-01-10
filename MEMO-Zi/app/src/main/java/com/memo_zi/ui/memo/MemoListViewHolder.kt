@@ -9,9 +9,9 @@ class MemoListViewHolder(private val binding: ItemMemoListAllBinding) :
     RecyclerView.ViewHolder(binding.root) {
     fun onBind(memoData: MemoItem.Memo) {
         binding.run {
-//            memoContent.text = memoData.contents
-//            memoDate.text = memoData.date
-//            memoTitle.text = memoData.title
+            memoContent.text = memoData.contents
+            memoDate.text = memoData.date
+            memoTitle.text = memoData.title
         }
     }
 }
