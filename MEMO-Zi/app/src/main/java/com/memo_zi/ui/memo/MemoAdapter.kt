@@ -25,6 +25,7 @@ class MemoAdapter(
         val category = categories[position]
         holder.bind(category)
     }
+
     override fun getItemCount(): Int = categories.size
     inner class ModelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(category: MemoCategory) {
@@ -34,7 +35,8 @@ class MemoAdapter(
     }
 }
 
-class CategoryAdapter(private val categories: List<MemoCategory>) : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
+class CategoryAdapter(private val categories: List<MemoCategory>) :
+    RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         val itemView = LayoutInflater.from(parent.context)
