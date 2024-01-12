@@ -8,9 +8,8 @@ class MemoListCategoryViewHolder(private val binding: ItemMemoCategoryBinding) :
     RecyclerView.ViewHolder(binding.root) {
     fun onBind(categoryData: MemoItem.Category) {
         binding.run {
-//            categoryImg.src = categoryData.imageRes
+            categoryImg.setImageResource(categoryData.imageRes)
+            categoryTitle.text = categoryData.title
         }
     }
-
-
 }

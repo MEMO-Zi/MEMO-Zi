@@ -2,59 +2,56 @@ package com.hadi.viewpager2carousel
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.memo_zi.R
-import com.memo_zi.data.model.MemoCategory
+import com.memo_zi.data.model.MemoItem
+import com.memo_zi.databinding.ItemMemoCategoryBinding
+import com.memo_zi.databinding.ItemMemoListAllBinding
+import com.memo_zi.ui.memo.MemoListCategoryViewHolder
+import com.memo_zi.ui.memo.MemoListViewHolder
+import timber.log.Timber
 
-class MemoAdapter(
-    private val context: Context,
-    private val categories: List<MemoCategory>
-) : RecyclerView.Adapter<MemoAdapter.ModelViewHolder>() {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModelViewHolder {
-        val itemView = LayoutInflater.from(context)
-            .inflate(R.layout.item_memo_category, parent, false)
-        return ModelViewHolder(itemView)
-    }
-
-    override fun onBindViewHolder(holder: ModelViewHolder, position: Int) {
-        val category = categories[position]
-        holder.bind(category)
-    }
-
-    override fun getItemCount(): Int = categories.size
-    inner class ModelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(category: MemoCategory) {
-            itemView.findViewById<ImageView>(R.id.category_img).setImageResource(category.imageRes)
-            itemView.findViewById<TextView>(R.id.category_text).text = category.title
+class MemoAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private val inflater by lazy { LayoutInflater.from(context) }
+    private val memoList = mutableListOf<MemoItem>()
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return when (viewType) {
+            MEMO_CATEGORY -> MemoListCategoryViewHolder(
+                ItemMemoCategoryBinding.inflate(
+                    inflater, parent, false
+                )
+            )
+            MEMO_ITEM -> MemoListViewHolder(
+                ItemMemoListAllBinding.inflate(
+                    inflater, parent, false
+                )
+            )
+            else -> throw RuntimeException("viewType error")
         }
     }
-}
 
-class CategoryAdapter(private val categories: List<MemoCategory>) :
-    RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>() {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
-        val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_memo_category, parent, false)
-        return CategoryViewHolder(itemView)
-    }
-
-    override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        val category = categories[position]
-        holder.bind(category)
-    }
-
-    override fun getItemCount(): Int = categories.size
-
-    inner class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(category: MemoCategory) {
-            itemView.findViewById<ImageView>(R.id.category_img).setImageResource(category.imageRes)
-            itemView.findViewById<TextView>(R.id.category_text).text = category.title
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder) {
+            is MemoListCategoryViewHolder -> holder.onBind(memoList[position] as MemoItem.Category)
+            is MemoListViewHolder -> holder.onBind(memoList[position] as MemoItem.Memo)
         }
+    }
+
+    override fun getItemCount(): Int = memoList.size
+
+    override fun getItemViewType(position: Int): Int = when(memoList[position]){
+        is MemoItem.Category -> MEMO_CATEGORY
+        is MemoItem.Memo -> MEMO_ITEM
+    }
+    fun setMemoList(dataList: List<MemoItem>) {
+        memoList.clear()
+        memoList.addAll(dataList)
+        Timber.tag("memo").d(dataList.toString())
+        notifyDataSetChanged()
+    }
+
+    companion object {
+        const val MEMO_CATEGORY = 0
+        const val MEMO_ITEM = 1
     }
 }
