@@ -2,37 +2,38 @@ package com.memo_zi.ui.memo
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.memo_zi.R
-import com.memo_zi.data.model.MemoCategory
+import com.memo_zi.data.model.MemoItem
+import com.memo_zi.databinding.ItemMemoCategoryBinding
+import timber.log.Timber
 
 class MemoCategoryAdapter(
-    private val context: Context,
-    private val categories: List<MemoCategory>
-) : RecyclerView.Adapter<MemoCategoryAdapter.ModelViewHolder>() {
-
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ModelViewHolder {
-        val itemView = LayoutInflater.from(context)
-            .inflate(R.layout.item_memo_category, parent, false)
-        return ModelViewHolder(itemView)
+    private val context: Context
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private val inflater by lazy { LayoutInflater.from(context) }
+    private val categoryList = mutableListOf<MemoItem>()
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return MemoListCategoryViewHolder(
+            ItemMemoCategoryBinding.inflate(
+                inflater, parent, false
+            )
+        )
     }
 
-    override fun onBindViewHolder(holder: ModelViewHolder, position: Int) {
-        val category = categories[position]
-        holder.bind(category)
-    }
-
-    override fun getItemCount(): Int = categories.size
-    inner class ModelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(category: MemoCategory) {
-            itemView.findViewById<ImageView>(R.id.category_img).setImageResource(category.imageRes)
-            itemView.findViewById<TextView>(R.id.category_title).text = category.title
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        when (holder) {
+            is MemoListCategoryViewHolder -> holder.onBind(categoryList[position] as MemoItem.Category)
         }
+    }
+
+    override fun getItemCount(): Int = categoryList.size
+
+    fun setCategoryList(dataList: List<MemoItem>){
+        categoryList.clear()
+        categoryList.addAll(dataList)
+        Timber.tag("memo").d(dataList.toString())
+        notifyDataSetChanged()
     }
 
 }

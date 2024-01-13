@@ -8,12 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.hadi.viewpager2carousel.MemoAdapter
 import com.memo_zi.R
-import com.memo_zi.data.model.MemoCategory
 import com.memo_zi.databinding.ActivityMemoBinding
 import com.memo_zi.ui.diary.DiaryActivity
 import com.memo_zi.ui.setting.SettingActivity
 import com.memo_zi.util.binding.BindingActivity
-import timber.log.Timber
 import kotlin.math.absoluteValue
 
 
@@ -22,6 +20,7 @@ class MemoActivity :
 
     private val viewModel by viewModels<MemoViewModel>()
     private lateinit var memoAdapter: MemoAdapter
+    private lateinit var categoryAdapter: MemoCategoryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +34,7 @@ class MemoActivity :
     }
 
     private fun setupCarousel() {
-        binding.apply{
+        binding.run {
             viewPager.offscreenPageLimit = 3
             val pageMargin = resources.getDimensionPixelOffset(R.dimen.pageMargin)
             val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
@@ -88,12 +87,7 @@ class MemoActivity :
 
     private fun initAdapter() {
         memoAdapter = MemoAdapter(this)
-        val categories = listOf(
-            MemoCategory(R.drawable.img_category, "투두리스트"),
-            MemoCategory(R.drawable.img_category2, "하기싫은것"),
-            MemoCategory(R.drawable.img_category, "해야만하는것")
-        )
-        val categoryAdapter  = MemoCategoryAdapter(this, categories)
+        categoryAdapter = MemoCategoryAdapter(this)
         binding.rvMemo.adapter = memoAdapter
         binding.viewPager.adapter = categoryAdapter
     }
@@ -101,6 +95,9 @@ class MemoActivity :
     private fun setMemoList() {
         viewModel.memoList.observe(this) { memoList ->
             memoAdapter.setMemoList(memoList)
+        }
+        viewModel.categoryList.observe(this) { categoryList ->
+            categoryAdapter.setCategoryList(categoryList)
         }
     }
 }

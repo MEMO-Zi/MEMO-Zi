@@ -12,10 +12,6 @@
     <dimen name="text_size_18">18sp</dimen>
 
     <dimen name="text_size_20">20sp</dimen>
-    <dimen name="pageWidth">120dp</dimen>
-    <dimen name="pageHeight">70dp</dimen>
-    <dimen name="centerPageWidth">150dp</dimen>
-    <dimen name="centerPageHeight">90dp</dimen>
     <dimen name="pageMargin">8dp</dimen>
     <dimen name="categoryCorner">13dp</dimen>
     <dimen name="viewpager_current_item_horizontal_margin">42dp</dimen>
