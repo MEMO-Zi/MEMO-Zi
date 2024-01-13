@@ -35,7 +35,7 @@ class MemoActivity :
     }
 
     private fun setupCarousel() {
-        binding.run{
+        binding.apply{
             viewPager.offscreenPageLimit = 3
             val pageMargin = resources.getDimensionPixelOffset(R.dimen.pageMargin)
             val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
@@ -50,7 +50,7 @@ class MemoActivity :
             viewPager.setPageTransformer(pageTransformer)
             viewPager.clipToPadding = false
             viewPager.clipChildren = false
-//            viewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+            viewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
             viewPager.setPadding(pageMargin, 0, pageMargin, 0)
         }
     }

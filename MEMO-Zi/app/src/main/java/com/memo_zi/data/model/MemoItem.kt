@@ -10,6 +10,4 @@ sealed class MemoItem {
         val contents: String,
         val date: String
     ) : MemoItem()
-
-
 }
