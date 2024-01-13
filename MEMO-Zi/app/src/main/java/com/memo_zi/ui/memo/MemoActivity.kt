@@ -57,7 +57,7 @@ class MemoActivity :
 
 
     private fun setButton() {
-        binding.memoAddButton.setOnClickListener {
+        binding.fabMemoAdd.setOnClickListener {
             Intent(this, MemoEditActivity::class.java).apply {
                 startActivity(this)
             }
