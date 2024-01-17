@@ -15,4 +15,10 @@
     <!-- 그라데이션 -->
     <color name="bg_start">#E2ACB1</color>
     <color name="bg_end">#BEBBE6</color>
+
+    <!-- 메모 -->
+    <color name="memo_title_color">#976A53</color>
+    <color name="memo_date_color">#A09B9B</color>
+    <color name="memo_add_color">#B3C0BCE7</color>
+    <color name="memo_button_color">#BFBCE7</color>
 </resources>
