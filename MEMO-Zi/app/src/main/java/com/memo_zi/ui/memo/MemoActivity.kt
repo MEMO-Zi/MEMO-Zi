@@ -24,7 +24,6 @@ class MemoActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         initAdapter()
         setMemoList()
         // 페이지 간의 간격 설정
@@ -35,7 +34,7 @@ class MemoActivity :
 
     private fun setupCarousel() {
         binding.run {
-            viewPager.offscreenPageLimit = 3
+            memoViewpager.offscreenPageLimit = 3
             val pageMargin = resources.getDimensionPixelOffset(R.dimen.pageMargin)
             val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
                 val offset = position * -2.0f
@@ -46,11 +45,12 @@ class MemoActivity :
                 page.scaleX = scale
                 page.scaleY = scale
             }
-            viewPager.setPageTransformer(pageTransformer)
-            viewPager.clipToPadding = false
-            viewPager.clipChildren = false
-            viewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-            viewPager.setPadding(pageMargin, 0, pageMargin, 0)
+            memoViewpager.setPageTransformer(pageTransformer)
+            memoViewpager.clipToPadding = false
+            memoViewpager.clipChildren = false
+            memoViewpager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+            memoViewpager.setPadding(pageMargin, 0, pageMargin, 0)
+
         }
     }
 
@@ -88,8 +88,13 @@ class MemoActivity :
     private fun initAdapter() {
         memoAdapter = MemoAdapter(this)
         categoryAdapter = MemoCategoryAdapter(this)
-        binding.rvMemo.adapter = memoAdapter
-        binding.viewPager.adapter = categoryAdapter
+        binding.run{
+            rvMemo.adapter = memoAdapter
+            memoViewpager.adapter = categoryAdapter
+            memoIndicator.setViewPager(memoViewpager)
+            categoryAdapter.registerAdapterDataObserver(memoIndicator.adapterDataObserver);
+        }
+
     }
 
     private fun setMemoList() {
