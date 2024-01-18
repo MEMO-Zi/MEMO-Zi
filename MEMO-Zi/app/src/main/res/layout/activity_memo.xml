@@ -91,18 +91,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_memo_add"
         app:tint="@null" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcv_memo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/memo_indicator"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_memo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="9dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/shape_diary_background"
         android:elevation="4dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/memo_viewpager"
+        app:layout_constraintTop_toBottomOf="@id/memo_indicator"
         tools:listitem="@layout/item_memo_list_all" />
 </androidx.constraintlayout.widget.ConstraintLayout>
