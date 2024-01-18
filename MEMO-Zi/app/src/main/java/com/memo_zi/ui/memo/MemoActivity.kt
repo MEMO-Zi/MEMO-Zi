@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.core.view.isInvisible
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.hadi.viewpager2carousel.MemoAdapter
@@ -62,20 +64,23 @@ class MemoActivity :
                 startActivity(this)
             }
         }
-        binding.memoBtnCategoryEdit.setOnClickListener{
-
+        binding.memoBtnCategoryEdit.setOnClickListener {
+            replaceFragment(MEMO_CATEGORY)
+            it.isInvisible = true
         }
     }
 
 
-    private fun changeFragment(){
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_memo)
-        if (currentFragment == null) {
-            supportFragmentManager.beginTransaction()
-                .add(R.id.fcv_memo, MemoFeedFragment())
-                .commit()
-        }
+    private fun replaceFragment(name: String) {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
 
+        val newFragment = when (name) {
+            MEMO_FEED -> MemoFeedFragment()
+            MEMO_CATEGORY -> MemoCategoryFragment()
+            else -> Fragment()
+        }
+        fragmentTransaction.replace(R.id.fcv_memo, newFragment)
+        fragmentTransaction.commit()
     }
 
     private fun changeMemoActivity() {
@@ -100,7 +105,7 @@ class MemoActivity :
         }
     }
 
-    private fun initMemoFragment(){
+    private fun initMemoFragment() {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_memo)
         if (currentFragment == null) {
             supportFragmentManager.beginTransaction()
@@ -108,10 +113,11 @@ class MemoActivity :
                 .commit()
         }
     }
+
     private fun initAdapter() {
         memoAdapter = MemoAdapter(this)
         categoryAdapter = MemoCategoryAdapter(this)
-        binding.run{
+        binding.run {
             memoViewpager.adapter = categoryAdapter
             memoIndicator.setViewPager(memoViewpager)
             categoryAdapter.registerAdapterDataObserver(memoIndicator.adapterDataObserver)
@@ -126,5 +132,12 @@ class MemoActivity :
         viewModel.categoryList.observe(this) { categoryList ->
             categoryAdapter.setCategoryList(categoryList)
         }
+    }
+
+
+    companion object
+    {
+        const val MEMO_FEED = "MemoFeed"
+        const val MEMO_CATEGORY = "MemoCategory"
     }
 }
