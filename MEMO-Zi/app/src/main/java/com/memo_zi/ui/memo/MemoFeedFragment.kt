@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.hadi.viewpager2carousel.MemoAdapter
 import com.memo_zi.databinding.FragementMemoFeedBinding
-import com.memo_zi.ui.diary.DiaryViewModel
-
 import com.memo_zi.util.binding.BindingFragment
 
 class MemoFeedFragment : BindingFragment<FragementMemoFeedBinding>() {
@@ -24,7 +22,7 @@ class MemoFeedFragment : BindingFragment<FragementMemoFeedBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         initAdapter()
-        setDiaryList()
+        setMemoList()
     }
 
     private fun initAdapter() {
@@ -32,10 +30,9 @@ class MemoFeedFragment : BindingFragment<FragementMemoFeedBinding>() {
         binding.rvMemo.adapter = memoAdapter
     }
 
-    private fun setDiaryList() {
+    private fun setMemoList() {
         viewModel.memoList.observe(viewLifecycleOwner) { memoList ->
             memoAdapter.setMemoList(memoList)
-
         }
     }
 
