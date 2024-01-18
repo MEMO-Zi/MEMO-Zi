@@ -10,6 +10,7 @@ import com.hadi.viewpager2carousel.MemoAdapter
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityMemoBinding
 import com.memo_zi.ui.diary.DiaryActivity
+import com.memo_zi.ui.diary.DiaryFeedFragment
 import com.memo_zi.ui.setting.SettingActivity
 import com.memo_zi.util.binding.BindingActivity
 import kotlin.math.absoluteValue
@@ -24,6 +25,7 @@ class MemoActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initMemoFragment()
         initAdapter()
         setMemoList()
         // 페이지 간의 간격 설정
@@ -85,11 +87,18 @@ class MemoActivity :
         }
     }
 
+    private fun initMemoFragment(){
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_memo)
+        if (currentFragment == null) {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fcv_memo, MemoFeedFragment())
+                .commit()
+        }
+    }
     private fun initAdapter() {
         memoAdapter = MemoAdapter(this)
         categoryAdapter = MemoCategoryAdapter(this)
         binding.run{
-            rvMemo.adapter = memoAdapter
             memoViewpager.adapter = categoryAdapter
             memoIndicator.setViewPager(memoViewpager)
             categoryAdapter.registerAdapterDataObserver(memoIndicator.adapterDataObserver);
