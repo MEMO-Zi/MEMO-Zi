@@ -13,7 +13,6 @@
         android:layout_marginTop="64dp"
         android:layout_marginBottom="20dp"
         android:scaleType="centerCrop"
-        app:layout_constrainedWidth_percent="0.4"
         app:layout_constraintBottom_toTopOf="@+id/btn_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
