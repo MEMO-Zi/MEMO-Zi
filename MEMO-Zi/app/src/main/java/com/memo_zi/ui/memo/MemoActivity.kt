@@ -57,7 +57,6 @@ class MemoActivity :
         }
     }
 
-
     private fun setButton() {
         binding.fabMemoAdd.setOnClickListener {
             Intent(this, MemoEditActivity::class.java).apply {
@@ -70,7 +69,6 @@ class MemoActivity :
         }
     }
 
-
     private fun replaceFragment(name: String) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
 
@@ -79,8 +77,10 @@ class MemoActivity :
             MEMO_CATEGORY -> MemoCategoryFragment()
             else -> Fragment()
         }
-        fragmentTransaction.replace(R.id.fcv_memo, newFragment)
-        fragmentTransaction.commit()
+        fragmentTransaction
+            .replace(R.id.fcv_memo, newFragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun changeMemoActivity() {
@@ -103,6 +103,11 @@ class MemoActivity :
                 else -> false
             }
         }
+    }
+
+    override fun onBackPressed() {//todo 추후 더 나은 로직 확인 필요
+        binding.memoBtnCategoryEdit.isInvisible = false
+        super.onBackPressed()
     }
 
     private fun initMemoFragment() {
@@ -135,8 +140,7 @@ class MemoActivity :
     }
 
 
-    companion object
-    {
+    companion object {
         const val MEMO_FEED = "MemoFeed"
         const val MEMO_CATEGORY = "MemoCategory"
     }
