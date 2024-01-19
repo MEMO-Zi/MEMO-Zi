@@ -3,7 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id "kotlin-parcelize"
     // Firebase
-    id("com.google.gms.google-services")
+
 }
 
 android {
@@ -40,6 +40,15 @@ android {
 }
 
 dependencies {
+
+    // kakao 로그인
+    implementation "com.kakao.sdk:v2-all:2.18.0"
+    implementation "com.kakao.sdk:v2-user:2.18.0"
+    implementation "com.kakao.sdk:v2-talk:2.18.0"
+    implementation "com.kakao.sdk:v2-share:2.18.0"
+    implementation "com.kakao.sdk:v2-friend:2.18.0"
+    implementation "com.kakao.sdk:v2-navi:2.18.0"
+    implementation "com.kakao.sdk:v2-cert:2.18.0"
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
