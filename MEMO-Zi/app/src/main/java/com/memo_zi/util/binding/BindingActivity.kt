@@ -1,4 +1,4 @@
-package com.memo_zi.util.base
+package com.memo_zi.util.binding
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,12 @@ import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseActivity<T : ViewBinding>(
+abstract class BindingActivity<T : ViewBinding>(
     val bindingFactory: (LayoutInflater) -> T
 ) : AppCompatActivity() {
 
     private var _binding: T? = null
-    val binding get() = _binding!!
+    val binding get() = requireNotNull(_binding!!) { "${this::class.java.simpleName}에서 에러가 발생했습니다." }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

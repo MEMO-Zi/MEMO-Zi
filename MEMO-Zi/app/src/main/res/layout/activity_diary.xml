@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.diary.DiaryActivity">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/bg_gradation"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_diary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/diary_tb">
+
+            <ImageView
+                android:id="@+id/iv_diary_tb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_memo_zi" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/tv_diary_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/nanumgothic_bold"
+            android:text="차혜빈"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tb_diary"
+            tools:text="차혜빈" />
+
+        <TextView
+            android:id="@+id/tv_diary_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanumgothic"
+            android:text="@string/diary_evening"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_13"
+            app:layout_constraintBottom_toBottomOf="@id/tv_diary_name"
+            app:layout_constraintStart_toEndOf="@id/tv_diary_name"
+            app:layout_constraintTop_toTopOf="@id/tv_diary_name"
+            tools:text="@string/diary_evening" />
+
+        <LinearLayout
+            android:id="@+id/ll_change_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_diary_name">
+
+            <ImageView
+                android:id="@+id/iv_diary_feed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_feed_black_17px" />
+
+            <View
+                android:id="@+id/view_change_icon_bar"
+                android:layout_width="1dp"
+                android:layout_height="12dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="9dp"
+                android:background="@color/white" />
+
+            <ImageView
+                android:id="@+id/iv_diary_calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:srcCompat="@drawable/ic_calendar_white_20px" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_diary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/fcv_diary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_change_icon">
+
+            <LinearLayout
+                android:id="@+id/ll_diary_default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/shape_diary_background"
+                android:elevation="10dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_diary_plus_default"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:src="@drawable/ic_round_plus_34px" />
+
+                <TextView
+                    android:id="@+id/tv_diary_default"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="19dp"
+                    android:fontFamily="@font/cafe24ssurround_air"
+                    android:gravity="center_horizontal"
+                    android:text="@string/diary_plus"
+                    android:textSize="@dimen/text_size_12" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_diary_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="14dp"
+                android:background="@drawable/shape_diary_background"
+                android:elevation="10dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_diary_add"
+                    android:layout_width="87dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="16dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    app:layout_constraintDimensionRatio="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@tools:sample/avatars" />
+
+                <EditText
+                    android:id="@+id/et_diary_add"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:ems="10"
+                    android:fontFamily="@font/nanumgothic"
+                    android:inputType="text|textPersonName"
+                    android:minHeight="100dp"
+                    android:textSize="@dimen/text_size_12"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_diary_add" />
+
+                <TextView
+                    android:id="@+id/tv_diary_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:drawableStart="@drawable/ic_location_9px"
+                    android:fontFamily="@font/nanumgothic"
+                    android:textSize="@dimen/text_size_8"
+                    android:visibility="invisible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_diary_add"
+                    tools:text="@string/diary_list_ex_location" />
+
+                <ImageView
+                    android:id="@+id/iv_diary_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="9dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="6dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_diary_location"
+                    app:srcCompat="@drawable/ic_camera_25px" />
+
+                <ImageView
+                    android:id="@+id/iv_diary_album"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_diary_camera"
+                    app:layout_constraintStart_toEndOf="@id/iv_diary_camera"
+                    app:layout_constraintTop_toTopOf="@id/iv_diary_camera"
+                    app:srcCompat="@drawable/ic_album_24px" />
+
+                <ImageView
+                    android:id="@+id/iv_diary_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_diary_camera"
+                    app:layout_constraintStart_toEndOf="@id/iv_diary_album"
+                    app:layout_constraintTop_toTopOf="@id/iv_diary_camera"
+                    app:srcCompat="@drawable/ic_location_27px" />
+
+                <ImageView
+                    android:id="@+id/iv_diary_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_diary_camera"
+                    app:layout_constraintStart_toEndOf="@id/iv_diary_location"
+                    app:layout_constraintTop_toTopOf="@id/iv_diary_camera"
+                    app:srcCompat="@drawable/ic_question_23px" />
+
+                <TextView
+                    android:id="@+id/tv_diary_text_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="6dp"
+                    android:fontFamily="@font/cafe24ssurround_air"
+                    android:text="100"
+                    android:textSize="@dimen/text_size_12"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_diary_add"
+                    app:layout_constraintEnd_toStartOf="@id/btn_diary_add"
+                    app:layout_constraintTop_toTopOf="@id/btn_diary_add" />
+
+                <Button
+                    android:id="@+id/btn_diary_add"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="9dp"
+                    android:fontFamily="@font/cafe24ssurround_air"
+                    android:text="등록"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_12"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_diary_camera"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_diary_camera" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_diary"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fl_diary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

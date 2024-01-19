@@ -1,5 +1,4 @@
 package com.memo_zi.ui.login
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,7 +11,6 @@ import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityLoginBinding
-import com.memo_zi.ui.home.HomeActivity
 import com.memo_zi.util.text.TextGradation
 
 class LoginActivity : AppCompatActivity() {
@@ -87,7 +85,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun changeActivity(){
         Log.d("Debug", "Changing to HomeActivity")
-        val intent = Intent(this, HomeActivity::class.java)
+        //val intent = Intent(this, HomeActivity::class.java)
         startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
         finish()
     }
