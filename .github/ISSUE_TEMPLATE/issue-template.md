@@ -1,5 +1,5 @@
 ---
-name: issue template
+name: ISSUE_TEMPLATE
 about: Issues for assignments
 title: Feat/
 labels: ''
@@ -7,13 +7,11 @@ assignees: ''
 
 ---
 
-## 📌 필수 과제
-- [ ]
+## 🛠 What is this issue?
+- 
 
 ---
-## 🎈 추가 사항
+## 🏃‍♀️ Progress
 - [ ]
 
----
-## 💡 참고 사항
 -
