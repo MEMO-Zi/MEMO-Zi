@@ -1,8 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
     id "kotlin-parcelize"
-    // Firebase
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 
 }
 
@@ -40,8 +42,16 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.databinding:databinding-runtime:8.2.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    // kakao 로그인
+    // kakao
     implementation "com.kakao.sdk:v2-all:2.18.0"
     implementation "com.kakao.sdk:v2-user:2.18.0"
     implementation "com.kakao.sdk:v2-talk:2.18.0"
@@ -50,28 +60,24 @@ dependencies {
     implementation "com.kakao.sdk:v2-navi:2.18.0"
     implementation "com.kakao.sdk:v2-cert:2.18.0"
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.databinding:databinding-runtime:8.2.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-
-    // Firebase
+    // firebase
     implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
 
-    // Ktx
-    implementation 'androidx.activity:activity-ktx:1.8.1'
+    // ktx
+    implementation 'androidx.activity:activity-ktx:1.8.2'
     implementation 'androidx.fragment:fragment-ktx:1.6.2'
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
 
-    // Timber
+    // timber
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
-    // Coil
-    implementation 'io.coil-kt:coil:2.4.0'
-    //glide
+    // coil
+    implementation 'io.coil-kt:coil:2.5.0'
+
+    // glide
     implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+    // hilt
+    implementation 'com.google.dagger:hilt-android:2.50'
+    kapt "com.google.dagger:hilt-android-compiler:2.44"
 }
