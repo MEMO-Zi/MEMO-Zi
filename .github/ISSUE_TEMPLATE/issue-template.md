@@ -1,7 +1,7 @@
 ---
 name: ISSUE_TEMPLATE
 about: Issues for assignments
-title: Feat/
+title: ''
 labels: ''
 assignees: ''
 
