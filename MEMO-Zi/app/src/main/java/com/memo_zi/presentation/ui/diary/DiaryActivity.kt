@@ -1,12 +1,9 @@
-package com.memo_zi.ui.diary
+package com.memo_zi.presentation.ui.diary
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityDiaryBinding
 import com.memo_zi.ui.memo.MemoActivity
@@ -14,7 +11,7 @@ import com.memo_zi.ui.setting.SettingActivity
 import com.memo_zi.util.binding.BindingActivity
 
 class DiaryActivity :
-    BindingActivity<ActivityDiaryBinding>({ ActivityDiaryBinding.inflate(it) }) {
+    BindingActivity<ActivityDiaryBinding>(R.layout.activity_diary) {
 
     companion object {
         const val DIARY_FEED = "DiaryFeed"

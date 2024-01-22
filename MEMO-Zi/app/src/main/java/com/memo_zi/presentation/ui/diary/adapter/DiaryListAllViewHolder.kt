@@ -1,8 +1,8 @@
-package com.memo_zi.ui.diary
+package com.memo_zi.presentation.ui.diary.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.memo_zi.data.model.DiaryItem
+import com.memo_zi.presentation.model.DiaryItem
 import com.memo_zi.databinding.ItemDiaryListAllBinding
 
 class DiaryListAllViewHolder(private val binding: ItemDiaryListAllBinding) : RecyclerView.ViewHolder(binding.root) {

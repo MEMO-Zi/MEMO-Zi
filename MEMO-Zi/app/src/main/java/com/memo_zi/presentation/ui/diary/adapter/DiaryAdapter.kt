@@ -1,11 +1,10 @@
-package com.memo_zi.ui.diary
+package com.memo_zi.presentation.ui.diary.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.memo_zi.data.model.DiaryItem
+import com.memo_zi.presentation.model.DiaryItem
 import com.memo_zi.databinding.ItemDiaryListAllBinding
 import com.memo_zi.databinding.ItemDiaryListTitleBinding
 import timber.log.Timber
