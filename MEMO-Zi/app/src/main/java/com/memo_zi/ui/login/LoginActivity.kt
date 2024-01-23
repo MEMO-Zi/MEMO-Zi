@@ -11,7 +11,7 @@ import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityLoginBinding
-import com.memo_zi.util.text.TextGradation
+import com.memo_zi.util.component.TextGradation
 
 class LoginActivity : AppCompatActivity() {
 

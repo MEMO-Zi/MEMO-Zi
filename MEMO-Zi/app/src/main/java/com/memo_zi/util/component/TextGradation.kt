@@ -1,4 +1,4 @@
-package com.memo_zi.util.text
+package com.memo_zi.util.component
 
 import android.widget.TextView
 import androidx.annotation.ColorInt
