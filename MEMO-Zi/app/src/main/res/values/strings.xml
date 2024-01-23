@@ -27,7 +27,7 @@
     <string name="memo_edit_button">등록</string>
 
     <!--카테고리-->
-    <string name="category_edit">배경 수정하기</string>
+    <string name="memo_category_edit">배경 수정하기</string>
     <string name="category_delete">일괄 삭제하기</string>
     <string name="category_move">메모 옮기고 카테고리 삭제하기</string>
 </resources>
