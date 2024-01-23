@@ -1,9 +1,10 @@
-package com.memo_zi.ui.diary
+package com.memo_zi.presentation.ui.diary
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.memo_zi.R
-import com.memo_zi.data.model.DiaryItem
+import com.memo_zi.presentation.model.DiaryItem
+import dagger.hilt.android.lifecycle.HiltViewModel
 
 class DiaryViewModel : ViewModel() {
     private val _diaryList = MutableLiveData<List<DiaryItem>>()

@@ -1,13 +1,12 @@
-package com.memo_zi.ui.diary
+package com.memo_zi.presentation.ui.diary.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.memo_zi.data.model.DiaryItem
-import com.memo_zi.databinding.ItemDiaryListAllBinding
+import com.memo_zi.databinding.ItemDiaryFeedBinding
 import com.memo_zi.databinding.ItemDiaryListTitleBinding
+import com.memo_zi.presentation.model.DiaryItem
 import timber.log.Timber
 
 class DiaryAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -23,7 +22,7 @@ class DiaryAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHol
             )
 
             DIARY_ALL_ITEM -> DiaryListAllViewHolder(
-                ItemDiaryListAllBinding.inflate(
+                ItemDiaryFeedBinding.inflate(
                     inflater, parent, false
                 )
             )

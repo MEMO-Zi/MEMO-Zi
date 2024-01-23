@@ -1,29 +1,29 @@
-package com.memo_zi.ui.diary
+package com.memo_zi.presentation.ui.diary
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.LinearLayout
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityDiaryBinding
 import com.memo_zi.ui.memo.MemoActivity
 import com.memo_zi.ui.setting.SettingActivity
 import com.memo_zi.util.binding.BindingActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DiaryActivity :
-    BindingActivity<ActivityDiaryBinding>({ ActivityDiaryBinding.inflate(it) }) {
-
-    companion object {
-        const val DIARY_FEED = "DiaryFeed"
-        const val DIARY_CALENDAR = "DiaryCalendar"
-    }
+    BindingActivity<ActivityDiaryBinding>(R.layout.activity_diary) {
+    val viewModel by viewModels<DiaryViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        initLayout()
+    }
+
+    private fun initLayout() {
         initDiaryFragment()
         changeActivity()
         clickDiaryWriting()
@@ -31,7 +31,7 @@ class DiaryActivity :
     }
 
     private fun changeActivity() {
-        binding.tbDiary.setOnMenuItemClickListener() { menuItem ->
+        binding.tbDiary.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.item_diary_change -> {
                     Intent(this, MemoActivity::class.java).apply {
@@ -62,7 +62,7 @@ class DiaryActivity :
     }
 
     private fun clickDiaryWriting() {
-        binding.run {
+        with(binding) {
             llDiaryDefault.setOnClickListener {
                 llDiaryDefault.visibility = View.GONE
                 clDiaryAdd.visibility = View.VISIBLE
@@ -71,16 +71,16 @@ class DiaryActivity :
     }
 
     private fun changeDiaryFragment() {
-        binding.run {
+        with(binding) {
             ivDiaryFeed.setOnClickListener {
-                ivDiaryFeed.setImageResource(R.drawable.ic_feed_black_17px)
-                ivDiaryCalendar.setImageResource(R.drawable.ic_calendar_white_20px)
+                ivDiaryFeed.setImageResource(R.drawable.ic_feed_select_22)
+                ivDiaryCalendar.setImageResource(R.drawable.ic_calender_default_22)
                 replaceFragment(DIARY_FEED)
             }
 
             ivDiaryCalendar.setOnClickListener {
-                ivDiaryFeed.setImageResource(R.drawable.ic_feed_white_17px)
-                ivDiaryCalendar.setImageResource(R.drawable.ic_calendar_black_20px)
+                ivDiaryFeed.setImageResource(R.drawable.ic_feed_default_22)
+                ivDiaryCalendar.setImageResource(R.drawable.ic_calender_select_22)
                 replaceFragment(DIARY_CALENDAR)
             }
         }
@@ -96,5 +96,10 @@ class DiaryActivity :
         }
         fragmentTransaction.replace(R.id.fcv_diary, newFragment)
         fragmentTransaction.commit()
+    }
+
+    companion object {
+        const val DIARY_FEED = "DiaryFeed"
+        const val DIARY_CALENDAR = "DiaryCalendar"
     }
 }

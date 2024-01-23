@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">MEMO : Zi</string>
 
+    <string name="all_register">등록</string>
+
     <!--카카오 로그인-->
     <string name="kakao_natvie_key">7a6d3cba6554d839acbaa08774fe749f</string>
     <string name="kakao_url">
@@ -17,7 +19,7 @@ https://kakao7a6d3cba6554d839acbaa08774fe749f://oauth</string>
     <string name="diary_list_ex_day">금요일</string>
     <string name="diary_list_ex_location">일본 교토시</string>
     <string name="diary_list_ex_diary_content">일본이 너무 가고싶은 날이다. 얼른 종강이 왔으면 좋겠다.</string>
-
+    <string name="diary_register">등록</string>
 
     <!-- 다이어리 캘린더 -->
     <string name="calendar_date">2023년 11월 달력</string>

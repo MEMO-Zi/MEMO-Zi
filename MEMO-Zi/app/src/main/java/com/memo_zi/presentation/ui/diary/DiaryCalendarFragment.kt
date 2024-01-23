@@ -1,50 +1,42 @@
-package com.memo_zi.ui.diary
+package com.memo_zi.presentation.ui.diary
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.memo_zi.R
 import com.memo_zi.databinding.FragmentDiaryCalendarBinding
+import com.memo_zi.presentation.ui.diary.adapter.CalendarMonthAdapter
+import com.memo_zi.presentation.ui.diary.adapter.DiaryAdapter
 import com.memo_zi.util.binding.BindingFragment
 import timber.log.Timber
 
-class DiaryCalendarFragment : BindingFragment<FragmentDiaryCalendarBinding>() {
+class DiaryCalendarFragment :
+    BindingFragment<FragmentDiaryCalendarBinding>(R.layout.fragment_diary_calendar) {
     private val viewModel by viewModels<DiaryViewModel>()
     private lateinit var diaryAdapter: DiaryAdapter
-
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
-
     private lateinit var recyclerView: RecyclerView
-
-    override fun getFragmentBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentDiaryCalendarBinding =
-        FragmentDiaryCalendarBinding.inflate(inflater, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initAdapter()
-        setDiaryList()
-        initCalendarBottomSheet()
-
-        initView()
-        createData()
+        initLayout()
+        addObservers()
     }
 
-    private fun initAdapter() {
+    private fun initLayout() {
         diaryAdapter = DiaryAdapter(requireContext())
         binding.rvDiary.adapter = diaryAdapter
+
+        initCalendarBottomSheet()
     }
 
-    private fun setDiaryList() {
+    private fun addObservers() {
         viewModel.diaryList.observe(viewLifecycleOwner) { diaryList ->
             diaryAdapter.setDiaryList(diaryList)
         }
@@ -87,11 +79,8 @@ class DiaryCalendarFragment : BindingFragment<FragmentDiaryCalendarBinding>() {
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
             }
         })
-    }
-
-    private fun initView() {
         recyclerView = binding.diaryBottomSheet.rvBottomSheetCalendar
-        var position: Int = Int.MAX_VALUE / 2
+        val position: Int = Int.MAX_VALUE / 2
 
         binding.diaryBottomSheet.rvBottomSheetCalendar.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
@@ -104,11 +93,7 @@ class DiaryCalendarFragment : BindingFragment<FragmentDiaryCalendarBinding>() {
         val snap = PagerSnapHelper()
         snap.attachToRecyclerView(binding.diaryBottomSheet.rvBottomSheetCalendar)
 
-    }
-
-    private fun createData() {
         binding.diaryBottomSheet.rvBottomSheetCalendar.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-
     }
 }

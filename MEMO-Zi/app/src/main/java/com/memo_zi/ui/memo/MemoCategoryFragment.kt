@@ -5,18 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import com.memo_zi.R
 import com.memo_zi.databinding.FragmentMemoCategoryEditBinding
 import com.memo_zi.util.binding.BindingFragment
 
-class MemoCategoryFragment : BindingFragment<FragmentMemoCategoryEditBinding>( ) {
+class MemoCategoryFragment :
+    BindingFragment<FragmentMemoCategoryEditBinding>(R.layout.fragment_memo_category_edit) {
     private val viewModel by viewModels<MemoViewModel>()
     private lateinit var categoryAdapter: MemoCategoryAdapter
-
-    override fun getFragmentBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragmentMemoCategoryEditBinding =
-        FragmentMemoCategoryEditBinding.inflate(inflater, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
