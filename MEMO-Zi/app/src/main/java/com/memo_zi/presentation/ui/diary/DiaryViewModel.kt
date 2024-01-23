@@ -6,7 +6,6 @@ import com.memo_zi.R
 import com.memo_zi.presentation.model.DiaryItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 
-@HiltViewModel
 class DiaryViewModel : ViewModel() {
     private val _diaryList = MutableLiveData<List<DiaryItem>>()
     val diaryList = _diaryList

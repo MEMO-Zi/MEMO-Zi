@@ -3,6 +3,7 @@ package com.memo_zi.presentation.ui.diary
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityDiaryBinding
@@ -14,6 +15,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DiaryActivity :
     BindingActivity<ActivityDiaryBinding>(R.layout.activity_diary) {
+    val viewModel by viewModels<DiaryViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

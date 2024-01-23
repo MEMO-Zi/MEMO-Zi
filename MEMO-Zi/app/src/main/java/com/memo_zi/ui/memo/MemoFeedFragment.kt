@@ -6,17 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.hadi.viewpager2carousel.MemoAdapter
+import com.memo_zi.R
 import com.memo_zi.databinding.FragementMemoFeedBinding
 import com.memo_zi.util.binding.BindingFragment
 
-class MemoFeedFragment : BindingFragment<FragementMemoFeedBinding>() {
+class MemoFeedFragment : BindingFragment<FragementMemoFeedBinding>(R.layout.fragement_memo_feed) {
     private val viewModel by viewModels<MemoViewModel>()
     private lateinit var memoAdapter: MemoAdapter
-
-    override fun getFragmentBinding(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ): FragementMemoFeedBinding = FragementMemoFeedBinding.inflate(inflater, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

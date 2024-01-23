@@ -18,7 +18,7 @@ import kotlin.math.absoluteValue
 
 
 class MemoActivity :
-    BindingActivity<ActivityMemoBinding>({ ActivityMemoBinding.inflate(it) }) {
+    BindingActivity<ActivityMemoBinding>(R.layout.activity_memo) {
 
     private val viewModel by viewModels<MemoViewModel>()
     private lateinit var memoAdapter: MemoAdapter
