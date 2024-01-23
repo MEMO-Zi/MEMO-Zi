@@ -21,4 +21,7 @@
     <color name="memo_date_color">#A09B9B</color>
     <color name="memo_add_color">#B3C0BCE7</color>
     <color name="memo_button_color">#BFBCE7</color>
+    <color name="select_color">#D1C4DA</color>
+    <color name="gray_color">#EBEBEB</color>
+
 </resources>
