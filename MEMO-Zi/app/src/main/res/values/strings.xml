@@ -1,5 +1,12 @@
 <resources>
-    <string name="app_name">MEMO-Zi</string>
+    <string name="app_name">MEMO : Zi</string>
+
+    <!--카카오 로그인-->
+    <string name="kakao_natvie_key">7a6d3cba6554d839acbaa08774fe749f</string>
+    <string name="kakao_url">
+https://kakao7a6d3cba6554d839acbaa08774fe749f://oauth</string>
+    <string name="kakao_app_key">7a6d3cba6554d839acbaa08774fe749f</string>
+    <!--todo 카카오 로그인 관련 사항 넣기-->
 
     <!-- 다이어리 -->
     <string name="diary_morning">님, 좋은 아침이에요! 오늘도 화이팅! </string>
@@ -10,7 +17,6 @@
     <string name="diary_list_ex_day">금요일</string>
     <string name="diary_list_ex_location">일본 교토시</string>
     <string name="diary_list_ex_diary_content">일본이 너무 가고싶은 날이다. 얼른 종강이 왔으면 좋겠다.</string>
-
 
 
     <!-- 다이어리 캘린더 -->
