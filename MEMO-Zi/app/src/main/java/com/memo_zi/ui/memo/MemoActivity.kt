@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
+import androidx.core.view.isInvisible
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.hadi.viewpager2carousel.MemoAdapter
@@ -24,7 +26,7 @@ class MemoActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        initMemoFragment()
         initAdapter()
         setMemoList()
         // 페이지 간의 간격 설정
@@ -35,7 +37,7 @@ class MemoActivity :
 
     private fun setupCarousel() {
         binding.run {
-            viewPager.offscreenPageLimit = 3
+            memoViewpager.offscreenPageLimit = 3
             val pageMargin = resources.getDimensionPixelOffset(R.dimen.pageMargin)
             val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
                 val offset = position * -2.0f
@@ -46,14 +48,14 @@ class MemoActivity :
                 page.scaleX = scale
                 page.scaleY = scale
             }
-            viewPager.setPageTransformer(pageTransformer)
-            viewPager.clipToPadding = false
-            viewPager.clipChildren = false
-            viewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-            viewPager.setPadding(pageMargin, 0, pageMargin, 0)
+            memoViewpager.setPageTransformer(pageTransformer)
+            memoViewpager.clipToPadding = false
+            memoViewpager.clipChildren = false
+            memoViewpager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+            memoViewpager.setPadding(pageMargin, 0, pageMargin, 0)
+
         }
     }
-
 
     private fun setButton() {
         binding.fabMemoAdd.setOnClickListener {
@@ -61,6 +63,24 @@ class MemoActivity :
                 startActivity(this)
             }
         }
+        binding.memoBtnCategoryEdit.setOnClickListener {
+            replaceFragment(MEMO_CATEGORY)
+            it.isInvisible = true
+        }
+    }
+
+    private fun replaceFragment(name: String) {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+
+        val newFragment = when (name) {
+            MEMO_FEED -> MemoFeedFragment()
+            MEMO_CATEGORY -> MemoCategoryFragment()
+            else -> Fragment()
+        }
+        fragmentTransaction
+            .replace(R.id.fcv_memo, newFragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun changeMemoActivity() {
@@ -85,11 +105,29 @@ class MemoActivity :
         }
     }
 
+    override fun onBackPressed() {//todo 추후 더 나은 로직 확인 필요
+        binding.memoBtnCategoryEdit.isInvisible = false
+        super.onBackPressed()
+    }
+
+    private fun initMemoFragment() {
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_memo)
+        if (currentFragment == null) {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fcv_memo, MemoFeedFragment())
+                .commit()
+        }
+    }
+
     private fun initAdapter() {
         memoAdapter = MemoAdapter(this)
         categoryAdapter = MemoCategoryAdapter(this)
-        binding.rvMemo.adapter = memoAdapter
-        binding.viewPager.adapter = categoryAdapter
+        binding.run {
+            memoViewpager.adapter = categoryAdapter
+            memoIndicator.setViewPager(memoViewpager)
+            categoryAdapter.registerAdapterDataObserver(memoIndicator.adapterDataObserver)
+        }
+
     }
 
     private fun setMemoList() {
@@ -99,5 +137,11 @@ class MemoActivity :
         viewModel.categoryList.observe(this) { categoryList ->
             categoryAdapter.setCategoryList(categoryList)
         }
+    }
+
+
+    companion object {
+        const val MEMO_FEED = "MemoFeed"
+        const val MEMO_CATEGORY = "MemoCategory"
     }
 }

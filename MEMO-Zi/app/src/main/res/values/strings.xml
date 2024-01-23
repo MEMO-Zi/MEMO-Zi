@@ -33,4 +33,12 @@ https://kakao7a6d3cba6554d839acbaa08774fe749f://oauth</string>
 
     <!-- 메모 -->
     <string name="memo_edit_button">등록</string>
+
+    <!--카테고리-->
+    <string name="category_delete">일괄 삭제하기</string>
+    <string name="category_move">메모 옮기고 카테고리 삭제하기</string>
+    <string name="category_delete_text1">카테고리 안에 총</string>
+    <string name="category_delete_text2">개의 메모가 있습니다.</string>
+    <string name="memo_category_edit">배경 수정하기</string>
+
 </resources>
