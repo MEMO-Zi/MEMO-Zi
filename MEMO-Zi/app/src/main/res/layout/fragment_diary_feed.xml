@@ -26,7 +26,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/item_diary_list_all" />
+            tools:listitem="@layout/item_diary_feed" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

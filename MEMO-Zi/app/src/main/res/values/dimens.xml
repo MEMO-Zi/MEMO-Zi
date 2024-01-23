@@ -10,8 +10,22 @@
     <dimen name="text_size_16">16sp</dimen>
     <dimen name="text_size_17">17sp</dimen>
     <dimen name="text_size_18">18sp</dimen>
-
     <dimen name="text_size_20">20sp</dimen>
+
+    <dimen name="spacing4">4dp</dimen>
+    <dimen name="spacing6">6dp</dimen>
+    <dimen name="spacing8">8dp</dimen>
+    <dimen name="spacing10">10dp</dimen>
+    <dimen name="spacing12">12dp</dimen>
+    <dimen name="spacing14">14dp</dimen>
+    <dimen name="spacing16">16dp</dimen>
+    <dimen name="spacing18">18dp</dimen>
+    <dimen name="spacing20">20dp</dimen>
+    <dimen name="spacing24">24dp</dimen>
+    <dimen name="spacing26">26dp</dimen>
+    <dimen name="spacing28">28dp</dimen>
+    <dimen name="spacing30">30dp</dimen>
+
     <dimen name="pageMargin">8dp</dimen>
     <dimen name="categoryCorner">13dp</dimen>
     <dimen name="viewpager_current_item_horizontal_margin">42dp</dimen>

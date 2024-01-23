@@ -7,7 +7,9 @@ import com.memo_zi.R
 import com.memo_zi.databinding.FragmentDiaryFeedBinding
 import com.memo_zi.presentation.ui.diary.adapter.DiaryAdapter
 import com.memo_zi.util.binding.BindingFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DiaryFeedFragment : BindingFragment<FragmentDiaryFeedBinding>(R.layout.fragment_diary_feed) {
     private val viewModel by viewModels<DiaryViewModel>()
     private lateinit var diaryAdapter: DiaryAdapter
@@ -15,16 +17,16 @@ class DiaryFeedFragment : BindingFragment<FragmentDiaryFeedBinding>(R.layout.fra
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initAdapter()
-        setDiaryList()
+        initLayout()
+        addObservers()
     }
 
-    private fun initAdapter() {
+    private fun initLayout() {
         diaryAdapter = DiaryAdapter(requireContext())
         binding.rvDiary.adapter = diaryAdapter
     }
 
-    private fun setDiaryList() {
+    private fun addObservers() {
         viewModel.diaryList.observe(viewLifecycleOwner) { diaryList ->
             diaryAdapter.setDiaryList(diaryList)
         }

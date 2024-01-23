@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/shape_all_radius_4"
+        android:backgroundTint="@color/white"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/tv_diary_feed_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing8"
+            android:text="@string/diary_list_ex_date"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_diary_feed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_diary_feed_date"
+            app:srcCompat="@drawable/img_location_test" />
+
+        <TextView
+            android:id="@+id/tv_diary_feed_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_location_9px"
+            android:text="@string/diary_list_ex_location"
+            android:textSize="@dimen/text_size_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_diary_feed" />
+
+        <TextView
+            android:id="@+id/tv_diary_feed_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="6dp"
+            android:fontFamily="@font/nanumgothic"
+            android:text="@string/diary_list_ex_diary_content"
+            android:textSize="@dimen/text_size_12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_diary_feed_location" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
