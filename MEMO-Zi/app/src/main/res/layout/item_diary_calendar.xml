@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/spacing8"
         android:layout_marginVertical="@dimen/spacing4"
-        android:background="@drawable/shape_all_radius_4"
+        android:background="@drawable/shape_border_radius_4"
         android:elevation="4dp">
 
         <TextView
