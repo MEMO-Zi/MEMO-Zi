@@ -9,10 +9,30 @@
     </style>
 
     <!-- Button -->
-    <style name="Widget.Material3.Button" parent="">
-        <item name="android:paddingTop">6dp</item>
-        <item name="android:paddingBottom">4dp</item>
-        <item name="android:paddingHorizontal">22dp</item>
-        <item name="android:background">@drawable/shape_7dp</item>
+    <style name="Theme.MEMOZi.Button" parent="Widget.Material3.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Theme.MEMOZi.Button.L" parent="Theme.MEMOZi.Button">
+        <item name="android:height">@dimen/button_l_height</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:textAppearance">@style/TextAppearance.MEMOZi.ng_bold_15</item>
+    </style>
+
+    <style name="Theme.MEMOZi.Button.M" parent="Theme.MEMOZi.Button">
+        <item name="android:height">@dimen/button_m_height</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:textAppearance">@style/TextAppearance.MEMOZi.ng_reg_12_170</item>
+    </style>
+
+    <style name="Theme.MEMOZi.Button.S" parent="Theme.MEMOZi.Button">
+        <item name="android:height">@dimen/button_s_height</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:textAppearance">@style/TextAppearance.MEMOZi.ssu_light_12</item>
     </style>
 </resources>
