@@ -33,6 +33,7 @@
     <style name="Theme.MEMOZi.Button.S" parent="Theme.MEMOZi.Button">
         <item name="android:height">@dimen/button_s_height</item>
         <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="backgroundTint">@color/selector_all_btn_background</item>
         <item name="android:textAppearance">@style/TextAppearance.MEMOZi.ssu_light_12</item>
     </style>
 </resources>
