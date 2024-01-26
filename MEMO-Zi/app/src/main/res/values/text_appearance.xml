@@ -1,4 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="TextAppearance.MEMOZi" parent="">
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <!-- AppName -->
+    <style name="TextAppearance.MEMOZi.appname_bold_24" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineHeight">24dp</item>
+        <item name="android:fontFamily">@font/gyeonggi_batang_bold</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.appname_bold_15" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">15sp</item>
+        <item name="android:lineHeight">24dp</item>
+        <item name="android:fontFamily">@font/gyeonggi_batang_bold</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.appname_bold_13" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">13sp</item>
+        <item name="android:lineHeight">24dp</item>
+        <item name="android:fontFamily">@font/gyeonggi_batang_bold</item>
+    </style>
+
+    <!-- Ssurround -->
+    <style name="TextAppearance.MEMOZi.ssu_light_19" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">19sp</item>
+        <item name="android:lineHeight">19dp</item>
+        <item name="android:fontFamily">@font/cafe24_ssurround_air</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ssu_light_16" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">22dp</item>
+        <item name="android:fontFamily">@font/cafe24_ssurround_air</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ssu_light_15" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">15sp</item>
+        <item name="android:lineHeight">21dp</item>
+        <item name="android:fontFamily">@font/cafe24_ssurround_air</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ssu_light_13" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">13sp</item>
+        <item name="android:lineHeight">18dp</item>
+        <item name="android:fontFamily">@font/cafe24_ssurround_air</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ssu_light_12" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineHeight">12dp</item>
+        <item name="android:fontFamily">@font/cafe24_ssurround_air</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ssu_light_11" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">11sp</item>
+        <item name="android:lineHeight">15dp</item>
+        <item name="android:fontFamily">@font/cafe24_ssurround_air</item>
+    </style>
+
+
+    <!-- Nanum -->
+    <style name="TextAppearance.MEMOZi.ng_bold_21" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">21sp</item>
+        <item name="android:lineHeight">21dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic_bold</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_bold_15" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">15sp</item>
+        <item name="android:lineHeight">15dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic_bold</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_bold_14" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">14dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic_bold</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_bold_12_170" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineHeight">20dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic_bold</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_bold_12_140" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineHeight">17dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic_bold</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_bold_11" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">11sp</item>
+        <item name="android:lineHeight">12dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic_bold</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_reg_15" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">15sp</item>
+        <item name="android:lineHeight">30dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_reg_14" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">14dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_reg_13" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">13sp</item>
+        <item name="android:lineHeight">13dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_reg_12_170" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineHeight">30dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_reg_12_140" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineHeight">30dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_reg_11" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">11sp</item>
+        <item name="android:lineHeight">11dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_reg_8" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">8sp</item>
+        <item name="android:lineHeight">8dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic</item>
+    </style>
+
+    <style name="TextAppearance.MEMOZi.ng_light_8" parent="TextAppearance.MEMOZi">
+        <item name="android:textSize">8sp</item>
+        <item name="android:lineHeight">8dp</item>
+        <item name="android:fontFamily">@font/nanum_gothic_light</item>
+    </style>
 </resources>
