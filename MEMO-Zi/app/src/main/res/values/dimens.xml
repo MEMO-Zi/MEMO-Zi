@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Spacing -->
+    <!-- spacing -->
     <dimen name="spacing4">4dp</dimen>
     <dimen name="spacing6">6dp</dimen>
     <dimen name="spacing8">8dp</dimen>
@@ -15,7 +15,7 @@
     <dimen name="spacing28">28dp</dimen>
     <dimen name="spacing30">30dp</dimen>
 
-    <!-- Button -->
+    <!-- button -->
     <dimen name="button_l_height">40dp</dimen>
     <dimen name="button_m_height">30dp</dimen>
     <dimen name="button_s_height">26dp</dimen>
