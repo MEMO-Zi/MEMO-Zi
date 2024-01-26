@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_size_8">8sp</dimen>
-    <dimen name="text_size_10">10sp</dimen>
-    <dimen name="text_size_11">11sp</dimen>
-    <dimen name="text_size_12">12sp</dimen>
-    <dimen name="text_size_13">13sp</dimen>
-    <dimen name="text_size_14">14sp</dimen>
-    <dimen name="text_size_15">15sp</dimen>
-    <dimen name="text_size_16">16sp</dimen>
-    <dimen name="text_size_17">17sp</dimen>
-    <dimen name="text_size_18">18sp</dimen>
-    <dimen name="text_size_20">20sp</dimen>
-    <dimen name="text_size_23">23sp</dimen>
-
+    <!-- spacing -->
     <dimen name="spacing4">4dp</dimen>
     <dimen name="spacing6">6dp</dimen>
     <dimen name="spacing8">8dp</dimen>
@@ -27,7 +15,9 @@
     <dimen name="spacing28">28dp</dimen>
     <dimen name="spacing30">30dp</dimen>
 
-    <dimen name="pageMargin">8dp</dimen>
-    <dimen name="categoryCorner">13dp</dimen>
-    <dimen name="viewpager_current_item_horizontal_margin">42dp</dimen>
+    <!-- button -->
+    <dimen name="button_l_height">40dp</dimen>
+    <dimen name="button_m_height">30dp</dimen>
+    <dimen name="button_s_height">26dp</dimen>
+    <dimen name="button_corner_radius">8dp</dimen>
 </resources>

@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- 기본 색상 -->
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="custom_black">#333333</color>
-    <color name="grey">#6F6F6F</color>
-    <color name="soft_grey">#D9D9D9</color>
-
-    <!-- 사용 색상 -->
-    <color name="sub_purple">#D0C3D9</color>
-    <color name="sub_blue">#B8BDEE</color>
-    <color name="sub_pink">#E2ABB0</color>
-
-    <!-- 그라데이션 -->
-    <color name="bg_start">#E2ACB1</color>
-    <color name="bg_end">#BEBBE6</color>
-
-    <!-- 메모 -->
-    <color name="memo_title_color">#976A53</color>
-    <color name="memo_date_color">#A09B9B</color>
-    <color name="memo_add_color">#B3C0BCE7</color>
-    <color name="memo_button_color">#BFBCE7</color>
-    <color name="select_color">#D1C4DA</color>
-    <color name="gray_color">#EBEBEB</color>
-
+    <color name="black">#333333</color>
+    <color name="login_black">#000000</color>
+    <color name="black_20">#33000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="main_pink">#E3ADB2</color>
+    <color name="main_purple">#BFBCE7</color>
+    <color name="main_purple_02">#BFBCE7B3</color>
+    <color name="sub_purple">#D1C4DA</color>
+    <color name="sub_pink">#FAC9C5</color>
+    <color name="sub_blue_01">#C8E5FF</color>
+    <color name="sub_blue_02">#89B2E7</color>
+    <color name="sub_yellow_green_01">#DEF6AB</color>
+    <color name="sub_yellow_green_02">#A8ECAB</color>
+    <color name="sub_yellow_01">#FCFAB8</color>
+    <color name="sub_yellow_02">#FFF2AC</color>
+    <color name="sub_orange">#FFD493</color>
+    <color name="g_01">#EBEBEB</color>
+    <color name="g_02">#D9D9D9</color>
+    <color name="g_03">#B3B3B3</color>
+    <color name="g_04">#9E9E9E</color>
+    <color name="g_05">#898989</color>
+    <color name="g_06">#A09B9B</color>
+    <color name="g_07">#787878</color>
+    <color name="caution_red">#FF8A8A</color>
+    <color name="delete_red">#E60000</color>
+    <color name="kakao">#FEE500</color>
 </resources>
