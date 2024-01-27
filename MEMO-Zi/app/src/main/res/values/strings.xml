@@ -5,11 +5,6 @@
     <string name="all_register">등록</string>
 
     <!-- kakao -->
-    <string name="kakao_natvie_key">7a6d3cba6554d839acbaa08774fe749f</string>
-    <string name="kakao_url">
-https://kakao7a6d3cba6554d839acbaa08774fe749f://oauth</string>
-    <string name="kakao_app_key">7a6d3cba6554d839acbaa08774fe749f</string>
-    <!--todo 카카오 로그인 관련 사항 넣기-->
 
     <!-- diary -->
     <string name="diary_morning">님, 좋은 아침이에요! 오늘도 화이팅! </string>
@@ -41,5 +36,4 @@ https://kakao7a6d3cba6554d839acbaa08774fe749f://oauth</string>
     <string name="category_delete_text1">카테고리 안에 총</string>
     <string name="category_delete_text2">개의 메모가 있습니다.</string>
     <string name="memo_category_edit">배경 수정하기</string>
-
 </resources>

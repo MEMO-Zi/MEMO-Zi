@@ -50,14 +50,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    // kakao
-    implementation "com.kakao.sdk:v2-all:2.18.0"
-    implementation "com.kakao.sdk:v2-user:2.18.0"
-    implementation "com.kakao.sdk:v2-talk:2.18.0"
-    implementation "com.kakao.sdk:v2-share:2.18.0"
-    implementation "com.kakao.sdk:v2-friend:2.18.0"
-    implementation "com.kakao.sdk:v2-navi:2.18.0"
-    implementation "com.kakao.sdk:v2-cert:2.18.0"
     // firebase
     implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
     // ktx
