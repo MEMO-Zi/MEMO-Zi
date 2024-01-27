@@ -1,4 +1,4 @@
-package com.memo_zi.ui.memo
+package com.memo_zi.presentation.ui.memo
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +12,7 @@ import com.hadi.viewpager2carousel.MemoAdapter
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityMemoBinding
 import com.memo_zi.presentation.ui.diary.DiaryActivity
-import com.memo_zi.ui.setting.SettingActivity
+import com.memo_zi.presentation.ui.setting.SettingActivity
 import com.memo_zi.util.binding.BindingActivity
 import kotlin.math.absoluteValue
 

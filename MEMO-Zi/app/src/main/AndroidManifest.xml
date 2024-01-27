@@ -37,10 +37,10 @@
             android:value="@string/kakao_url" />
             -->
         <activity
-            android:name=".ui.memo.MemoEditActivity"
+            android:name=".presentation.ui.memo.MemoEditActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.memo.MemoActivity"
+            android:name=".presentation.ui.memo.MemoActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -53,7 +53,7 @@
             android:name=".presentation.ui.diary.DiaryActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.setting.SettingActivity"
+            android:name=".presentation.ui.setting.SettingActivity"
             android:exported="false" />
     </application>
 </manifest>

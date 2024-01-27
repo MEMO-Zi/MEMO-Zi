@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.memo_zi.data.model.MemoItem
 import com.memo_zi.databinding.ItemMemoCategoryBinding
 import com.memo_zi.databinding.ItemMemoListAllBinding
-import com.memo_zi.ui.memo.MemoListCategoryViewHolder
-import com.memo_zi.ui.memo.MemoListViewHolder
+import com.memo_zi.presentation.ui.memo.MemoListCategoryViewHolder
+import com.memo_zi.presentation.ui.memo.MemoListViewHolder
 import timber.log.Timber
 
 class MemoAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

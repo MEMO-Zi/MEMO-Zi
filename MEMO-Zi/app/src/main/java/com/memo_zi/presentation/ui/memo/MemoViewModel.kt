@@ -1,4 +1,4 @@
-package com.memo_zi.ui.memo
+package com.memo_zi.presentation.ui.memo
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
