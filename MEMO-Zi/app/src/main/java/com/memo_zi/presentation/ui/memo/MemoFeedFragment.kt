@@ -1,9 +1,7 @@
 package com.memo_zi.presentation.ui.memo
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.hadi.viewpager2carousel.MemoAdapter
 import com.memo_zi.R

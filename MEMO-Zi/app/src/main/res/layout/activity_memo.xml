@@ -16,11 +16,11 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/bg_gradation"
+            android:background="@drawable/background_category_defalut"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/tb_memo"
@@ -37,7 +37,7 @@
                 android:id="@+id/iv_memo_tb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_memo_zi" />
+                app:srcCompat="@drawable/ic_all_app_logo_77" />
         </androidx.appcompat.widget.Toolbar>
 
         <androidx.appcompat.widget.SearchView
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="9dp"
             android:layout_marginTop="50dp"
-            android:background="@drawable/shape_diary_background"
+            android:background="@drawable/shape_border_radius_8"
             android:elevation="10dp"
             android:focusable="true"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,8 +68,8 @@
             android:layout_height="16dp"
             android:layout_marginVertical="8dp"
             android:layout_marginTop="9dp"
-            app:ci_drawable="@drawable/blue_radius"
-            app:ci_drawable_unselected="@drawable/gray_radius"
+            app:ci_drawable="@drawable/ic_onboarding_circle_13"
+            app:ci_drawable_unselected="@drawable/ic_onboarding_circle_10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/memo_viewpager" />
@@ -81,7 +81,7 @@
             android:layout_marginTop="9dp"
             android:background="@null"
             android:backgroundTint="@null"
-            android:src="@drawable/ic_edit"
+            android:src="@drawable/ic_edit_15"
             app:layout_constraintStart_toEndOf="@+id/memo_indicator"
             app:layout_constraintTop_toBottomOf="@id/memo_viewpager" />
 
@@ -89,14 +89,15 @@
             android:id="@+id/fab_memo_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="9dp"
-            android:layout_marginBottom="50dp"
-            android:backgroundTint="@color/memo_add_color"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="48dp"
+            android:backgroundTint="@color/main_purple_02"
             android:contentDescription="Add Memo"
+            android:foreground="@drawable/ic_cross_20"
+            android:foregroundGravity="center"
+            app:elevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_memo_add"
-            app:tint="@null" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fcv_memo"
