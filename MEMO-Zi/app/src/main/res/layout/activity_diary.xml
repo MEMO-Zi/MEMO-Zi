@@ -27,11 +27,12 @@
             app:layout_constraintGuide_end="@dimen/spacing16" />
 
         <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="@drawable/bg_gradation"
-            android:orientation="vertical"
+            android:id="@+id/layout_diary_background_gradation"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/background_all_gradation"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/layout_diary_item"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -40,27 +41,23 @@
             android:id="@+id/tb_diary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/diary_tb">
+            app:menu="@menu/tb_diary">
 
             <ImageView
                 android:id="@+id/iv_diary_tb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_memo_zi" />
+                app:srcCompat="@drawable/ic_all_app_logo_77"
+                android:contentDescription="@string/app_logo_memo_zi" />
         </androidx.appcompat.widget.Toolbar>
 
         <TextView
             android:id="@+id/tv_diary_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nanumgothic_bold"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_15"
             app:layout_constraintStart_toEndOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/tb_diary"
             tools:text="차혜빈" />
@@ -69,11 +66,7 @@
             android:id="@+id/tv_diary_state"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/nanumgothic"
-            android:gravity="start"
             android:text="@string/diary_evening"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_13"
             app:layout_constraintBottom_toBottomOf="@id/tv_diary_name"
             app:layout_constraintEnd_toStartOf="@id/gl_end"
             app:layout_constraintStart_toEndOf="@id/tv_diary_name"
@@ -113,7 +106,7 @@
         </LinearLayout>
 
         <FrameLayout
-            android:id="@+id/fl_diary"
+            android:id="@+id/layout_diary_item"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@id/fcv_diary"
