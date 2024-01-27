@@ -1,14 +1,11 @@
 package com.memo_zi.presentation.ui.auth
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil.setContentView
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityAuthBinding
-import com.memo_zi.databinding.ActivityLoginBinding
 import com.memo_zi.util.binding.BindingActivity
 
-class AuthActivity: BindingActivity<ActivityAuthBinding>(R.layout.activity_auth) {
+class AuthActivity : BindingActivity<ActivityAuthBinding>(R.layout.activity_auth) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
