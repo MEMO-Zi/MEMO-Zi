@@ -103,10 +103,13 @@
             android:id="@+id/fcv_memo"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/memo_indicator" />
+            app:layout_constraintTop_toBottomOf="@id/memo_indicator"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
