@@ -101,7 +101,7 @@
 
     <style name="TextAppearance.MEMOZi.ng_reg_15" parent="TextAppearance.MEMOZi">
         <item name="android:textSize">15sp</item>
-        <item name="android:lineHeight">30dp</item>
+        <item name="android:lineHeight">21dp</item>
         <item name="android:fontFamily">@font/nanum_gothic</item>
     </style>
 
@@ -119,13 +119,13 @@
 
     <style name="TextAppearance.MEMOZi.ng_reg_12_170" parent="TextAppearance.MEMOZi">
         <item name="android:textSize">12sp</item>
-        <item name="android:lineHeight">30dp</item>
+        <item name="android:lineHeight">20dp</item>
         <item name="android:fontFamily">@font/nanum_gothic</item>
     </style>
 
     <style name="TextAppearance.MEMOZi.ng_reg_12_140" parent="TextAppearance.MEMOZi">
         <item name="android:textSize">12sp</item>
-        <item name="android:lineHeight">30dp</item>
+        <item name="android:lineHeight">17dp</item>
         <item name="android:fontFamily">@font/nanum_gothic</item>
     </style>
 
