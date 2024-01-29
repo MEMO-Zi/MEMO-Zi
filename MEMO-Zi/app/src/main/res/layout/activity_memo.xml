@@ -13,10 +13,10 @@
         tools:context=".presentation.ui.memo.MemoActivity">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/layout"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="@drawable/background_category_defalut"
+            android:background="@drawable/background_all_gradation"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
         </androidx.appcompat.widget.Toolbar>
 
         <androidx.appcompat.widget.SearchView
-            android:id="@+id/memo_search"
+            android:id="@+id/sv_memo_search"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="9dp"
@@ -55,15 +55,15 @@
             app:queryHint="메모를 검색해 보세요!" />
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/memo_viewpager"
+            android:id="@+id/vp_memo_category_list"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            app:layout_constraintTop_toBottomOf="@id/memo_search" />
+            app:layout_constraintTop_toBottomOf="@id/sv_memo_search" />
 
         <me.relex.circleindicator.CircleIndicator3
-            android:id="@+id/memo_indicator"
+            android:id="@+id/indicator_memo_category"
             android:layout_width="wrap_content"
             android:layout_height="16dp"
             android:layout_marginVertical="8dp"
@@ -72,25 +72,25 @@
             app:ci_drawable_unselected="@drawable/ic_onboarding_circle_10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/memo_viewpager" />
+            app:layout_constraintTop_toBottomOf="@id/vp_memo_category_list" />
 
         <ImageButton
-            android:id="@+id/memo_btn_category_edit"
+            android:id="@+id/btn_memo_category_edit"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginTop="9dp"
             android:background="@null"
             android:backgroundTint="@null"
             android:src="@drawable/ic_edit_15"
-            app:layout_constraintStart_toEndOf="@+id/memo_indicator"
-            app:layout_constraintTop_toBottomOf="@id/memo_viewpager" />
+            app:layout_constraintStart_toEndOf="@+id/indicator_memo_category"
+            app:layout_constraintTop_toBottomOf="@id/vp_memo_category_list" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_memo_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="48dp"
+            android:layout_marginBottom="51dp"
             android:backgroundTint="@color/main_purple_02"
             android:contentDescription="Add Memo"
             android:foreground="@drawable/ic_cross_20"
@@ -106,10 +106,8 @@
             android:layout_marginHorizontal="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/memo_indicator"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@id/indicator_memo_category" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

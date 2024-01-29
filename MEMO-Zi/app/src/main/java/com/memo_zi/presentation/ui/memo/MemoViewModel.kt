@@ -14,13 +14,13 @@ class MemoViewModel : ViewModel() {
     init {
         _categoryList.value = listOf(
             MemoItem.Category(
-                R.drawable.background_category_defalut, "투두리스트"
+                R.drawable.img_background_category_defalut, "투두리스트"
             ),
             MemoItem.Category(
-                R.drawable.background_category_defalut, "하기싫은것"
+                R.drawable.img_background_category_defalut, "하기싫은것"
             ),
             MemoItem.Category(
-                R.drawable.background_category_defalut, "해야만하는것"
+                R.drawable.img_background_category_defalut, "해야만하는것"
             ),
         )
 
