@@ -12,11 +12,11 @@
 
 
         <TextView
-            android:id="@+id/memo_edit_category_name"
+            android:id="@+id/tv_memo_category_name"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="39dp"
+            android:layout_marginTop="32dp"
             android:gravity="center"
             android:text="투두리스트"
             android:textSize="17dp"
@@ -25,184 +25,182 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/memo_edit_category_list"
+            android:id="@+id/btn_memo_category_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginVertical="10dp"
-            android:layout_marginLeft="5dp"
-            android:background="@drawable/ic_drop_black_11px"
-            app:layout_constraintStart_toEndOf="@+id/memo_edit_category_name"
-            app:layout_constraintTop_toTopOf="@+id/memo_edit_category_name" />
+            android:layout_marginVertical="4dp"
+            android:layout_marginStart="3dp"
+            android:background="@drawable/ic_drop_black_11"
+            app:layout_constraintBottom_toBottomOf="@id/tv_memo_category_name"
+            app:layout_constraintStart_toEndOf="@id/tv_memo_category_name"
+            app:layout_constraintTop_toTopOf="@id/tv_memo_category_name" />
 
         <Button
-            android:id="@+id/memo_edit_enroll"
+            android:id="@+id/btn_memo_edit_enroll"
+            style="@style/Theme.MEMOZi.Button.S"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="39dp"
+            android:layout_marginTop="29dp"
             android:layout_marginEnd="8dp"
-            android:fontFamily="@font/cafe24ssurround_air"
+            android:backgroundTint="@color/g_02"
             android:text="@string/memo_edit_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/memo_edit_title"
+            android:id="@+id/et_memo_edit_title"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="40dp"
             android:background="@null"
-            android:fontFamily="@font/nanumgothic"
             android:hint="제목"
-            android:textSize="15sp"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_15"
+            android:textColorHint="@color/g_04"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/memo_edit_category_name" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_memo_category_name" />
 
         <View
-            android:id="@+id/view_item_memo_edit_horizontal_bar"
+            android:id="@+id/v_item_memo_edit_horizontal_bar"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginStart="24dp"
+            android:layout_marginHorizontal="24dp"
             android:layout_marginTop="9dp"
-            android:layout_marginEnd="24dp"
-            android:background="@color/soft_grey"
+            android:background="@color/g_02"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/memo_edit_title" />
+            app:layout_constraintTop_toBottomOf="@id/et_memo_edit_title" />
 
         <EditText
-            android:id="@+id/memo_edit_contents"
+            android:id="@+id/et_memo_edit_contents"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="24dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="8dp"
             android:background="@null"
-            android:fontFamily="@font/nanumgothic"
             android:gravity="top"
             android:hint="메모 내용을 입력하세요!"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_12_140"
+            app:layout_constraintBottom_toBottomOf="@id/v_item_memo_edit_horizontal_bar2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar" />
+            app:layout_constraintTop_toBottomOf="@+id/v_item_memo_edit_horizontal_bar" />
 
         <View
-            android:id="@+id/view_item_memo_edit_horizontal_bar2"
+            android:id="@+id/v_item_memo_edit_horizontal_bar2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="9dp"
-            android:background="@color/soft_grey"
+            android:layout_marginBottom="40dp"
+            android:background="@color/g_02"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/memo_edit_contents" />
+            app:layout_constraintTop_toBottomOf="@id/et_memo_edit_contents" />
 
         <ImageButton
-            android:id="@+id/memo_bold"
+            android:id="@+id/et_memo_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="16dp"
             android:background="@null"
-            android:src="@drawable/ic_bold"
+            android:src="@drawable/ic_bold_24"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+            app:layout_constraintTop_toBottomOf="@+id/v_item_memo_edit_horizontal_bar2" />
 
         <View
-            android:id="@+id/view_item_memo_edit_vertical_bar"
+            android:id="@+id/v_item_memo_edit_vertical_bar"
             android:layout_width="1dp"
             android:layout_height="0dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@color/memo_button_color"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/memo_bold"
-            app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/main_purple"
+            app:layout_constraintBottom_toBottomOf="@id/et_memo_bold"
+            app:layout_constraintStart_toEndOf="@id/et_memo_bold"
+            app:layout_constraintTop_toTopOf="@id/et_memo_bold" />
 
         <ImageButton
-            android:id="@+id/memo_italic"
+            android:id="@+id/btn_memo_italic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="8dp"
             android:background="@null"
-            android:src="@drawable/ic_italic"
-            app:layout_constraintStart_toStartOf="@id/view_item_memo_edit_vertical_bar"
-            app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+            android:src="@drawable/ic_italic_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/v_item_memo_edit_vertical_bar"
+            app:layout_constraintTop_toBottomOf="@id/v_item_memo_edit_horizontal_bar2" />
 
         <View
-            android:id="@+id/view_item_memo_edit_vertical_bar2"
+            android:id="@+id/v_item_memo_edit_vertical_bar2"
             android:layout_width="1dp"
             android:layout_height="0dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@color/memo_button_color"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/memo_italic"
-            app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/main_purple"
+            app:layout_constraintBottom_toBottomOf="@id/btn_memo_italic"
+            app:layout_constraintStart_toEndOf="@id/btn_memo_italic"
+            app:layout_constraintTop_toTopOf="@id/btn_memo_italic" />
 
         <ImageButton
-            android:id="@+id/memo_strikethrough"
+            android:id="@+id/btn_memo_strikethrough"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="8dp"
             android:background="@null"
-            android:src="@drawable/ic_strikethrough"
-            app:layout_constraintStart_toStartOf="@id/view_item_memo_edit_vertical_bar2"
-            app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+            android:src="@drawable/ic_strike_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/v_item_memo_edit_vertical_bar2"
+            app:layout_constraintTop_toBottomOf="@+id/v_item_memo_edit_horizontal_bar2" />
 
         <View
-            android:id="@+id/view_item_memo_edit_vertical_bar3"
+            android:id="@+id/v_item_memo_edit_vertical_bar3"
             android:layout_width="1dp"
             android:layout_height="0dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@color/memo_button_color"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/main_purple"
+            app:layout_constraintBottom_toBottomOf="@id/btn_memo_strikethrough"
+            app:layout_constraintStart_toEndOf="@id/btn_memo_strikethrough"
+            app:layout_constraintTop_toTopOf="@id/btn_memo_strikethrough" />
+
+        <ImageButton
+            android:id="@+id/btn_memo_underline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:layout_marginStart="8dp"
+            android:background="@null"
+            android:src="@drawable/ic_underline_24"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/memo_strikethrough"
-            app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+            app:layout_constraintStart_toEndOf="@id/v_item_memo_edit_vertical_bar3"
+            app:layout_constraintTop_toBottomOf="@+id/v_item_memo_edit_horizontal_bar2" />
 
         <ImageButton
-            android:id="@+id/memo_underline"
+            android:id="@+id/btn_memo_check"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginVertical="12dp"
+            android:layout_marginEnd="64dp"
             android:background="@null"
-            android:src="@drawable/ic_underline"
-            app:layout_constraintStart_toStartOf="@id/view_item_memo_edit_vertical_bar3"
-            app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+            android:src="@drawable/ic_empty_check_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_memo_list"
+            app:layout_constraintTop_toBottomOf="@+id/v_item_memo_edit_horizontal_bar2" />
 
         <ImageButton
-            android:id="@+id/memo_check"
+            android:id="@+id/btn_memo_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="47dp"
+            android:layout_marginVertical="12dp"
+            android:layout_marginEnd="16dp"
             android:background="@null"
-            android:src="@drawable/ic_check"
-            app:layout_constraintEnd_toStartOf="@+id/memo_list"
-            app:layout_constraintStart_toEndOf="@+id/memo_underline"
-            app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
-
-        <ImageButton
-            android:id="@+id/memo_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="11dp"
-            android:layout_marginEnd="36dp"
-            android:background="@null"
-            android:src="@drawable/ic_orderedlist"
+            android:src="@drawable/ic_numbering_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_item_memo_edit_horizontal_bar2" />
+            app:layout_constraintTop_toBottomOf="@+id/v_item_memo_edit_horizontal_bar2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
