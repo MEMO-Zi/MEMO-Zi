@@ -12,6 +12,20 @@
         android:layout_height="match_parent"
         tools:context=".presentation.ui.memo.MemoActivity">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/spacing16" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/spacing16" />
+
         <LinearLayout
             android:id="@+id/layout"
             android:layout_width="match_parent"
@@ -40,34 +54,54 @@
                 app:srcCompat="@drawable/ic_all_app_logo_77" />
         </androidx.appcompat.widget.Toolbar>
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/sv_memo_search"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_memo_search"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="9dp"
-            android:layout_marginTop="50dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="17dp"
             android:background="@drawable/shape_border_radius_8"
-            android:elevation="10dp"
-            android:focusable="true"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:queryHint="메모를 검색해 보세요!" />
+            android:elevation="8dp"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
+            app:layout_constraintTop_toBottomOf="@id/tb_memo">
+
+            <View
+                android:id="@+id/view_search_ic"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginStart="@dimen/spacing8"
+                android:background="@drawable/ic_search_27"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_search_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing8"
+                android:layout_marginStart="8dp"
+                android:text="메모를 검색해 보세요!"
+                android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_12"
+                android:textColor="@color/g_05"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/view_search_ic"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp_memo_category_list"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="152dp"
             android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            app:layout_constraintTop_toBottomOf="@id/sv_memo_search" />
+            android:layout_marginTop="@dimen/spacing16"
+            app:layout_constraintTop_toBottomOf="@id/layout_memo_search" />
 
         <me.relex.circleindicator.CircleIndicator3
             android:id="@+id/indicator_memo_category"
             android:layout_width="wrap_content"
-            android:layout_height="16dp"
-            android:layout_marginVertical="8dp"
-            android:layout_marginTop="9dp"
+            android:layout_height="@dimen/spacing8"
+            android:layout_marginTop="@dimen/spacing16"
             app:ci_drawable="@drawable/ic_onboarding_circle_13"
             app:ci_drawable_unselected="@drawable/ic_onboarding_circle_10"
             app:layout_constraintEnd_toEndOf="parent"
@@ -103,10 +137,10 @@
             android:id="@+id/fcv_memo"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="@dimen/spacing16"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/gl_end"
+            app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/indicator_memo_category" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
