@@ -112,10 +112,10 @@
             android:id="@+id/btn_memo_category_edit"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="13dp"
             android:background="@null"
             android:backgroundTint="@null"
-            android:src="@drawable/ic_edit_15"
+            android:src="@drawable/ic_edit_14"
             app:layout_constraintStart_toEndOf="@+id/indicator_memo_category"
             app:layout_constraintTop_toBottomOf="@id/vp_memo_category_list" />
 
