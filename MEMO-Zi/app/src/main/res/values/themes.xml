@@ -36,4 +36,13 @@
         <item name="backgroundTint">@color/selector_all_btn_background</item>
         <item name="android:textAppearance">@style/TextAppearance.MEMOZi.ssu_light_12</item>
     </style>
+
+    <style name="Theme.MEMOZi.EditText" parent="Widget.Material3.TextInputEditText.OutlinedBox">
+        <item name="android:height">@dimen/button_l_height</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="elevation">@dimen/spacing8</item>
+        <item name="android:textAppearance">@style/TextAppearance.MEMOZi.ng_reg_15</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 </resources>
