@@ -11,8 +11,6 @@ import androidx.viewpager2.widget.ViewPager2
 import com.hadi.viewpager2carousel.MemoAdapter
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityMemoBinding
-import com.memo_zi.presentation.ui.diary.DiaryActivity
-import com.memo_zi.presentation.ui.setting.SettingActivity
 import com.memo_zi.util.binding.BindingActivity
 import kotlin.math.absoluteValue
 

@@ -30,7 +30,7 @@
             android:id="@+id/img_category_selected"
             android:layout_width="0dp"
             android:layout_height="168dp"
-            android:background="@drawable/img_background_category_defalut"
+            android:background="@drawable/ic_launcher_foreground"
             android:layout_marginTop="48dp"
             android:clipToOutline="true"
             android:scaleType="centerCrop"
