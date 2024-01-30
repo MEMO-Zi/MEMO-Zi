@@ -7,8 +7,8 @@ import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityDiaryBinding
-import com.memo_zi.ui.memo.MemoActivity
-import com.memo_zi.ui.setting.SettingActivity
+import com.memo_zi.presentation.ui.memo.MemoActivity
+import com.memo_zi.presentation.ui.setting.SettingActivity
 import com.memo_zi.util.binding.BindingActivity
 import dagger.hilt.android.AndroidEntryPoint
 

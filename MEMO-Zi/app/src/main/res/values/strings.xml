@@ -13,6 +13,7 @@
     <string name="diary_evening">님, 좋은 저녁이에요! 오늘 하루는 어떠셨나요?</string>
     <string name="diary_plus">오늘은 일기를 적지 않으셨어요 !\n오늘의 기억을 적어주세요 :)</string>
     <string name="diary_register">등록</string>
+    <string name="item_diary_title">Diary Of Nov.</string>
 
     <!-- diary calender -->
     <string name="calendar_date">2023년 11월 달력</string>
@@ -26,12 +27,10 @@
 
     <!-- memo -->
     <string name="memo_edit_button">등록</string>
-
+    <string name="memo_search_hint">메모를 검색해 보세요!</string>
+    <string name="memo_edit_content_hint">메모 내용을 입력하세요!</string>
+    <string name="memo_edit_title_hint">제목</string>
     <!-- memo category-->
-    <string name="category_delete">일괄 삭제하기</string>
-    <string name="category_move">메모 옮기고 카테고리 삭제하기</string>
-    <string name="category_delete_text1">카테고리 안에 총</string>
-    <string name="category_delete_text2">개의 메모가 있습니다.</string>
-    <string name="memo_category_edit">배경 수정하기</string>
-    <string name="item_diary_title">Diary Of Nov.</string>
+    <string name="category_image_change">사진 변경하기</string>
+    <string name="category_rename">대분류 이름 변경하기</string>
 </resources>

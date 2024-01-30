@@ -36,4 +36,5 @@
         <item name="backgroundTint">@color/selector_all_btn_background</item>
         <item name="android:textAppearance">@style/TextAppearance.MEMOZi.ssu_light_12</item>
     </style>
+
 </resources>

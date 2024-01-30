@@ -1,4 +1,4 @@
-package com.memo_zi.ui.setting
+package com.memo_zi.presentation.ui.setting
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package com.memo_zi.ui.memo
+package com.memo_zi.presentation.ui.memo
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +12,7 @@ import com.hadi.viewpager2carousel.MemoAdapter
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityMemoBinding
 import com.memo_zi.presentation.ui.diary.DiaryActivity
-import com.memo_zi.ui.setting.SettingActivity
+import com.memo_zi.presentation.ui.setting.SettingActivity
 import com.memo_zi.util.binding.BindingActivity
 import kotlin.math.absoluteValue
 
@@ -38,7 +38,7 @@ class MemoActivity :
     private fun setupCarousel() {
         binding.run {
             memoViewpager.offscreenPageLimit = 3
-            val pageMargin = resources.getDimensionPixelOffset(R.dimen.pageMargin)
+            val pageMargin = resources.getDimensionPixelOffset(R.dimen.spacing8)
             val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
                 val offset = position * -2.0f
                 //todo 방향 전환 양수로 해서

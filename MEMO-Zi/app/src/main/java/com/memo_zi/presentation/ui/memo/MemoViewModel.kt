@@ -1,4 +1,4 @@
-package com.memo_zi.ui.memo
+package com.memo_zi.presentation.ui.memo
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,13 +14,13 @@ class MemoViewModel : ViewModel() {
     init {
         _categoryList.value = listOf(
             MemoItem.Category(
-                R.drawable.img_category, "투두리스트"
+                R.drawable.img_background_category_defalut, "투두리스트"
             ),
             MemoItem.Category(
-                R.drawable.img_category2, "하기싫은것"
+                R.drawable.img_background_category_defalut, "하기싫은것"
             ),
             MemoItem.Category(
-                R.drawable.img_category, "해야만하는것"
+                R.drawable.img_background_category_defalut, "해야만하는것"
             ),
         )
 
