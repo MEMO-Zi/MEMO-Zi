@@ -1,14 +1,14 @@
 package com.memo_zi.presentation.model
 
-sealed class DiaryItem() {
+sealed class DiaryFeedItem {
     data class Title(
         val titleLogoImage: Int
-    ) : DiaryItem()
+    ) : DiaryFeedItem()
 
-    data class AllItem(
+    data class AllFeedItem(
         val diaryDate: String,
         val diaryContent: String,
         val diaryImgUrl: Int,
         val diaryLocation: String,
-    ) : DiaryItem()
+    ) : DiaryFeedItem()
 }
