@@ -27,7 +27,6 @@
             app:layout_constraintGuide_end="@dimen/spacing16" />
 
         <LinearLayout
-            android:id="@+id/layout"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="@drawable/background_all_gradation"
@@ -65,10 +64,10 @@
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/tb_memo">
 
-            <View
-                android:id="@+id/view_search_ic"
-                android:layout_width="27dp"
-                android:layout_height="27dp"
+            <ImageView
+                android:id="@+id/iv_search_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/spacing8"
                 android:background="@drawable/ic_search_27"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -85,7 +84,7 @@
                 android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_12"
                 android:textColor="@color/g_05"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/view_search_ic"
+                app:layout_constraintStart_toEndOf="@id/iv_search_icon"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
