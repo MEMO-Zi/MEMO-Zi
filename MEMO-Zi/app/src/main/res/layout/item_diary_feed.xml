@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -11,69 +12,65 @@
         android:layout_height="wrap_content">
 
         <View
-            android:id="@+id/view_item_diary_list_all_horizontal_bar"
+            android:id="@+id/view_diary_feed_horizontal_bar"
             android:layout_width="0dp"
             android:layout_height="1dp"
-            android:layout_marginHorizontal="@dimen/spacing8"
-            android:background="@color/soft_grey"
+            android:layout_marginHorizontal="@dimen/spacing5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/ll_item_diary_feed"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
+        <TextView
+            android:id="@+id/tv_diary_feed_date"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
             android:orientation="horizontal"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_12"
+            android:textColor="@color/g_07"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/view_item_diary_list_all_horizontal_bar">
-
-            <TextView
-                android:id="@+id/tv_item_diary_feed_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/diary_list_ex_date"
-                android:textColor="@color/grey"
-                android:textSize="@dimen/text_size_12" />
-        </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@id/view_diary_feed_horizontal_bar"
+            tools:text="2023년 11월 10일 | 금요일" />
 
         <ImageView
-            android:id="@+id/iv_item_diary_feed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
+            android:id="@+id/iv_diary_feed_img"
+            android:layout_width="88dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="8dp"
+            app:layout_constraintDimensionRatio="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ll_item_diary_feed"
-            app:srcCompat="@drawable/img_location_test" />
+            app:layout_constraintTop_toBottomOf="@id/tv_diary_feed_date"
+            app:srcCompat="@drawable/ic_launcher_background" />
 
         <TextView
-            android:id="@+id/tv_item_diary_feed_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:drawableStart="@drawable/ic_location_9px"
-            android:text="@string/diary_list_ex_location"
-            android:textSize="@dimen/text_size_8"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_item_diary_feed" />
-
-        <TextView
-            android:id="@+id/tv_item_diary_feed_content"
+            android:id="@+id/tv_diary_feed_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="6dp"
-            android:fontFamily="@font/nanumgothic"
-            android:text="@string/diary_list_ex_diary_content"
-            android:textSize="@dimen/text_size_12"
+            android:drawableStart="@drawable/ic_location_9"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_8"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_diary_feed_img"
+            tools:text="일본 도쿄" />
+
+        <TextView
+            android:id="@+id/tv_diary_feed_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_12_140"
+            android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_item_diary_feed_location" />
+            app:layout_constraintTop_toBottomOf="@id/tv_diary_feed_location"
+            tools:text="일본이 너무 가고싶은 날이다. 얼른 종강이 왔으면 좋겠다.\n엄마 나 이번학기 전액 장학금이래~~~~~~~~~~" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

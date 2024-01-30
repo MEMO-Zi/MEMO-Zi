@@ -31,23 +31,14 @@ class DiaryActivity :
     }
 
     private fun changeActivity() {
-        binding.tbDiary.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.item_diary_change -> {
-                    Intent(this, MemoActivity::class.java).apply {
-                        startActivity(this)
-                    }
-                    true
-                }
-
-                R.id.item_diary_setting -> {
-                    Intent(this, SettingActivity::class.java).apply {
-                        startActivity(this)
-                    }
-                    true
-                }
-
-                else -> false
+        binding.includeTopAppbar.ivAllTopAppbarChange.setOnClickListener {
+            Intent(this, MemoActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
+        binding.includeTopAppbar.ivAllTopAppbarSetting.setOnClickListener {
+            Intent(this, SettingActivity::class.java).apply {
+                startActivity(this)
             }
         }
     }
@@ -63,24 +54,24 @@ class DiaryActivity :
 
     private fun clickDiaryWriting() {
         with(binding) {
-            llDiaryDefault.setOnClickListener {
-                llDiaryDefault.visibility = View.GONE
-                clDiaryAdd.visibility = View.VISIBLE
+            layoutDiaryDefault.setOnClickListener {
+                layoutDiaryDefault.visibility = View.GONE
+                layoutDiaryWriting.visibility = View.VISIBLE
             }
         }
     }
 
     private fun changeDiaryFragment() {
         with(binding) {
-            ivDiaryFeed.setOnClickListener {
-                ivDiaryFeed.setImageResource(R.drawable.ic_feed_select_22)
-                ivDiaryCalendar.setImageResource(R.drawable.ic_calender_default_22)
+            ivDiaryChangeFeed.setOnClickListener {
+                ivDiaryChangeFeed.setImageResource(R.drawable.ic_feed_select_22)
+                ivDiaryChangeCalendar.setImageResource(R.drawable.ic_calender_default_22)
                 replaceFragment(DIARY_FEED)
             }
 
-            ivDiaryCalendar.setOnClickListener {
-                ivDiaryFeed.setImageResource(R.drawable.ic_feed_default_22)
-                ivDiaryCalendar.setImageResource(R.drawable.ic_calender_select_22)
+            ivDiaryChangeCalendar.setOnClickListener {
+                ivDiaryChangeFeed.setImageResource(R.drawable.ic_feed_default_22)
+                ivDiaryChangeCalendar.setImageResource(R.drawable.ic_calender_select_22)
                 replaceFragment(DIARY_CALENDAR)
             }
         }

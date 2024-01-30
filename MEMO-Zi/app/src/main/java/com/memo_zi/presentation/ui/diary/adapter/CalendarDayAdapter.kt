@@ -22,7 +22,7 @@ class CalendarDayAdapter(val tempMonth: Int, val dayList: MutableList<Date>) :
 
     override fun onBindViewHolder(holder: DayView, position: Int) {
         // 초기화
-        var dayText: TextView = holder.layout.findViewById(R.id.item_day_text)
+        var dayText: TextView = holder.layout.findViewById(R.id.tv_calendar_day)
 
         // 날짜 표시
         dayText.text = dayList[position].date.toString()

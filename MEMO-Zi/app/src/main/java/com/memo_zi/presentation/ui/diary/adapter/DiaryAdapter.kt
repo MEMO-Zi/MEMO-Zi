@@ -5,23 +5,23 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.memo_zi.databinding.ItemDiaryFeedBinding
-import com.memo_zi.databinding.ItemDiaryListTitleBinding
-import com.memo_zi.presentation.model.DiaryItem
+import com.memo_zi.databinding.ItemDiaryFeedTitleBinding
+import com.memo_zi.presentation.model.DiaryFeedItem
 import timber.log.Timber
 
 class DiaryAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
-    private val diaryList = mutableListOf<DiaryItem>()
+    private val diaryList = mutableListOf<DiaryFeedItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
-            DIARY_TITLE -> DiaryListTitleViewHolder(
-                ItemDiaryListTitleBinding.inflate(
+            DIARY_TITLE -> DiaryFeedTitleViewHolder(
+                ItemDiaryFeedTitleBinding.inflate(
                     inflater, parent, false
                 )
             )
 
-            DIARY_ALL_ITEM -> DiaryListAllViewHolder(
+            DIARY_ALL_ITEM -> DiaryFeedViewHolder(
                 ItemDiaryFeedBinding.inflate(
                     inflater, parent, false
                 )
@@ -35,17 +35,17 @@ class DiaryAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHol
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is DiaryListTitleViewHolder -> holder.onBind(diaryList[position] as DiaryItem.Title)
-            is DiaryListAllViewHolder -> holder.onBind(diaryList[position] as DiaryItem.AllItem)
+            is DiaryFeedTitleViewHolder -> holder.onBind(diaryList[position] as DiaryFeedItem.Title)
+            is DiaryFeedViewHolder -> holder.onBind(diaryList[position] as DiaryFeedItem.AllFeedItem)
         }
     }
 
     override fun getItemViewType(position: Int): Int = when (diaryList[position]) {
-        is DiaryItem.Title -> DIARY_TITLE
-        is DiaryItem.AllItem -> DIARY_ALL_ITEM
+        is DiaryFeedItem.Title -> DIARY_TITLE
+        is DiaryFeedItem.AllFeedItem -> DIARY_ALL_ITEM
     }
 
-    fun setDiaryList(dataList: List<DiaryItem>) {
+    fun setDiaryList(dataList: List<DiaryFeedItem>) {
         diaryList.clear()
         diaryList.addAll(dataList)
         Timber.tag("dataList").d(dataList.toString())

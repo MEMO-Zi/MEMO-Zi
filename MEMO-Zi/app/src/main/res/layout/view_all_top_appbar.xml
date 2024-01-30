@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="src"
+            type="Integer" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <ImageView
+            android:id="@+id/iv_all_top_appbar_logo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:src="@drawable/ic_all_app_logo_77"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_all_top_appbar_change"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@{src}"
+            app:layout_constraintBottom_toBottomOf="@id/iv_all_top_appbar_setting"
+            app:layout_constraintEnd_toStartOf="@id/iv_all_top_appbar_line"
+            app:layout_constraintTop_toTopOf="@id/iv_all_top_appbar_setting" />
+
+        <ImageView
+            android:id="@+id/iv_all_top_appbar_line"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_line_black_11px"
+            app:layout_constraintBottom_toBottomOf="@id/iv_all_top_appbar_setting"
+            app:layout_constraintEnd_toStartOf="@id/iv_all_top_appbar_setting"
+            app:layout_constraintTop_toTopOf="@id/iv_all_top_appbar_setting" />
+
+        <ImageView
+            android:id="@+id/iv_all_top_appbar_setting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="21dp"
+            android:src="@drawable/ic_all_setting_change_26"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

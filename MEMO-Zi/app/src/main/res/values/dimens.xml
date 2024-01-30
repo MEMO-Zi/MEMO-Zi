@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- spacing -->
+    <dimen name="spacing3">3dp</dimen>
     <dimen name="spacing4">4dp</dimen>
+    <dimen name="spacing5">5dp</dimen>
     <dimen name="spacing6">6dp</dimen>
     <dimen name="spacing8">8dp</dimen>
     <dimen name="spacing10">10dp</dimen>
@@ -11,6 +13,7 @@
     <dimen name="spacing18">18dp</dimen>
     <dimen name="spacing20">20dp</dimen>
     <dimen name="spacing24">24dp</dimen>
+    <dimen name="spacing25">25dp</dimen>
     <dimen name="spacing26">26dp</dimen>
     <dimen name="spacing28">28dp</dimen>
     <dimen name="spacing30">30dp</dimen>
