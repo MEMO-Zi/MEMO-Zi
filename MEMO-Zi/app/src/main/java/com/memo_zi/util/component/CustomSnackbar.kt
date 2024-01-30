@@ -11,7 +11,6 @@ import com.memo_zi.util.ext.toPx
 
 object CustomSnackbar {
     private const val MARGIN_PX = 8
-
     fun makeSnackbar(view: View, message: String, botMarin: Int) {
         val inflater = LayoutInflater.from(view.context)
         val binding = ViewCustomSnackbarBinding.inflate(inflater, null, false)

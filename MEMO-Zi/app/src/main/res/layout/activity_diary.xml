@@ -41,10 +41,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="66dp"
-            app:layout_constraintBottom_toBottomOf="@id/layout_diary_writing_top"
+            app:layout_constraintBottom_toBottomOf="@id/layout_diary_all"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/layout_diary_writing_top" />
+            app:layout_constraintTop_toTopOf="@id/layout_diary_all" />
 
         <include
             android:id="@+id/include_top_appbar"
@@ -107,7 +107,7 @@
             app:srcCompat="@drawable/ic_calender_default_22" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/layout_diary_writing_top"
+            android:id="@+id/layout_diary_all"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -157,7 +157,7 @@
                 android:id="@+id/layout_diary_writing"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -320,6 +320,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/gl_end"
             app:layout_constraintStart_toEndOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/layout_diary_writing_top" />
+            app:layout_constraintTop_toBottomOf="@id/layout_diary_all" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
