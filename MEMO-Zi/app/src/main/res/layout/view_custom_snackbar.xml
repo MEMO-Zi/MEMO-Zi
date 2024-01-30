@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_border_radius_8"
+        android:backgroundTint="@color/g_04">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/spacing14" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/spacing14" />
+
+        <ImageView
+            android:id="@+id/iv_snackbar_warning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_warning_12"
+            app:layout_constraintBottom_toBottomOf="@id/tv_snackbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_snackbar" />
+
+        <TextView
+            android:id="@+id/tv_snackbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_11"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/gl_bottom"
+            app:layout_constraintStart_toEndOf="@id/iv_snackbar_warning"
+            app:layout_constraintTop_toBottomOf="@id/gl_top"
+            tools:text="(문제가 있다는 텍스트)" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
