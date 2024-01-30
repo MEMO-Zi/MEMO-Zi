@@ -15,7 +15,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DiaryActivity :
     BindingActivity<ActivityDiaryBinding>(R.layout.activity_diary) {
-    val viewModel by viewModels<DiaryViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

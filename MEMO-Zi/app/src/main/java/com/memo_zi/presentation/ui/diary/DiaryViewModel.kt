@@ -4,8 +4,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.memo_zi.R
 import com.memo_zi.presentation.model.DiaryFeedItem
+import javax.inject.Inject
 
-class DiaryViewModel : ViewModel() {
+class DiaryViewModel @Inject constructor(
+
+) : ViewModel() {
     private val _diaryList = MutableLiveData<List<DiaryFeedItem>>()
     val diaryList = _diaryList
 
