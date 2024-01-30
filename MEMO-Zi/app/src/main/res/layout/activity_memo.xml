@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/spacing8"
                 android:layout_marginStart="8dp"
-                android:text="메모를 검색해 보세요!"
+                android:text="@string/memo_search_hint"
                 android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_12"
                 android:textColor="@color/g_05"
                 app:layout_constraintBottom_toBottomOf="parent"
