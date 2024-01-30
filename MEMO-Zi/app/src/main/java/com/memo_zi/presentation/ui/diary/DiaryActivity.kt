@@ -3,7 +3,6 @@ package com.memo_zi.presentation.ui.diary
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityDiaryBinding
@@ -20,16 +19,10 @@ class DiaryActivity :
         super.onCreate(savedInstanceState)
 
         initLayout()
+        addListeners()
     }
 
-    private fun initLayout() {
-        initDiaryFragment()
-        changeActivity()
-        clickDiaryWriting()
-        changeDiaryFragment()
-    }
-
-    private fun changeActivity() {
+    private fun addListeners() {
         binding.includeTopAppbar.ivAllTopAppbarChange.setOnClickListener {
             Intent(this, MemoActivity::class.java).apply {
                 startActivity(this)
@@ -40,27 +33,6 @@ class DiaryActivity :
                 startActivity(this)
             }
         }
-    }
-
-    private fun initDiaryFragment() {
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_diary)
-        if (currentFragment == null) {
-            supportFragmentManager.beginTransaction()
-                .add(R.id.fcv_diary, DiaryFeedFragment())
-                .commit()
-        }
-    }
-
-    private fun clickDiaryWriting() {
-        with(binding) {
-            layoutDiaryDefault.setOnClickListener {
-                layoutDiaryDefault.visibility = View.GONE
-                layoutDiaryWriting.visibility = View.VISIBLE
-            }
-        }
-    }
-
-    private fun changeDiaryFragment() {
         with(binding) {
             ivDiaryChangeFeed.setOnClickListener {
                 ivDiaryChangeFeed.setImageResource(R.drawable.ic_feed_select_22)
@@ -73,6 +45,20 @@ class DiaryActivity :
                 ivDiaryChangeCalendar.setImageResource(R.drawable.ic_calender_select_22)
                 replaceFragment(DIARY_CALENDAR)
             }
+
+            layoutDiaryDefault.setOnClickListener {
+                layoutDiaryDefault.visibility = View.GONE
+                layoutDiaryWriting.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun initLayout() {
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_diary)
+        if (currentFragment == null) {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fcv_diary, DiaryFeedFragment())
+                .commit()
         }
     }
 
