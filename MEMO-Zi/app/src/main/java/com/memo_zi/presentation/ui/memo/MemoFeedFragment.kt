@@ -3,7 +3,7 @@ package com.memo_zi.presentation.ui.memo
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import com.hadi.viewpager2carousel.MemoAdapter
+import com.memo_zi.presentation.ui.memo.adapter.MemoAdapter
 import com.memo_zi.R
 import com.memo_zi.databinding.FragementMemoFeedBinding
 import com.memo_zi.util.binding.BindingFragment

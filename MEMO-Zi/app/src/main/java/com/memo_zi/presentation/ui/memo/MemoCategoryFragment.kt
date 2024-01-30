@@ -1,12 +1,11 @@
 package com.memo_zi.presentation.ui.memo
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.memo_zi.R
 import com.memo_zi.databinding.FragmentMemoCategoryEditBinding
+import com.memo_zi.presentation.ui.memo.adapter.MemoCategoryAdapter
 import com.memo_zi.util.binding.BindingFragment
 
 class MemoCategoryFragment :

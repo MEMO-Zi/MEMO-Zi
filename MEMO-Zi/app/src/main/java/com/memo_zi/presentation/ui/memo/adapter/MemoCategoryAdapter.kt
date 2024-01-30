@@ -1,4 +1,4 @@
-package com.memo_zi.presentation.ui.memo
+package com.memo_zi.presentation.ui.memo.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.memo_zi.data.model.MemoItem
 import com.memo_zi.databinding.ItemMemoCategoryBinding
+import com.memo_zi.presentation.ui.memo.adapter.MemoListCategoryViewHolder
 import timber.log.Timber
 
 class MemoCategoryAdapter(

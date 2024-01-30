@@ -1,4 +1,4 @@
-package com.hadi.viewpager2carousel
+package com.memo_zi.presentation.ui.memo.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,8 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.memo_zi.data.model.MemoItem
 import com.memo_zi.databinding.ItemMemoCategoryBinding
 import com.memo_zi.databinding.ItemMemoListAllBinding
-import com.memo_zi.presentation.ui.memo.MemoListCategoryViewHolder
-import com.memo_zi.presentation.ui.memo.MemoListViewHolder
 import timber.log.Timber
 
 class MemoAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
