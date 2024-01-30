@@ -11,8 +11,6 @@ import androidx.viewpager2.widget.ViewPager2
 import com.hadi.viewpager2carousel.MemoAdapter
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityMemoBinding
-import com.memo_zi.presentation.ui.diary.DiaryActivity
-import com.memo_zi.presentation.ui.setting.SettingActivity
 import com.memo_zi.util.binding.BindingActivity
 import kotlin.math.absoluteValue
 
@@ -37,7 +35,7 @@ class MemoActivity :
 
     private fun setupCarousel() {
         binding.run {
-            memoViewpager.offscreenPageLimit = 3
+            vpMemoCategoryList.offscreenPageLimit = 3
             val pageMargin = resources.getDimensionPixelOffset(R.dimen.spacing8)
             val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
                 val offset = position * -2.0f
@@ -48,11 +46,11 @@ class MemoActivity :
                 page.scaleX = scale
                 page.scaleY = scale
             }
-            memoViewpager.setPageTransformer(pageTransformer)
-            memoViewpager.clipToPadding = false
-            memoViewpager.clipChildren = false
-            memoViewpager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-            memoViewpager.setPadding(pageMargin, 0, pageMargin, 0)
+            vpMemoCategoryList.setPageTransformer(pageTransformer)
+            vpMemoCategoryList.clipToPadding = false
+            vpMemoCategoryList.clipChildren = false
+            vpMemoCategoryList.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+            vpMemoCategoryList.setPadding(pageMargin, 0, pageMargin, 0)
 
         }
     }
@@ -63,7 +61,7 @@ class MemoActivity :
                 startActivity(this)
             }
         }
-        binding.memoBtnCategoryEdit.setOnClickListener {
+        binding.btnMemoCategoryEdit.setOnClickListener {
             replaceFragment(MEMO_CATEGORY)
             it.isInvisible = true
         }
@@ -84,29 +82,11 @@ class MemoActivity :
     }
 
     private fun changeMemoActivity() {
-        binding.tbMemo.setOnMenuItemClickListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.item_memo_change -> {
-                    Intent(this, DiaryActivity::class.java).apply {
-                        startActivity(this)
-                    }
-                    true
-                }
 
-                R.id.item_memo_setting -> {
-                    Intent(this, SettingActivity::class.java).apply {
-                        startActivity(this)
-                    }
-                    true
-                }
-
-                else -> false
-            }
-        }
     }
 
     override fun onBackPressed() {//todo 추후 더 나은 로직 확인 필요
-        binding.memoBtnCategoryEdit.isInvisible = false
+        binding.btnMemoCategoryEdit.isInvisible = false
         super.onBackPressed()
     }
 
@@ -123,9 +103,9 @@ class MemoActivity :
         memoAdapter = MemoAdapter(this)
         categoryAdapter = MemoCategoryAdapter(this)
         binding.run {
-            memoViewpager.adapter = categoryAdapter
-            memoIndicator.setViewPager(memoViewpager)
-            categoryAdapter.registerAdapterDataObserver(memoIndicator.adapterDataObserver)
+            vpMemoCategoryList.adapter = categoryAdapter
+            indicatorMemoCategory.setViewPager(vpMemoCategoryList)
+            categoryAdapter.registerAdapterDataObserver(indicatorMemoCategory.adapterDataObserver)
         }
 
     }

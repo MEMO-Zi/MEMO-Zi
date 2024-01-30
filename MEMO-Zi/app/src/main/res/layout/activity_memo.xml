@@ -35,23 +35,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.Toolbar
+        <include
             android:id="@+id/tb_memo"
-            android:layout_width="0dp"
+            layout="@layout/view_all_top_appbar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/memo_tb">
+            android:src="@drawable/ic_all_memo_change_26" />
 
-            <ImageView
-                android:id="@+id/iv_memo_tb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_all_app_logo_77" />
-        </androidx.appcompat.widget.Toolbar>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_memo_search"

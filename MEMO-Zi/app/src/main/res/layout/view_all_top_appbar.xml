@@ -5,8 +5,8 @@
     <data>
 
         <variable
-            name="src"
-            type="Integer" />
+            name="activity"
+            type="Boolean" />
 
     </data>
 
@@ -28,7 +28,7 @@
             android:id="@+id/iv_all_top_appbar_change"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:src="@{src}"
+            android:src="@{activity ? @drawable/ic_all_memo_change_26 : @drawable/ic_all_diary_change_26}"
             app:layout_constraintBottom_toBottomOf="@id/iv_all_top_appbar_setting"
             app:layout_constraintEnd_toStartOf="@id/iv_all_top_appbar_line"
             app:layout_constraintTop_toTopOf="@id/iv_all_top_appbar_setting" />

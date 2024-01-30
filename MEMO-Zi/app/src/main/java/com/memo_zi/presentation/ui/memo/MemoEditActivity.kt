@@ -16,7 +16,7 @@ class MemoEditActivity :
 
     private fun setupButton() {
         binding.run {
-            memoEditEnroll.setOnClickListener {
+            btnMemoEditEnroll.setOnClickListener {
                 Intent(this@MemoEditActivity, MemoActivity::class.java).apply {
                     startActivity(this)
                 }
