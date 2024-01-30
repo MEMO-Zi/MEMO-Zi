@@ -72,7 +72,6 @@
             android:layout_marginBottom="@dimen/spacing16"
             android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_12_140"
             android:textColor="@color/g_04"
-            android:lineHeight="@dimen/spacing16"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
