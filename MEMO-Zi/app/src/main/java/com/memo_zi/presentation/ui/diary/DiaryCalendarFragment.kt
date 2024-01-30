@@ -13,8 +13,10 @@ import com.memo_zi.databinding.FragmentDiaryCalendarBinding
 import com.memo_zi.presentation.ui.diary.adapter.CalendarMonthAdapter
 import com.memo_zi.presentation.ui.diary.adapter.DiaryAdapter
 import com.memo_zi.util.binding.BindingFragment
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
+@AndroidEntryPoint
 class DiaryCalendarFragment :
     BindingFragment<FragmentDiaryCalendarBinding>(R.layout.fragment_diary_calendar) {
     private val viewModel by viewModels<DiaryViewModel>()

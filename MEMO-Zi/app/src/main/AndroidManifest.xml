@@ -27,7 +27,7 @@
             android:name=".presentation.ui.memo.MemoEditActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.memo.MemoActivity"
+            android:name=".presentation.ui.memo.MemoActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.diary.DiaryActivity"
