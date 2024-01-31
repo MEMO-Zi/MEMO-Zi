@@ -24,7 +24,21 @@ class MemoSearchViewModel @Inject constructor(
                 "오늘의 할일",
                 "2023-01-31",
                 "어려운것...서치뷰 만들기"
+            ),
+
+            MemoSearchFeedItem.Title("회의 일정",1),
+            MemoSearchFeedItem.AllFeedItem(
+                "test1",
+                "2023-01-30",
+                "메모지 회의!"
+            ),
+            MemoSearchFeedItem.AllFeedItem(
+                "test1 ",
+                "2023-01-31",
+                "어려운것...서치뷰 만들기"
             )
+
+
 
         )
 

@@ -38,10 +38,10 @@
 
         <Button
             android:id="@+id/btn_cancel"
-            style="@style/Theme.MEMOZi.Button.L"
+            style="@style/Theme.MEMOZi.Button.S"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/empty"
+            android:background="@android:color/transparent"
             android:text="@string/all_cancel"
             android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_13"
             android:textColor="@color/white"
@@ -74,8 +74,8 @@
 
             <EditText
                 android:id="@+id/et_search_text"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="290dp"
+                android:layout_height="29dp"
                 android:layout_marginStart="9dp"
                 android:layout_marginEnd="8dp"
                 android:background="@null"

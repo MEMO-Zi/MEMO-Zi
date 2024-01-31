@@ -55,7 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="29dp"
             android:layout_marginEnd="@dimen/spacing8"
-            android:backgroundTint="@color/g_02"
+            android:backgroundTint="@color/selector_all_btn_background"
+            android:enabled="false"
             android:text="@string/memo_edit_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

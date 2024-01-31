@@ -10,9 +10,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing8"
+        android:layout_marginTop="@dimen/spacing4"
         android:layout_marginHorizontal="@dimen/spacing16"
-        android:elevation="@dimen/spacing8"
+        android:layout_marginBottom="@dimen/spacing4"
+        android:elevation="@dimen/spacing4"
         android:background="@drawable/shape_border_radius_8">
 
         <androidx.constraintlayout.widget.Guideline
