@@ -41,8 +41,8 @@
             style="@style/Theme.MEMOZi.Button.L"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@null"
-            android:text="취소"
+            android:background="@color/empty"
+            android:text="@string/all_cancel"
             android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_13"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@id/layout_search"
@@ -91,8 +91,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
