@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/spacing16">
+
+        <TextView
+            android:id="@+id/tv_memo_search_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing24"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tool:text="투두리스트" />
+
+        <TextView
+            android:id="@+id/tv_memo_search_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing4"
+            android:layout_marginBottom="1dp"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_8"
+            app:layout_constraintBottom_toBottomOf="@id/tv_memo_search_title"
+            app:layout_constraintStart_toEndOf="@id/tv_memo_search_title"
+            tool:text="@string/memo_search_amount" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

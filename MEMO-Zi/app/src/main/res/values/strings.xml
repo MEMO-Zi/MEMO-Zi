@@ -28,6 +28,7 @@
     <string name="memo_search_hint">메모를 검색해 보세요!</string>
     <string name="memo_edit_content_hint">메모 내용을 입력하세요!</string>
     <string name="memo_edit_title_hint">제목</string>
+    <string name="memo_search_amount">카테고리에서 %d개의 메모를 발견했습니다!</string>
     <!-- memo category-->
     <string name="category_image_change">사진 변경하기</string>
     <string name="category_rename">대분류 이름 변경하기</string>
