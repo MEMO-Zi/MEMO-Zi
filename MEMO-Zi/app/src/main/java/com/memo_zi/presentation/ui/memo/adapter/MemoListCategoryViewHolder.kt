@@ -1,4 +1,4 @@
-package com.memo_zi.presentation.ui.memo
+package com.memo_zi.presentation.ui.memo.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import com.memo_zi.data.model.MemoItem

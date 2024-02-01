@@ -1,28 +1,26 @@
-package com.hadi.viewpager2carousel
+package com.memo_zi.presentation.ui.memo.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.memo_zi.data.model.MemoItem
-import com.memo_zi.databinding.ItemMemoCategoryBinding
-import com.memo_zi.databinding.ItemMemoListAllBinding
-import com.memo_zi.presentation.ui.memo.MemoListCategoryViewHolder
-import com.memo_zi.presentation.ui.memo.MemoListViewHolder
+import com.memo_zi.databinding.ItemMemoSearchSingleBinding
+import com.memo_zi.databinding.ItemMemoSearchTitleBinding
+import com.memo_zi.presentation.model.MemoSearchFeedItem
 import timber.log.Timber
 
-class MemoAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MemoSearchAdapter(context: Context): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
-    private val memoList = mutableListOf<MemoItem>()
+    private val memoList = mutableListOf<MemoSearchFeedItem>()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
-            MEMO_CATEGORY -> MemoListCategoryViewHolder(
-                ItemMemoCategoryBinding.inflate(
+            MEMO_TITLE -> MemoSearchTitleViewHolder(
+                ItemMemoSearchTitleBinding.inflate(
                     inflater, parent, false
                 )
             )
-            MEMO_ITEM -> MemoListViewHolder(
-                ItemMemoListAllBinding.inflate(
+            MEMO_ITEM -> MemoSearchViewHolder(
+                ItemMemoSearchSingleBinding.inflate(
                     inflater, parent, false
                 )
             )
@@ -32,18 +30,19 @@ class MemoAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHold
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is MemoListCategoryViewHolder -> holder.onBind(memoList[position] as MemoItem.Category)
-            is MemoListViewHolder -> holder.onBind(memoList[position] as MemoItem.Memo)
+            is MemoSearchTitleViewHolder -> holder.onBind(memoList[position] as MemoSearchFeedItem.Title)
+            is MemoSearchViewHolder -> holder.onBind(memoList[position] as MemoSearchFeedItem.AllFeedItem)
         }
     }
 
     override fun getItemCount(): Int = memoList.size
 
     override fun getItemViewType(position: Int): Int = when(memoList[position]){
-        is MemoItem.Category -> MEMO_CATEGORY
-        is MemoItem.Memo -> MEMO_ITEM
+        is MemoSearchFeedItem.Title-> MEMO_TITLE
+        is MemoSearchFeedItem.AllFeedItem -> MEMO_ITEM
     }
-    fun setMemoList(dataList: List<MemoItem>) {
+
+    fun setMemoList(dataList: List<MemoSearchFeedItem>) {
         memoList.clear()
         memoList.addAll(dataList)
         Timber.tag("memo").d(dataList.toString())
@@ -51,7 +50,7 @@ class MemoAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHold
     }
 
     companion object {
-        const val MEMO_CATEGORY = 0
+        const val MEMO_TITLE = 0
         const val MEMO_ITEM = 1
     }
 }

@@ -4,6 +4,7 @@
     <!-- all -->
     <string name="all_register">등록</string>
     <string name="all_app_logo_memo_zi">MEMO:Zi</string>
+    <string name="all_cancel">취소</string>
 
     <!-- diary -->
     <string name="diary_morning">님, 좋은 아침이에요! 오늘도 화이팅! </string>
@@ -28,6 +29,7 @@
     <string name="memo_search_hint">메모를 검색해 보세요!</string>
     <string name="memo_edit_content_hint">메모 내용을 입력하세요!</string>
     <string name="memo_edit_title_hint">제목</string>
+    <string name="memo_search_amount">카테고리에서 %d개의 메모를 발견했습니다!</string>
     <!-- memo category-->
     <string name="category_image_change">사진 변경하기</string>
     <string name="category_rename">대분류 이름 변경하기</string>

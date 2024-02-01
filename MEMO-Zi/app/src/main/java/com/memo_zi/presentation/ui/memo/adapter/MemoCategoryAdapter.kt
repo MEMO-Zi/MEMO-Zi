@@ -1,4 +1,4 @@
-package com.memo_zi.presentation.ui.memo
+package com.memo_zi.presentation.ui.memo.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

@@ -3,30 +3,30 @@ package com.memo_zi.presentation.ui.memo
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import com.memo_zi.presentation.ui.memo.adapter.MemoAdapter
 import com.memo_zi.R
-import com.memo_zi.databinding.FragementMemoFeedBinding
+import com.memo_zi.databinding.FragmentMemoSearchBinding
+import com.memo_zi.presentation.ui.memo.adapter.MemoSearchAdapter
 import com.memo_zi.util.binding.BindingFragment
 
-class MemoFeedFragment : BindingFragment<FragementMemoFeedBinding>(R.layout.fragement_memo_feed) {
-    private val viewModel by viewModels<MemoViewModel>()
-    private lateinit var memoAdapter: MemoAdapter
+class MemoSearchFragment :
+    BindingFragment<FragmentMemoSearchBinding>(R.layout.fragment_memo_search) {
+    private val viewModel by viewModels<MemoSearchViewModel>()
+    private lateinit var memoSearchAdapter: MemoSearchAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initAdapter()
         setMemoList()
     }
 
     private fun initAdapter() {
-        memoAdapter = MemoAdapter(requireContext())
-        binding.rvMemo.adapter = memoAdapter
+        memoSearchAdapter = MemoSearchAdapter(requireContext())
+        binding.rvMemoSearch.adapter = memoSearchAdapter
     }
 
     private fun setMemoList() {
         viewModel.memoList.observe(viewLifecycleOwner) { memoList ->
-            memoAdapter.setMemoList(memoList)
+            memoSearchAdapter.setMemoList(memoList)
         }
     }
 
