@@ -4,8 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.memo_zi.databinding.ItemMemoSearchSingleBinding
 import com.memo_zi.databinding.ItemMemoSearchTitleBinding
-import com.memo_zi.databinding.ItemMemoSingleBinding
 import com.memo_zi.presentation.model.MemoSearchFeedItem
 import timber.log.Timber
 
@@ -20,7 +20,7 @@ class MemoSearchAdapter(context: Context): RecyclerView.Adapter<RecyclerView.Vie
                 )
             )
             MEMO_ITEM -> MemoSearchViewHolder(
-                ItemMemoSingleBinding.inflate(
+                ItemMemoSearchSingleBinding.inflate(
                     inflater, parent, false
                 )
             )

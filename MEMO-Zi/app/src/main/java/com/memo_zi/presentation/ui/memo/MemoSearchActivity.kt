@@ -5,10 +5,8 @@ import android.view.KeyEvent
 import android.view.KeyEvent.KEYCODE_ENTER
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityMemoSearchBinding
-import com.memo_zi.presentation.ui.diary.DiaryFeedFragment
 import com.memo_zi.presentation.ui.memo.adapter.MemoSearchAdapter
 import com.memo_zi.util.binding.BindingActivity
 import timber.log.Timber
@@ -19,31 +17,27 @@ class MemoSearchActivity
     private val viewModel by viewModels<MemoSearchViewModel>()
     private lateinit var memoSearchAdapter: MemoSearchAdapter
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        init()
+        initLayout()
     }
 
-    private fun init(){
+    private fun initLayout() {
         initFragment()
         initAdapter()
         setMemoList()
-
-//        setButton()
-//        setSearchEvent()
     }
-
 
     private fun initAdapter() {
         memoSearchAdapter = MemoSearchAdapter(this)
     }
 
-    private fun setMemoList(){
+    private fun setMemoList() {
         viewModel.memoList.observe(this) { memoList ->
             memoSearchAdapter.setMemoList(memoList)
         }
     }
+
     private fun setButton() {
         binding.run {
             btnCancel.setOnClickListener {
