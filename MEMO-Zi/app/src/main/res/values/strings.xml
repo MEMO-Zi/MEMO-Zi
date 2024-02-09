@@ -33,4 +33,8 @@
     <!-- memo category-->
     <string name="category_image_change">사진 변경하기</string>
     <string name="category_rename">대분류 이름 변경하기</string>
+    
+    <!--onboarding-->
+    <string name="onboarding_greeting">환영해요. %s님!\n 회원가입이 완료되었어요:)</string>
+
 </resources>
