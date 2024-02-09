@@ -14,6 +14,10 @@ class OnboardingPopupFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        init()
+    }
+
+    private fun init() {
         binding.run {
             TextGradation(
                 tvOnboardingPopupTitle,
@@ -21,9 +25,18 @@ class OnboardingPopupFragment :
                 resources.getColor(R.color.main_pink),
                 resources.getColor(R.color.main_purple)
             )
+        }
+        initButton()
+    }
+
+    private fun initButton() {
+        binding.run {
             layoutOnboardingCheck.setOnClickListener {
                 check = !check
                 checkEvent()
+            }
+            btnOnboarding.setOnClickListener {
+                (activity as OnboardingActivity).changeActivity()
             }
         }
     }

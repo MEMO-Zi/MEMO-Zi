@@ -1,8 +1,10 @@
 package com.memo_zi.presentation.ui.onboarding;
 
+import android.content.Intent
 import android.os.Bundle
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityOnboardingBinding
+import com.memo_zi.presentation.ui.memo.MemoActivity
 import com.memo_zi.util.binding.BindingActivity
 
 class OnboardingActivity :
@@ -21,4 +23,9 @@ class OnboardingActivity :
         }
     }
 
+    fun changeActivity() {
+        Intent(this, MemoActivity::class.java).apply {
+            startActivity(this)
+        }
+    }
 }
