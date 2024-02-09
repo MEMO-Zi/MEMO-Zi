@@ -5,10 +5,10 @@ import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivitySplashBinding
+import com.memo_zi.presentation.ui.auth.AuthActivity
 import com.memo_zi.util.binding.BindingActivity
-import kotlinx.coroutines.delay
-import com.memo_zi.presentation.ui.onboarding.OnboardingActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 
@@ -26,8 +26,9 @@ class SplashActivity : BindingActivity<ActivitySplashBinding>(R.layout.activity_
             navigateToAuth()
         }
     }
+
     private fun navigateToAuth() {
-        Intent(this, OnboardingActivity::class.java).apply {
+        Intent(this, AuthActivity::class.java).apply {
             startActivity(this)
         }
         finish()
