@@ -8,7 +8,12 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 class OnboardingAdapter(fragmentActivity: FragmentActivity) :
     FragmentStateAdapter(fragmentActivity) {
     private val fragments =
-        listOf<Fragment>(OnboardingGreetingFragment(), OnboardingMemoFragment(),OnboardingDiaryFragment())
+        listOf<Fragment>(
+            OnboardingGreetingFragment(),
+            OnboardingMemoFragment(),
+            OnboardingDiaryFragment(),
+            OnboardingPopupFragment()
+        )
 
     override fun getItemCount(): Int {
         return fragments.size

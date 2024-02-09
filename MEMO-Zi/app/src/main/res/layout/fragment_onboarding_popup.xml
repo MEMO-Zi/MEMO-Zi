@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start_onboarding_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/spacing16" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start_onboarding_popup_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/spacing24" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end_onboarding_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/spacing16" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_top_onboarding_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="83dp" />
+
+        <TextView
+            android:id="@+id/tv_onboarding_popup_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.MEMOZi.appname_bold_13"
+            app:layout_constraintStart_toEndOf="@id/gl_start_onboarding_popup_second"
+            app:layout_constraintTop_toBottomOf="@id/gl_top_onboarding_popup" />
+
+        <TextView
+            android:id="@+id/tv_onboarding_popup_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing8"
+            android:text="@string/onboarding_intro_memo"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_16"
+            app:layout_constraintStart_toEndOf="@id/gl_start_onboarding_popup_second"
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_popup_title" />
+
+        <TimePicker
+            android:id="@+id/tp_onboarding_popup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="67dp"
+            android:background="@drawable/shape_border_radius_8"
+            android:elevation="@dimen/spacing10"
+            android:theme="@style/Theme.MEMOZi.Timepicker"
+            android:timePickerMode="spinner"
+            android:backgroundTint="@null"
+            app:layout_constraintEnd_toStartOf="@id/gl_end_onboarding_popup"
+            app:layout_constraintStart_toEndOf="@id/gl_start_onboarding_popup"
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_popup_content" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_onboarding_check"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            app:layout_constraintEnd_toStartOf="@id/gl_end_onboarding_popup"
+            app:layout_constraintStart_toEndOf="@id/gl_start_onboarding_popup_second"
+            app:layout_constraintTop_toBottomOf="@id/tp_onboarding_popup">
+
+            <View
+                android:id="@+id/view_onboard_checkbox"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:background="@drawable/ic_unchecked_checkbox"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing16"
+                android:text="@string/onboarding_popup_setting_message"
+                android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_15"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/view_onboard_checkbox"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            style="@style/Theme.MEMOZi.Button.L"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="95dp"
+            android:layout_marginBottom="55dp"
+            android:backgroundTint="@color/main_purple"
+            android:text="@string/onboarding_btn_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_onboarding_check"
+            app:layout_constraintEnd_toStartOf="@id/gl_end_onboarding_popup"
+            app:layout_constraintStart_toEndOf="@id/gl_start_onboarding_popup" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

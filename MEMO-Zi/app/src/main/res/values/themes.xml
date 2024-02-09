@@ -37,4 +37,14 @@
         <item name="android:textAppearance">@style/TextAppearance.MEMOZi.ssu_light_12</item>
     </style>
 
+    <!-- Timepicker -->
+    <style name="Theme.MEMOZi.Timepicker" parent="" >
+        <item name="android:textAppearance">@style/TextAppearance.MEMOZi.ng_bold_21</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <!-- NumberPicker divider color -->
+        <item name="colorControlNormal">@color/main_purple</item>
+        <item name="android:headerAmPmTextAppearance">@style/TextAppearance.MEMOZi.ng_bold_21</item>
+        <item name="android:headerTimeTextAppearance">@style/TextAppearance.MEMOZi.ssu_light_19</item>
+    </style>
+
 </resources>
