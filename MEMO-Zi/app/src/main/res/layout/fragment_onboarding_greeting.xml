@@ -9,32 +9,34 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/spacing24">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_start_onboarding_fragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="196dp" />
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/spacing24" />
 
         <TextView
             android:id="@+id/tv_onboarding_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:textAppearance="@style/TextAppearance.MEMOZi.appname_bold_13"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/gl_start_onboarding_fragment"
-            tool:text="@string/app_name" />
+            app:layout_constraintBottom_toTopOf="@id/tv_onboarding_content"
+            app:layout_constraintStart_toEndOf="@id/gl_start_onboarding_fragment"
+            android:text="@string/app_name" />
 
         <TextView
             android:id="@+id/tv_onboarding_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing8"
             android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_16"
-            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_title"
-            app:layout_constraintStart_toStartOf="parent"
-            tool:text="@string/onboarding_greeting" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/gl_start_onboarding_fragment"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/onboarding_greeting" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

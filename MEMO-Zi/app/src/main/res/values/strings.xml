@@ -33,8 +33,15 @@
     <!-- memo category-->
     <string name="category_image_change">사진 변경하기</string>
     <string name="category_rename">대분류 이름 변경하기</string>
-    
+
     <!--onboarding-->
     <string name="onboarding_greeting">환영해요. %s님!\n 회원가입이 완료되었어요:)</string>
+    <string name="onboarding_intro_memo">갑자기 떠오르는 영감이나, 꼭 해야할 일을\n 메모해 보세요:)</string>
+    <string name="onboarding_intro_diary">매일 매일 간단하게 일기를 기록해보세요:)\n 저희가 도와드릴게요!</string>
+    <string name="onboarding_intro_popup">일기를 쓸 시간을 설정해 주세요.\n 팝업 알림으로 알려드릴 수도 있어요:)</string>
+    <string name="onboarding_popup_setting_message">팝업 알림은 안받을래요.</string>
+    <string name="onboarding_btn_text">MEMO : Zi 시작하기</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
