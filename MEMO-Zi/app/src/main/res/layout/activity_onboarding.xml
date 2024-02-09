@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.onboarding.OnboardingActivity">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start_onboarding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/spacing24" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end_onboarding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/spacing24" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_top_onboarding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="83dp"
+            android:orientation="horizontal" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/indicator_onboarding"
+            app:layout_constraintEnd_toStartOf="@id/gl_end_onboarding"
+            app:layout_constraintStart_toEndOf="@id/gl_start_onboarding"
+            app:layout_constraintTop_toBottomOf="@id/gl_top_onboarding" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/indicator_onboarding"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/spacing14"
+            android:layout_marginBottom="57dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/gl_end_onboarding"
+            app:layout_constraintStart_toEndOf="@id/gl_start_onboarding" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
