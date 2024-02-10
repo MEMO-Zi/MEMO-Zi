@@ -14,10 +14,10 @@ class OnboardingPopupFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        init()
+        initLayout()
     }
 
-    private fun init() {
+    private fun initLayout() {
         binding.run {
             TextGradation(
                 tvOnboardingPopupTitle,
@@ -44,15 +44,15 @@ class OnboardingPopupFragment :
     private fun checkEvent() {
         when (check) {
             true -> binding.run {
-                viewOnboardCheckbox.background =
+                viewOnboardPopupCheckbox.background =
                     resources.getDrawable(R.drawable.ic_checked_checkbox)
-                tpOnboardingPopup.setBackgroundColor(resources.getColor(R.color.g_02))
+                timepickerOnboardingPopup.setBackgroundColor(resources.getColor(R.color.g_02))
             }
 
             false -> binding.run {
-                viewOnboardCheckbox.background =
+                viewOnboardPopupCheckbox.background =
                     resources.getDrawable(R.drawable.ic_unchecked_checkbox)
-                tpOnboardingPopup.setBackgroundColor(resources.getColor(R.color.white))
+                timepickerOnboardingPopup.setBackgroundColor(resources.getColor(R.color.white))
             }
         }
     }

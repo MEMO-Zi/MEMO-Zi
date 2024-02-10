@@ -12,14 +12,18 @@ class OnboardingGreetingFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initLayout()
+    }
+
+    private fun initLayout(){
         binding.run {
             TextGradation(
-                tvOnboardingTitle,
+                tvOnboardingGreetingTitle,
                 resources.getString(R.string.app_name),
                 resources.getColor(R.color.main_pink),
                 resources.getColor(R.color.main_purple)
             )
-            tvOnboardingContent.text = resources.getString(R.string.onboarding_greeting, "김명석")
+            tvOnboardingGreetingContent.text = resources.getString(R.string.onboarding_greeting, "김명석")
         }
     }
 }

@@ -12,10 +12,10 @@ class OnboardingActivity :
     private lateinit var onboardingAdapter: OnboardingAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        init()
+        initLayout()
     }
 
-    private fun init() {
+    private fun initLayout() {
         onboardingAdapter = OnboardingAdapter(this)
         binding.run {
             vpOnboarding.adapter = onboardingAdapter

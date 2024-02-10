@@ -12,6 +12,10 @@ class OnboardingDiaryFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initLayout()
+    }
+
+    private fun initLayout(){
         binding.run {
             TextGradation(
                 tvOnboardingDiaryTitle,

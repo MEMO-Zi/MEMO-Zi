@@ -26,7 +26,7 @@
         </activity>
         <activity
             android:name=".presentation.ui.auth.AuthActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".presentation.ui.onboarding.OnboardingActivity"
             android:exported="false" />

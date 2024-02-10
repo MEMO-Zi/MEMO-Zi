@@ -11,6 +11,10 @@ import com.memo_zi.util.component.TextGradation
 class AuthActivity : BindingActivity<ActivityAuthBinding>(R.layout.activity_auth) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initLayout()
+    }
+
+    private fun initLayout(){
         binding.run {
             TextGradation(
                 tvAuthTitle,
