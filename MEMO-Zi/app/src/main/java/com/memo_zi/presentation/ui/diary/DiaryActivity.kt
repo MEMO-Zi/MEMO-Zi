@@ -13,6 +13,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import coil.load
 import com.memo_zi.R
@@ -20,6 +21,8 @@ import com.memo_zi.databinding.ActivityDiaryBinding
 import com.memo_zi.presentation.ui.memo.MemoActivity
 import com.memo_zi.presentation.ui.setting.SettingActivity
 import com.memo_zi.util.binding.BindingActivity
+import com.memo_zi.util.component.TextGradation
+import com.memo_zi.util.ext.colorOf
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,6 +39,7 @@ class DiaryActivity :
 
     private fun initLayout() {
         initFragment()
+        initWritingTextCount()
     }
 
     private fun addListeners() {
@@ -51,6 +55,19 @@ class DiaryActivity :
             supportFragmentManager.beginTransaction()
                 .add(R.id.fcv_diary, DiaryFeedFragment())
                 .commit()
+        }
+    }
+
+    private fun initWritingTextCount() {
+        TextGradation(
+            textView = binding.tvDiaryWritingCount,
+            text = "100",
+            startColorInt = colorOf(R.color.main_pink),
+            endColorInt = colorOf(R.color.main_purple)
+        )
+
+        binding.etDiaryWriting.addTextChangedListener { text ->
+            binding.tvDiaryWritingCount.text = (100 - (text?.length ?: 0)).toString()
         }
     }
 
