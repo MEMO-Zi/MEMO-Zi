@@ -23,4 +23,12 @@
     <dimen name="button_m_height">30dp</dimen>
     <dimen name="button_s_height">26dp</dimen>
     <dimen name="button_corner_radius">8dp</dimen>
+
+    <!-- timepicker-->
+    <dimen name="timepicker_height">138dp</dimen>
+    <dimen name="timepicker_corner_radius">8dp</dimen>
+
+    <!-- auth -->
+    <dimen name="button_kakao_height">44dp</dimen>
+    <dimen name="button_kakao_coner">12dp</dimen>
 </resources>

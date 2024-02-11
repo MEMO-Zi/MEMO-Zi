@@ -8,9 +8,10 @@ import androidx.core.view.isInvisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.hadi.viewpager2carousel.MemoAdapter
+import com.memo_zi.presentation.ui.memo.adapter.MemoAdapter
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityMemoBinding
+import com.memo_zi.presentation.ui.memo.adapter.MemoCategoryAdapter
 import com.memo_zi.util.binding.BindingActivity
 import kotlin.math.absoluteValue
 

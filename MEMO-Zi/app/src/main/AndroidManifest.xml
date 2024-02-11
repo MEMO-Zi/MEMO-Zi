@@ -25,18 +25,28 @@
         android:theme="@style/Base.Theme.MEMOZi"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.ui.auth.AuthActivity"
+            android:name=".presentation.ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".presentation.ui.auth.AuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.onboarding.OnboardingActivity"
+            android:exported="false" />
         <activity
             android:name=".presentation.ui.memo.MemoEditActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.memo.MemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.memo.MemoSearchActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.diary.DiaryActivity"
@@ -45,4 +55,5 @@
             android:name=".presentation.ui.setting.SettingActivity"
             android:exported="false" />
     </application>
+
 </manifest>

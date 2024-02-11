@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start_onboarding_memo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/spacing24" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end_onboarding_memo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/spacing24" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_top_onboarding_memo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="83dp" />
+
+        <TextView
+            android:id="@+id/tv_onboarding_memo_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAppearance="@style/TextAppearance.MEMOZi.appname_bold_13"
+            app:layout_constraintStart_toEndOf="@id/gl_start_onboarding_memo"
+            app:layout_constraintTop_toBottomOf="@id/gl_top_onboarding_memo" />
+
+        <TextView
+            android:id="@+id/tv_onboarding_memo_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing8"
+            android:text="@string/onboarding_intro_memo"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_16"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/gl_start_onboarding_memo"
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_memo_title" />
+
+        <ImageView
+            android:id="@+id/iv_onboarding_memo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="67dp"
+            android:layout_marginBottom="112dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/gl_end_onboarding_memo"
+            app:layout_constraintStart_toEndOf="@id/gl_start_onboarding_memo"
+            app:layout_constraintTop_toBottomOf="@id/tv_onboarding_memo_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
