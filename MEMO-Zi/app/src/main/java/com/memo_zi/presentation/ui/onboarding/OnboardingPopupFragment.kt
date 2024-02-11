@@ -35,7 +35,7 @@ class OnboardingPopupFragment :
                 check = !check
                 checkEvent()
             }
-            btnOnboarding.setOnClickListener {
+            btnOnboardingPopup.setOnClickListener {
                 (activity as OnboardingActivity).changeActivity()
             }
         }
