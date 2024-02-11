@@ -5,16 +5,13 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
-import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import coil.load
 import com.memo_zi.R
@@ -82,25 +79,13 @@ class DiaryActivity :
         }
     }
 
-    private fun replaceFragment(name: String) {
-        val fragmentTransaction = supportFragmentManager.beginTransaction()
-
-        val newFragment = when (name) {
-            DIARY_FEED -> DiaryFeedFragment()
-            DIARY_CALENDAR -> DiaryCalendarFragment()
-            else -> Fragment()
-        }
-        fragmentTransaction.replace(R.id.fcv_diary, newFragment)
-        fragmentTransaction.commit()
-    }
-
     private fun clickToCamera() {
         val permissionCheck = ContextCompat.checkSelfPermission(
             this,
             Manifest.permission.CAMERA
         )
         if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
-            // 카메라 실행
+            startCameraActivity()
         } else {
             ActivityCompat.requestPermissions(
                 this,
@@ -144,6 +129,36 @@ class DiaryActivity :
                 )
             }
         }
+    }
+
+    private val takePictureLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data: Intent? = result.data
+                val imageBitmap: Bitmap? = data?.extras?.getParcelable("data")
+                binding.ivDiaryWriting.visibility = View.VISIBLE
+                binding.ivDiaryWritingX.visibility = View.VISIBLE
+                binding.ivDiaryWriting.load(imageBitmap)
+            } else finish()
+        }
+
+    private fun startCameraActivity() {
+        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        if (takePictureIntent.resolveActivity(packageManager) != null) {
+            takePictureLauncher.launch(takePictureIntent)
+        }
+    }
+
+    private fun replaceFragment(name: String) {
+        val fragmentTransaction = supportFragmentManager.beginTransaction()
+
+        val newFragment = when (name) {
+            DIARY_FEED -> DiaryFeedFragment()
+            DIARY_CALENDAR -> DiaryCalendarFragment()
+            else -> Fragment()
+        }
+        fragmentTransaction.replace(R.id.fcv_diary, newFragment)
+        fragmentTransaction.commit()
     }
 
     companion object {
