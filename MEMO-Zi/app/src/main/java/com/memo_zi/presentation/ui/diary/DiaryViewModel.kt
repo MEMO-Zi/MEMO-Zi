@@ -10,7 +10,7 @@ class DiaryViewModel @Inject constructor(
 
 ) : ViewModel() {
     private val _diaryList = MutableLiveData<List<DiaryFeedItem>>()
-    val diaryList = _diaryList
+    val diaryList get() = _diaryList
 
     // 더미데이터 테스트
     init {

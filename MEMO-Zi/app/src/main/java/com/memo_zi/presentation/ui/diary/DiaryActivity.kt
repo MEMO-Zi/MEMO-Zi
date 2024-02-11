@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -24,6 +25,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class DiaryActivity :
     BindingActivity<ActivityDiaryBinding>(R.layout.activity_diary) {
+    private val viewModel by viewModels<DiaryViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,6 +35,17 @@ class DiaryActivity :
     }
 
     private fun initLayout() {
+        initFragment()
+    }
+
+    private fun addListeners() {
+        clickToChangeActivity()
+        clickToChangeFragment()
+        clickToWritingLayout()
+        clickToWritingIcon()
+    }
+
+    private fun initFragment() {
         val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_diary)
         if (currentFragment == null) {
             supportFragmentManager.beginTransaction()
@@ -40,7 +54,7 @@ class DiaryActivity :
         }
     }
 
-    private fun addListeners() {
+    private fun clickToChangeActivity() {
         binding.includeTopAppbar.ivAllTopAppbarChange.setOnClickListener {
             Intent(this, MemoActivity::class.java).apply {
                 startActivity(this)
@@ -51,6 +65,18 @@ class DiaryActivity :
                 startActivity(this)
             }
         }
+    }
+
+    private fun clickToWritingLayout() {
+        with(binding) {
+            layoutDiaryDefault.setOnClickListener {
+                layoutDiaryDefault.visibility = View.GONE
+                layoutDiaryWriting.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun clickToChangeFragment() {
         with(binding) {
             ivDiaryChangeFeed.setOnClickListener {
                 ivDiaryChangeFeed.setImageResource(R.drawable.ic_feed_select_22)
@@ -63,19 +89,22 @@ class DiaryActivity :
                 ivDiaryChangeCalendar.setImageResource(R.drawable.ic_calender_select_22)
                 replaceFragment(DIARY_CALENDAR)
             }
-
-            layoutDiaryDefault.setOnClickListener {
-                layoutDiaryDefault.visibility = View.GONE
-                layoutDiaryWriting.visibility = View.VISIBLE
-            }
         }
+    }
 
+    private fun clickToWritingIcon() {
         binding.ivDiaryWritingCamera.setOnClickListener {
             clickToCamera()
         }
 
         binding.ivDiaryWritingAlbum.setOnClickListener {
             clickToAlbum()
+        }
+
+        binding.ivDiaryWritingX.setOnClickListener {
+            binding.ivDiaryWriting.visibility = View.GONE
+            binding.ivDiaryWritingX.visibility = View.GONE
+            // TODO 서버 통신으로 넘기는 이미지 값 삭제
         }
     }
 
@@ -95,6 +124,24 @@ class DiaryActivity :
         }
     }
 
+    private val takePictureLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data: Intent? = result.data
+                val imageBitmap: Bitmap? = data?.extras?.getParcelable("data")
+                binding.ivDiaryWriting.visibility = View.VISIBLE
+                binding.ivDiaryWritingX.visibility = View.VISIBLE
+                binding.ivDiaryWriting.load(imageBitmap)
+            }
+        }
+
+    private fun startCameraActivity() {
+        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        if (takePictureIntent.resolveActivity(packageManager) != null) {
+            takePictureLauncher.launch(takePictureIntent)
+        }
+    }
+
     private fun clickToAlbum() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             val permissionCheck = ContextCompat.checkSelfPermission(
@@ -102,10 +149,8 @@ class DiaryActivity :
                 Manifest.permission.READ_MEDIA_IMAGES
             )
             if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
-                // 이미 권한이 허용되어 있는 경우
-                // 앨범실행
+                openAlbum()
             } else {
-                // 권한을 요청
                 ActivityCompat.requestPermissions(
                     this,
                     arrayOf(Manifest.permission.READ_MEDIA_IMAGES),
@@ -118,10 +163,8 @@ class DiaryActivity :
                 Manifest.permission.READ_EXTERNAL_STORAGE
             )
             if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
-                // 이미 권한이 허용되어 있는 경우
-                // 앨범실행
+                openAlbum()
             } else {
-                // 권한을 요청
                 ActivityCompat.requestPermissions(
                     this,
                     arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
@@ -131,22 +174,16 @@ class DiaryActivity :
         }
     }
 
-    private val takePictureLauncher =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val data: Intent? = result.data
-                val imageBitmap: Bitmap? = data?.extras?.getParcelable("data")
-                binding.ivDiaryWriting.visibility = View.VISIBLE
-                binding.ivDiaryWritingX.visibility = View.VISIBLE
-                binding.ivDiaryWriting.load(imageBitmap)
-            } else finish()
+    private val pickImage = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+        if (uri != null) {
+            binding.ivDiaryWriting.visibility = View.VISIBLE
+            binding.ivDiaryWritingX.visibility = View.VISIBLE
+            binding.ivDiaryWriting.load(uri)
         }
+    }
 
-    private fun startCameraActivity() {
-        val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        if (takePictureIntent.resolveActivity(packageManager) != null) {
-            takePictureLauncher.launch(takePictureIntent)
-        }
+    private fun openAlbum() {
+        pickImage.launch("image/*")
     }
 
     private fun replaceFragment(name: String) {
