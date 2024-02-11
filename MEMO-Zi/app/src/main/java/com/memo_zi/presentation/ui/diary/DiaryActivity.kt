@@ -1,14 +1,22 @@
 package com.memo_zi.presentation.ui.diary
 
 import android.Manifest
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.View
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import coil.load
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityDiaryBinding
 import com.memo_zi.presentation.ui.memo.MemoActivity
@@ -24,6 +32,15 @@ class DiaryActivity :
 
         initLayout()
         addListeners()
+    }
+
+    private fun initLayout() {
+        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_diary)
+        if (currentFragment == null) {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fcv_diary, DiaryFeedFragment())
+                .commit()
+        }
     }
 
     private fun addListeners() {
@@ -54,67 +71,14 @@ class DiaryActivity :
                 layoutDiaryDefault.visibility = View.GONE
                 layoutDiaryWriting.visibility = View.VISIBLE
             }
-
-            ivDiaryWritingCamera.setOnClickListener {
-                val permission = Manifest.permission.CAMERA
-                if (ContextCompat.checkSelfPermission(
-                        this@DiaryActivity,
-                        permission
-                    ) != PackageManager.PERMISSION_GRANTED
-                ) {
-                    ActivityCompat.requestPermissions(
-                        this@DiaryActivity,
-                        arrayOf(permission),
-                        PERMISSION_CAMERA_CODE
-                    )
-                } else {
-                    // TODO 권한이 이미 부여되어 있음. 카메라 로직 실행
-                }
-            }
-
-            ivDiaryWritingAlbum.setOnClickListener {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                    val permission = Manifest.permission.READ_MEDIA_IMAGES
-                    if (ContextCompat.checkSelfPermission(
-                            this@DiaryActivity,
-                            permission
-                        ) != PackageManager.PERMISSION_GRANTED
-                    ) {
-                        ActivityCompat.requestPermissions(
-                            this@DiaryActivity,
-                            arrayOf(permission),
-                            PERMISSION_READ_MEDIA_IMAGES_CODE
-                        )
-                    } else {
-                        // TODO 권한이 이미 부여되어 있음. 사진 선택 로직 실행
-                    }
-                } else {
-                    val permission = Manifest.permission.READ_EXTERNAL_STORAGE
-                    if (ContextCompat.checkSelfPermission(
-                            this@DiaryActivity,
-                            permission
-                        ) != PackageManager.PERMISSION_GRANTED
-                    ) {
-                        ActivityCompat.requestPermissions(
-                            this@DiaryActivity,
-                            arrayOf(permission),
-                            PERMISSION_READ_EXTERNAL_STORAGE_CODE
-                        )
-                    } else {
-                        // TODO 권한이 이미 부여되어 있음. 사진 선택 로직 실행
-                    }
-                }
-
-            }
         }
-    }
 
-    private fun initLayout() {
-        val currentFragment = supportFragmentManager.findFragmentById(R.id.fcv_diary)
-        if (currentFragment == null) {
-            supportFragmentManager.beginTransaction()
-                .add(R.id.fcv_diary, DiaryFeedFragment())
-                .commit()
+        binding.ivDiaryWritingCamera.setOnClickListener {
+            clickToCamera()
+        }
+
+        binding.ivDiaryWritingAlbum.setOnClickListener {
+            clickToAlbum()
         }
     }
 
@@ -128,6 +92,58 @@ class DiaryActivity :
         }
         fragmentTransaction.replace(R.id.fcv_diary, newFragment)
         fragmentTransaction.commit()
+    }
+
+    private fun clickToCamera() {
+        val permissionCheck = ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.CAMERA
+        )
+        if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+            // 카메라 실행
+        } else {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.CAMERA),
+                PERMISSION_CAMERA_CODE
+            )
+        }
+    }
+
+    private fun clickToAlbum() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val permissionCheck = ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.READ_MEDIA_IMAGES
+            )
+            if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+                // 이미 권한이 허용되어 있는 경우
+                // 앨범실행
+            } else {
+                // 권한을 요청
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.READ_MEDIA_IMAGES),
+                    PERMISSION_READ_MEDIA_IMAGES_CODE
+                )
+            }
+        } else {
+            val permissionCheck = ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            )
+            if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+                // 이미 권한이 허용되어 있는 경우
+                // 앨범실행
+            } else {
+                // 권한을 요청
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                    PERMISSION_READ_EXTERNAL_STORAGE_CODE
+                )
+            }
+        }
     }
 
     companion object {
