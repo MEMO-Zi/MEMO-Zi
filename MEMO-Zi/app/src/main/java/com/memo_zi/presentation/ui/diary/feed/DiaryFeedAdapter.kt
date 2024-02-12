@@ -1,4 +1,4 @@
-package com.memo_zi.presentation.ui.diary.adapter
+package com.memo_zi.presentation.ui.diary.feed
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import com.memo_zi.databinding.ItemDiaryFeedTitleBinding
 import com.memo_zi.presentation.model.DiaryFeedItem
 import timber.log.Timber
 
-class DiaryAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class DiaryFeedAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
     private val diaryList = mutableListOf<DiaryFeedItem>()
 

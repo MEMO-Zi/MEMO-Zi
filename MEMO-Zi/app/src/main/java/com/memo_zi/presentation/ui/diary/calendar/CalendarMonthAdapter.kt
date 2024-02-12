@@ -1,4 +1,4 @@
-package com.memo_zi.presentation.ui.diary.adapter
+package com.memo_zi.presentation.ui.diary.calendar
 
 import android.view.LayoutInflater
 import android.view.View

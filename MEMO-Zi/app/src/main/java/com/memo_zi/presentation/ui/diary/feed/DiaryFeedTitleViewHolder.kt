@@ -1,4 +1,4 @@
-package com.memo_zi.presentation.ui.diary.adapter
+package com.memo_zi.presentation.ui.diary.feed
 
 import androidx.recyclerview.widget.RecyclerView
 import com.memo_zi.databinding.ItemDiaryFeedTitleBinding

@@ -1,4 +1,4 @@
-package com.memo_zi.presentation.ui.diary
+package com.memo_zi.presentation.ui.diary.calendar
 
 import android.os.Bundle
 import android.view.View
@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.memo_zi.R
 import com.memo_zi.databinding.FragmentDiaryCalendarBinding
-import com.memo_zi.presentation.ui.diary.adapter.CalendarMonthAdapter
-import com.memo_zi.presentation.ui.diary.adapter.DiaryAdapter
+import com.memo_zi.presentation.ui.diary.DiaryViewModel
+import com.memo_zi.presentation.ui.diary.feed.DiaryFeedAdapter
 import com.memo_zi.util.binding.BindingFragment
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
@@ -20,7 +20,7 @@ import timber.log.Timber
 class DiaryCalendarFragment :
     BindingFragment<FragmentDiaryCalendarBinding>(R.layout.fragment_diary_calendar) {
     private val viewModel by viewModels<DiaryViewModel>()
-    private lateinit var diaryAdapter: DiaryAdapter
+    private lateinit var diaryFeedAdapter: DiaryFeedAdapter
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
     private lateinit var recyclerView: RecyclerView
 
@@ -32,15 +32,15 @@ class DiaryCalendarFragment :
     }
 
     private fun initLayout() {
-        diaryAdapter = DiaryAdapter(requireContext())
-        binding.rvDiary.adapter = diaryAdapter
+        diaryFeedAdapter = DiaryFeedAdapter(requireContext())
+        binding.rvDiary.adapter = diaryFeedAdapter
 
         initCalendarBottomSheet()
     }
 
     private fun addObservers() {
         viewModel.diaryList.observe(viewLifecycleOwner) { diaryList ->
-            diaryAdapter.setDiaryList(diaryList)
+            diaryFeedAdapter.setDiaryList(diaryList)
         }
     }
 
