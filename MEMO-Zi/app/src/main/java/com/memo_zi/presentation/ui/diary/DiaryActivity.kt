@@ -146,9 +146,11 @@ class DiaryActivity :
             if (result.resultCode == Activity.RESULT_OK) {
                 val data: Intent? = result.data
                 val imageBitmap: Bitmap? = data?.extras?.getParcelable("data")
-                binding.ivDiaryWriting.visibility = View.VISIBLE
-                binding.ivDiaryWritingX.visibility = View.VISIBLE
-                binding.ivDiaryWriting.load(imageBitmap)
+                with(binding) {
+                    ivDiaryWriting.visibility = View.VISIBLE
+                    ivDiaryWritingX.visibility = View.VISIBLE
+                    ivDiaryWriting.load(imageBitmap)
+                }
             }
         }
 
