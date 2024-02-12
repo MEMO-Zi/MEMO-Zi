@@ -7,15 +7,17 @@ import com.memo_zi.R
 import com.memo_zi.databinding.ActivitySplashBinding
 import com.memo_zi.presentation.ui.auth.AuthActivity
 import com.memo_zi.util.binding.BindingActivity
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-
 class SplashActivity : BindingActivity<ActivitySplashBinding>(R.layout.activity_splash) {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        initLayout()
+    }
+
+    private fun initLayout() {
         loadSplashScreen()
     }
 
