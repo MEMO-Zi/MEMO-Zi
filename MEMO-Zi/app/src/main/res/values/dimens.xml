@@ -31,4 +31,10 @@
     <!-- auth -->
     <dimen name="button_kakao_height">44dp</dimen>
     <dimen name="button_kakao_coner">12dp</dimen>
+
+    <!--memo-->
+    <dimen name="viewpager_offset">96dp</dimen>
+    <dimen name="viewpager_margin">104dp</dimen>
+    <dimen name="viewpager_height_down">8dp</dimen>
+    <dimen name="viewpager_height_up">10dp</dimen>
 </resources>

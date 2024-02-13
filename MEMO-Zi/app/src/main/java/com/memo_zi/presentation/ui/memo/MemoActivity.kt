@@ -2,33 +2,33 @@ package com.memo_zi.presentation.ui.memo
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
 import androidx.core.view.isInvisible
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewpager2.widget.ViewPager2
 import com.memo_zi.presentation.ui.memo.adapter.MemoAdapter
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityMemoBinding
 import com.memo_zi.presentation.ui.memo.adapter.MemoCategoryAdapter
 import com.memo_zi.util.binding.BindingActivity
-import kotlin.math.absoluteValue
+import kotlin.math.abs
 
 
 class MemoActivity :
     BindingActivity<ActivityMemoBinding>(R.layout.activity_memo) {
-
     private val viewModel by viewModels<MemoViewModel>()
     private lateinit var memoAdapter: MemoAdapter
     private lateinit var categoryAdapter: MemoCategoryAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        initLayout()
+    }
+
+    private fun initLayout() {
         initMemoFragment()
         initAdapter()
         setMemoList()
-        // 페이지 간의 간격 설정
         setupCarousel()
         changeMemoActivity()
         setButton()
@@ -37,22 +37,35 @@ class MemoActivity :
     private fun setupCarousel() {
         binding.run {
             vpMemoCategoryList.offscreenPageLimit = 3
-            val pageMargin = resources.getDimensionPixelOffset(R.dimen.spacing8)
-            val pageTransformer = ViewPager2.PageTransformer { page: View, position: Float ->
-                val offset = position * -2.0f
-                //todo 방향 전환 양수로 해서
-                page.translationX = offset * (page.width - pageMargin * 2)
-                val scale =
-                    if (position.absoluteValue < 0.5) 1f - 0.2f * position.absoluteValue else 0.8f
-                page.scaleX = scale
-                page.scaleY = scale
-            }
-            vpMemoCategoryList.setPageTransformer(pageTransformer)
-            vpMemoCategoryList.clipToPadding = false
-            vpMemoCategoryList.clipChildren = false
-            vpMemoCategoryList.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-            vpMemoCategoryList.setPadding(pageMargin, 0, pageMargin, 0)
+            val offsetBetweenPages =
+                resources.getDimensionPixelOffset(R.dimen.viewpager_offset).toFloat()
+            val heightDown =
+                resources.getDimensionPixelOffset(R.dimen.viewpager_height_down).toFloat()
+            val heightUp =
+                resources.getDimensionPixelOffset(R.dimen.viewpager_height_up).toFloat()
 
+            vpMemoCategoryList.setPageTransformer { page, position ->
+                val myOffset = position * -(2 * offsetBetweenPages)
+                //Y축 이동
+                if (position != 0f) {
+                    page.translationY =
+                        (heightDown + (DEFAULT_SIZE - heightDown) * (1 - abs(position)))
+                } else {
+                    page.translationY =
+                        -(heightUp + (DEFAULT_SIZE - heightUp) * (1 - abs(position)))
+                }
+
+                //좌우 이동 및 크기 스케일링
+                if (position < -1) {
+                    page.translationX = myOffset
+                } else if (position <= 1) {
+                    val scaleFactor = (MIN_SIZE + (1 - MIN_SIZE) * (1 - abs(position)))
+                    page.scaleY = scaleFactor
+                    page.translationX = myOffset
+                } else {
+                    page.translationX = myOffset
+                }
+            }
         }
     }
 
@@ -120,9 +133,10 @@ class MemoActivity :
         }
     }
 
-
     companion object {
         const val MEMO_FEED = "MemoFeed"
         const val MEMO_CATEGORY = "MemoCategory"
+        const val MIN_SIZE = 72f / 88f
+        const val DEFAULT_SIZE = 1f
     }
 }
