@@ -11,21 +11,17 @@ class OnboardingPopupFragment :
     BindingFragment<FragmentOnboardingPopupBinding>(R.layout.fragment_onboarding_popup) {
     private var check = true
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initLayout()
     }
 
     private fun initLayout() {
-        binding.run {
-            TextGradation(
-                tvOnboardingPopupTitle,
-                getString(R.string.app_name),
-                resources.getColor(R.color.main_pink),
-                resources.getColor(R.color.main_purple)
-            )
-        }
+        TextGradation(
+            context= requireContext(),
+            textView = binding.tvOnboardingPopupTitle
+        )
         initButton()
     }
 

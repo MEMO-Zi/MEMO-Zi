@@ -59,15 +59,18 @@ class DiaryActivity :
     }
 
     private fun initWritingTextCount() {
+        binding.tvDiaryWritingCount.text = "100"
         TextGradation(
-            textView = binding.tvDiaryWritingCount,
-            text = "100",
-            startColorInt = colorOf(R.color.main_pink),
-            endColorInt = colorOf(R.color.main_purple)
+            context = this,
+            textView = binding.tvDiaryWritingCount
         )
 
         binding.etDiaryWriting.addTextChangedListener { text ->
             binding.tvDiaryWritingCount.text = (100 - (text?.length ?: 0)).toString()
+            TextGradation(
+                context = this,
+                textView = binding.tvDiaryWritingCount
+            )
         }
     }
 

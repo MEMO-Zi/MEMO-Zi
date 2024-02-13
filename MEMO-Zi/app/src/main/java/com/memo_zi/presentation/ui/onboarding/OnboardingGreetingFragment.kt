@@ -9,21 +9,18 @@ import com.memo_zi.util.component.TextGradation
 
 class OnboardingGreetingFragment :
     BindingFragment<FragmentOnboardingGreetingBinding>(R.layout.fragment_onboarding_greeting) {
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         initLayout()
     }
 
-    private fun initLayout(){
-        binding.run {
-            TextGradation(
-                tvOnboardingGreetingTitle,
-                resources.getString(R.string.app_name),
-                resources.getColor(R.color.main_pink),
-                resources.getColor(R.color.main_purple)
-            )
-            tvOnboardingGreetingContent.text = resources.getString(R.string.onboarding_greeting, "김명석")
-        }
+    private fun initLayout() {
+        TextGradation(
+            context= requireContext(),
+            textView = binding.tvOnboardingGreetingTitle
+        )
+        binding.tvOnboardingGreetingContent.text =
+            resources.getString(R.string.onboarding_greeting, "김명석")
     }
 }

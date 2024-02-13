@@ -32,17 +32,13 @@ class AuthActivity : BindingActivity<ActivityAuthBinding>(R.layout.activity_auth
 
     private fun initLayout() {
         ActivityCompat.requestPermissions(this, permissionList, REQUEST_CODE_PERMISSIONS)
+        TextGradation(
+            context = this,
+            textView = binding.tvAuthTitle
+        )
 
-        binding.run {
-            TextGradation(
-                tvAuthTitle,
-                getString(R.string.app_name),
-                getColor(R.color.main_pink),
-                getColor(R.color.main_purple)
-            )
-            btnAuthKakao.setOnClickListener {
-                navigateToOnboarding()
-            }
+        binding.btnAuthKakao.setOnClickListener {
+            navigateToOnboarding()
         }
     }
 
