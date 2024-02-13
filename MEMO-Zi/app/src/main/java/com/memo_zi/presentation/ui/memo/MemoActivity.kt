@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment
 import com.memo_zi.presentation.ui.memo.adapter.MemoAdapter
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityMemoBinding
+import com.memo_zi.presentation.ui.diary.DiaryActivity
 import com.memo_zi.presentation.ui.memo.adapter.MemoCategoryAdapter
+import com.memo_zi.presentation.ui.setting.SettingActivity
 import com.memo_zi.util.binding.BindingActivity
 import kotlin.math.abs
 
@@ -30,7 +32,7 @@ class MemoActivity :
         initAdapter()
         setMemoList()
         setupCarousel()
-        changeMemoActivity()
+        clickToChangeActivity()
         setButton()
     }
 
@@ -81,6 +83,19 @@ class MemoActivity :
         }
     }
 
+    private fun clickToChangeActivity() {
+        binding.includeMemoTopAppbar.ivAllTopAppbarChange.setOnClickListener {
+            Intent(this, DiaryActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
+        binding.includeMemoTopAppbar.ivAllTopAppbarSetting.setOnClickListener {
+            Intent(this, SettingActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
+    }
+
     private fun replaceFragment(name: String) {
         val fragmentTransaction = supportFragmentManager.beginTransaction()
 
@@ -95,11 +110,7 @@ class MemoActivity :
             .commit()
     }
 
-    private fun changeMemoActivity() {
-
-    }
-
-    override fun onBackPressed() {//todo 추후 더 나은 로직 확인 필요
+    override fun onBackPressed() {
         binding.btnMemoCategoryEdit.isInvisible = false
         super.onBackPressed()
     }
