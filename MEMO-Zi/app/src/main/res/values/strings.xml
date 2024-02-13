@@ -18,14 +18,12 @@
     <string name="item_diary_title">Diary Of Nov.</string>
 
     <!-- diary calender -->
-    <string name="calendar_date">2023년 11월 달력</string>
-    <string name="calendar_sunday">S</string>
-    <string name="calendar_monday">M</string>
-    <string name="calendar_tuesday">T</string>
-    <string name="calendar_wednesday">W</string>
-    <string name="calendar_thursday">T</string>
-    <string name="calendar_friday">F</string>
-    <string name="calendar_saturday">S</string>
+    <string name="calendar_s">S</string>
+    <string name="calendar_m">M</string>
+    <string name="calendar_t">T</string>
+    <string name="calendar_w">W</string>
+    <string name="calendar_f">F</string>
+    <string name="calendar_today">TODAY</string>
 
     <!-- memo -->
     <string name="memo_edit_button">등록</string>
@@ -45,5 +43,4 @@
     <string name="onboarding_intro_popup">일기를 쓸 시간을 설정해 주세요.\n팝업 알림으로 알려드릴 수도 있어요:)</string>
     <string name="onboarding_popup_setting_message">팝업 알림은 안받을래요.</string>
     <string name="onboarding_btn_text">MEMO : Zi 시작하기</string>
-
 </resources>
