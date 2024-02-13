@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.memo_zi.databinding.ItemDiaryFeedBinding
 import com.memo_zi.databinding.ItemDiaryFeedTitleBinding
-import com.memo_zi.presentation.model.DiaryFeedItem
+import com.memo_zi.presentation.model.DiaryItem
 import timber.log.Timber
 
 class DiaryFeedAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
-    private val diaryList = mutableListOf<DiaryFeedItem>()
+    private val diaryList = mutableListOf<DiaryItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
@@ -35,20 +35,19 @@ class DiaryFeedAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.Vie
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is DiaryFeedTitleViewHolder -> holder.onBind(diaryList[position] as DiaryFeedItem.Title)
-            is DiaryFeedViewHolder -> holder.onBind(diaryList[position] as DiaryFeedItem.AllFeedItem)
+            is DiaryFeedTitleViewHolder -> holder.onBind(diaryList[position] as DiaryItem.FeedTitle)
+            is DiaryFeedViewHolder -> holder.onBind(diaryList[position] as DiaryItem.Item)
         }
     }
 
     override fun getItemViewType(position: Int): Int = when (diaryList[position]) {
-        is DiaryFeedItem.Title -> DIARY_TITLE
-        is DiaryFeedItem.AllFeedItem -> DIARY_ALL_ITEM
+        is DiaryItem.FeedTitle -> DIARY_TITLE
+        is DiaryItem.Item -> DIARY_ALL_ITEM
     }
 
-    fun setDiaryList(dataList: List<DiaryFeedItem>) {
+    fun setDiaryList(dataList: List<DiaryItem>) {
         diaryList.clear()
         diaryList.addAll(dataList)
-        Timber.tag("dataList").d(dataList.toString())
         notifyDataSetChanged()
     }
 

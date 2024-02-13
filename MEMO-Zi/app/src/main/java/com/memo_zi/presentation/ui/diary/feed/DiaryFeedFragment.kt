@@ -27,7 +27,7 @@ class DiaryFeedFragment : BindingFragment<FragmentDiaryFeedBinding>(R.layout.fra
     }
 
     private fun addObservers() {
-        viewModel.diaryList.observe(viewLifecycleOwner) { diaryList ->
+        viewModel.diaryFeedList.observe(viewLifecycleOwner) { diaryList ->
             diaryFeedAdapter.setDiaryList(diaryList)
         }
     }
