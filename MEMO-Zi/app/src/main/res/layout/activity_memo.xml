@@ -106,13 +106,13 @@
         <ImageButton
             android:id="@+id/btn_memo_category_edit"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginTop="13dp"
+            android:layout_height="wrap_content"
             android:background="@null"
             android:backgroundTint="@null"
             android:src="@drawable/ic_edit_14"
+            app:layout_constraintBottom_toBottomOf="@id/indicator_memo_category"
             app:layout_constraintStart_toEndOf="@+id/indicator_memo_category"
-            app:layout_constraintTop_toBottomOf="@id/vp_memo_category_list" />
+            app:layout_constraintTop_toTopOf="@id/indicator_memo_category" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_memo_add"
@@ -133,7 +133,6 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:outlineProvider="background"
-            android:layout_marginTop="@dimen/spacing16"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
