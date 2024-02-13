@@ -2,16 +2,13 @@ package com.memo_zi.presentation.ui.diary.calendar
 
 import android.os.Bundle
 import android.view.View
-import android.widget.LinearLayout
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.memo_zi.R
 import com.memo_zi.databinding.FragmentDiaryCalendarBinding
 import com.memo_zi.presentation.ui.diary.DiaryViewModel
-import com.memo_zi.presentation.ui.diary.feed.DiaryFeedAdapter
 import com.memo_zi.util.binding.BindingFragment
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
@@ -20,9 +17,7 @@ import timber.log.Timber
 class DiaryCalendarFragment :
     BindingFragment<FragmentDiaryCalendarBinding>(R.layout.fragment_diary_calendar) {
     private val viewModel by viewModels<DiaryViewModel>()
-    private lateinit var diaryFeedAdapter: DiaryFeedAdapter
-    private lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var diaryCalendarAdapter: DiaryCalendarAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,21 +27,21 @@ class DiaryCalendarFragment :
     }
 
     private fun initLayout() {
-        diaryFeedAdapter = DiaryFeedAdapter(requireContext())
-        binding.rvDiary.adapter = diaryFeedAdapter
+        diaryCalendarAdapter = DiaryCalendarAdapter()
+        binding.rvDiary.adapter = diaryCalendarAdapter
 
         initCalendarBottomSheet()
     }
 
     private fun addObservers() {
-        viewModel.diaryList.observe(viewLifecycleOwner) { diaryList ->
-            diaryFeedAdapter.setDiaryList(diaryList)
+        viewModel.diaryCalendarList.observe(viewLifecycleOwner) { diaryList ->
+            diaryCalendarAdapter.submitList(diaryList)
+            diaryCalendarAdapter.currentList
         }
     }
 
     private fun initCalendarBottomSheet() {
-        bottomSheetBehavior =
-            BottomSheetBehavior.from(binding.diaryBottomSheet.llBottomSheet)
+        val bottomSheetBehavior = BottomSheetBehavior.from(binding.llDiaryCalendarBottomSheet)
 
         bottomSheetBehavior.addBottomSheetCallback(object :
             BottomSheetBehavior.BottomSheetCallback() {
@@ -81,21 +76,17 @@ class DiaryCalendarFragment :
             override fun onSlide(bottomSheet: View, slideOffset: Float) {
             }
         })
-        recyclerView = binding.diaryBottomSheet.rvBottomSheetCalendar
         val position: Int = Int.MAX_VALUE / 2
 
-        binding.diaryBottomSheet.rvBottomSheetCalendar.layoutManager =
+        binding.rvBottomSheetCalendar.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.diaryBottomSheet.rvBottomSheetCalendar.adapter = CalendarMonthAdapter()
+        binding.rvBottomSheetCalendar.adapter = CalendarMonthAdapter(requireContext())
 
-        //item의 위치 지정
-        binding.diaryBottomSheet.rvBottomSheetCalendar.scrollToPosition(position)
+        // item의 위치 지정
+        binding.rvBottomSheetCalendar.scrollToPosition(position)
 
-        //항목씩 스크롤 지정
+        // 항목씩 스크롤 지정
         val snap = PagerSnapHelper()
-        snap.attachToRecyclerView(binding.diaryBottomSheet.rvBottomSheetCalendar)
-
-        binding.diaryBottomSheet.rvBottomSheetCalendar.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        snap.attachToRecyclerView(binding.rvBottomSheetCalendar)
     }
 }

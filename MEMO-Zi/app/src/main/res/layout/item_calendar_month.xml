@@ -11,101 +11,134 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/spacing25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/spacing25" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_all_arrow_left_24"
+            app:layout_constraintBottom_toBottomOf="@id/tv_bottom_sheet_calendar"
+            app:layout_constraintEnd_toStartOf="@id/tv_bottom_sheet_calendar"
+            app:layout_constraintTop_toTopOf="@id/tv_bottom_sheet_calendar" />
+
         <TextView
             android:id="@+id/tv_bottom_sheet_calendar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/ic_all_arrow_right_15"
+            android:layout_marginVertical="2dp"
             android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_15"
             android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/ll_calendar_month_week"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/calendar_date" />
+            tools:text="2024년 5월" />
 
-        <!-- 요일 -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_all_arrow_right_24"
+            app:layout_constraintBottom_toBottomOf="@id/tv_bottom_sheet_calendar"
+            app:layout_constraintStart_toEndOf="@id/tv_bottom_sheet_calendar"
+            app:layout_constraintTop_toTopOf="@id/tv_bottom_sheet_calendar" />
+
         <LinearLayout
             android:id="@+id/ll_calendar_month_week"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="19dp"
             android:background="@color/white"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/gl_end"
+            app:layout_constraintStart_toEndOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/tv_bottom_sheet_calendar">
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/calendar_sunday"
+                android:text="@string/calendar_s"
+                android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_12_140"
+                android:textColor="@color/caution_red" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/calendar_m"
                 android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_12_140"
                 android:textColor="@color/black" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/calendar_monday"
+                android:text="@string/calendar_t"
                 android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_12_140"
                 android:textColor="@color/black" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/calendar_tuesday"
+                android:text="@string/calendar_w"
                 android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_12_140"
                 android:textColor="@color/black" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/calendar_wednesday"
+                android:text="@string/calendar_t"
                 android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_12_140"
                 android:textColor="@color/black" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/calendar_thursday"
+                android:text="@string/calendar_f"
                 android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_12_140"
                 android:textColor="@color/black" />
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/calendar_friday"
+                android:text="@string/calendar_s"
                 android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_12_140"
-                android:textColor="@color/black" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/calendar_saturday"
-                android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_12_140"
-                android:textColor="@color/black" />
+                android:textColor="@color/sub_blue_02" />
         </LinearLayout>
 
-        <!-- 요일이 보여질 리사이클러뷰 -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_calendar_month_day"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="@id/ll_calendar_month_week"
-            app:layout_constraintStart_toStartOf="@id/ll_calendar_month_week"
+            android:layout_marginTop="7dp"
+            app:layout_constraintEnd_toStartOf="@id/gl_end"
+            app:layout_constraintStart_toEndOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/ll_calendar_month_week"
             tools:listitem="@layout/item_calendar_day" />
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,23 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/item_day_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_calendar_day"
+        <ImageView
+            android:id="@+id/iv_calendar_day_border"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@drawable/img_calendar_circle_20"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/tv_calendar_day"
+            app:layout_constraintEnd_toEndOf="@id/tv_calendar_day"
+            app:layout_constraintStart_toStartOf="@id/tv_calendar_day"
+            app:layout_constraintTop_toTopOf="@id/tv_calendar_day" />
+
+        <ImageView
+            android:id="@+id/iv_calendar_day_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_border_circle"
+            android:backgroundTint="@color/main_purple"
+            android:src="@drawable/img_calendar_circle_20"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/tv_calendar_day"
+            app:layout_constraintEnd_toEndOf="@id/tv_calendar_day"
+            app:layout_constraintStart_toStartOf="@id/tv_calendar_day"
+            app:layout_constraintTop_toTopOf="@id/tv_calendar_day" />
+
+        <TextView
+            android:id="@+id/tv_calendar_day"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="14dp"
             android:gravity="center"
             android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_12_140"
             android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="9" />
-    </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_calendar_day_today"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/calendar_today"
+            android:textColor="@color/black"
+            android:textSize="7sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="@id/tv_calendar_day"
+            app:layout_constraintStart_toStartOf="@id/tv_calendar_day"
+            app:layout_constraintTop_toBottomOf="@id/tv_calendar_day" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
