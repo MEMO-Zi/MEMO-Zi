@@ -7,10 +7,7 @@ import android.text.TextPaint
 import android.text.style.CharacterStyle
 import android.text.style.UpdateAppearance
 import androidx.annotation.ColorInt
-import androidx.core.graphics.toColor
-import androidx.core.graphics.toColorLong
 import com.memo_zi.R
-import com.memo_zi.util.ext.colorOf
 
 class LinearGradientSpan(
     private val context: Context,

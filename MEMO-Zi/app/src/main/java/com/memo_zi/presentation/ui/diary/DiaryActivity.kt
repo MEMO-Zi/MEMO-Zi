@@ -22,7 +22,6 @@ import com.memo_zi.presentation.ui.memo.MemoActivity
 import com.memo_zi.presentation.ui.setting.SettingActivity
 import com.memo_zi.util.binding.BindingActivity
 import com.memo_zi.util.component.TextGradation
-import com.memo_zi.util.ext.colorOf
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
