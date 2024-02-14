@@ -27,6 +27,10 @@ class MemoEditActivity :
                     startActivity(this)
                 }
             }
+
+            layoutMemoEditCategory.setOnClickListener{
+                //todo 카테고리
+            }
 //            memoBold.setOnClickListener {
 //todo 메모 볼드체 등 기타 버튼에 대한 설정 필요
 //            }

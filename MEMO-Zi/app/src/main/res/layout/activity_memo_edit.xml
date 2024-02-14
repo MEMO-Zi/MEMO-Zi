@@ -25,28 +25,38 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="24dp" />
 
-        <TextView
-            android:id="@+id/tv_memo_category_name"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
-            android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_19"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tool:text="투두리스트" />
-
-        <ImageButton
-            android:id="@+id/btn_memo_category_list"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_memo_edit_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:background="@drawable/ic_drop_11"
-            app:layout_constraintBottom_toBottomOf="@id/tv_memo_category_name"
-            app:layout_constraintStart_toEndOf="@id/tv_memo_category_name"
-            app:layout_constraintTop_toTopOf="@id/tv_memo_category_name" />
+            android:layout_marginTop="32dp"
+            android:clickable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_memo_category_name"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginHorizontal="32dp"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_19"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tool:text="투두리스트" />
+
+            <ImageButton
+                android:id="@+id/btn_memo_category_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:background="@drawable/ic_drop_11"
+                app:layout_constraintBottom_toBottomOf="@id/tv_memo_category_name"
+                app:layout_constraintStart_toEndOf="@id/tv_memo_category_name"
+                app:layout_constraintTop_toTopOf="@id/tv_memo_category_name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:id="@+id/btn_memo_edit_enroll"
@@ -73,7 +83,7 @@
             android:textColorHint="@color/g_04"
             app:layout_constraintEnd_toEndOf="@id/gl_end_edit"
             app:layout_constraintStart_toStartOf="@id/gl_start_edit"
-            app:layout_constraintTop_toBottomOf="@id/tv_memo_category_name" />
+            app:layout_constraintTop_toBottomOf="@id/layout_memo_edit_category" />
 
         <View
             android:id="@+id/view_top_bar"
@@ -90,7 +100,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
             android:background="@null"
             android:gravity="top"
