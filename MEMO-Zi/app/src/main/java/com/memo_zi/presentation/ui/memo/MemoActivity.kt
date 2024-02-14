@@ -77,6 +77,11 @@ class MemoActivity :
                 startActivity(this)
             }
         }
+        binding.layoutMemoSearch.setOnClickListener{
+            Intent(this, MemoSearchActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
         binding.btnMemoCategoryEdit.setOnClickListener {
             replaceFragment(MEMO_CATEGORY)
             it.isInvisible = true
