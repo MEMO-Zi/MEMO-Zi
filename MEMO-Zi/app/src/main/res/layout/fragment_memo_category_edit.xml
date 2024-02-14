@@ -25,20 +25,24 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="@dimen/spacing16" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="64dp" />
 
         <ImageView
             android:id="@+id/img_category_selected"
             android:layout_width="0dp"
             android:layout_height="168dp"
             android:background="@drawable/ic_launcher_foreground"
-            android:layout_marginTop="48dp"
             android:clipToOutline="true"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toTopOf="@+id/btn_edit"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toBottomOf="@id/gl_top" />
 
         <Button
             android:id="@+id/btn_edit"
@@ -59,11 +63,12 @@
             android:layout_marginTop="48dp"
             android:background="@drawable/shape_border_radius_8"
             android:elevation="@dimen/spacing16"
+            android:paddingLeft="@dimen/spacing8"
             android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_15"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/btn_edit"
-            android:paddingLeft="@dimen/spacing8"
             tool:text="투두리스트" />
 
         <Button
@@ -77,7 +82,6 @@
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/et_memo_category_name" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
