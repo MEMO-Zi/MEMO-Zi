@@ -43,6 +43,9 @@ class MemoSearchActivity
             btnCancel.setOnClickListener {
                 finish()
             }
+            btnMemoSearchDelete.setOnClickListener {
+                etSearchText.text.clear()
+            }
         }
     }
 
