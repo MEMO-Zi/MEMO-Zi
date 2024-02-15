@@ -26,14 +26,26 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="@dimen/spacing16" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="176dp"
-            android:background="@drawable/background_all_gradation"
-            android:orientation="vertical"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_memo_background_gradation"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background = "@drawable/background_all_gradation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/space_memo"
+            />
+
+        <Space
+            android:id="@+id/space_memo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toBottomOf="@id/vp_memo_category_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
         <include
             android:id="@+id/include_memo_top_appbar"
@@ -44,7 +56,6 @@
             app:activity="@{false}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_memo_search"

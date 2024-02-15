@@ -10,7 +10,7 @@ class MemoSearchTitleViewHolder(private val binding: ItemMemoSearchTitleBinding)
     fun onBind(memoData: MemoSearchFeedItem.Title) {
         binding.run {
             tvMemoSearchTitle.text = memoData.titleText
-            tvMemoSearchAmount.text = root.resources.getString(R.string.memo_search_amount, 3)
+            tvMemoSearchAmount.text = root.resources.getString(R.string.memo_search_amount).format(3)
         }
     }
 }

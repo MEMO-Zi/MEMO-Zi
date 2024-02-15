@@ -47,21 +47,24 @@ class MemoActivity :
                 resources.getDimensionPixelOffset(R.dimen.viewpager_height_up).toFloat()
 
             vpMemoCategoryList.setPageTransformer { page, position ->
-                val myOffset = position * -(2 * offsetBetweenPages)
+                val myOffset = position * -(TWO_TIMES * offsetBetweenPages)
                 //Y축 이동
-                if (position != 0f) {
+                if (position != SELECTED_POSITION) {
                     page.translationY =
-                        (heightDown + (DEFAULT_SIZE - heightDown) * (1 - abs(position)))
+                        (heightDown + (DEFAULT_SIZE - heightDown) * (MAX_SIZE - abs(
+                            position
+                        )))
                 } else {
                     page.translationY =
-                        -(heightUp + (DEFAULT_SIZE - heightUp) * (1 - abs(position)))
+                        -(heightUp + (DEFAULT_SIZE - heightUp) * (MAX_SIZE - abs(position)))
                 }
 
                 //좌우 이동 및 크기 스케일링
-                if (position < -1) {
+                if (position < LEFT_POSITION) {
                     page.translationX = myOffset
-                } else if (position <= 1) {
-                    val scaleFactor = (MIN_SIZE + (1 - MIN_SIZE) * (1 - abs(position)))
+                } else if (position <= RIGHT_POSITION) {
+                    val scaleFactor =
+                        (MIN_SIZE + (MAX_SIZE - MIN_SIZE) * (MAX_SIZE - abs(position)))
                     page.scaleY = scaleFactor
                     page.translationX = myOffset
                 } else {
@@ -77,7 +80,7 @@ class MemoActivity :
                 startActivity(this)
             }
         }
-        binding.layoutMemoSearch.setOnClickListener{
+        binding.layoutMemoSearch.setOnClickListener {
             Intent(this, MemoSearchActivity::class.java).apply {
                 startActivity(this)
             }
@@ -152,7 +155,12 @@ class MemoActivity :
     companion object {
         const val MEMO_FEED = "MemoFeed"
         const val MEMO_CATEGORY = "MemoCategory"
+        const val MAX_SIZE = 1f
         const val MIN_SIZE = 72f / 88f
         const val DEFAULT_SIZE = 1f
+        const val TWO_TIMES = 2
+        const val SELECTED_POSITION = 0f
+        const val LEFT_POSITION = -1f
+        const val RIGHT_POSITION = 1f
     }
 }
