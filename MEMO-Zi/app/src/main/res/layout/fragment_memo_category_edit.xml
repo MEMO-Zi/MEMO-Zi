@@ -33,19 +33,19 @@
             app:layout_constraintGuide_begin="64dp" />
 
         <ImageView
-            android:id="@+id/img_category_selected"
+            android:id="@+id/iv_memo_category_selected"
             android:layout_width="0dp"
             android:layout_height="168dp"
             android:background="@drawable/ic_launcher_foreground"
             android:clipToOutline="true"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/btn_edit"
+            app:layout_constraintBottom_toTopOf="@+id/btn_memo_category_edit_img"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/gl_top" />
 
         <Button
-            android:id="@+id/btn_edit"
+            android:id="@+id/btn_memo_category_edit_img"
             style="@style/Theme.MEMOZi.Button.L"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -54,7 +54,7 @@
             android:text="@string/category_image_change"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/img_category_selected" />
+            app:layout_constraintTop_toBottomOf="@id/iv_memo_category_selected" />
 
         <EditText
             android:id="@+id/et_memo_category_name"
@@ -68,11 +68,11 @@
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
-            app:layout_constraintTop_toBottomOf="@id/btn_edit"
+            app:layout_constraintTop_toBottomOf="@id/btn_memo_category_edit_img"
             tool:text="투두리스트" />
 
         <Button
-            android:id="@+id/btn_rename_category"
+            android:id="@+id/btn_memo_category_rename"
             style="@style/Theme.MEMOZi.Button.L"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -82,6 +82,5 @@
             app:layout_constraintEnd_toEndOf="@id/gl_end"
             app:layout_constraintStart_toStartOf="@id/gl_start"
             app:layout_constraintTop_toBottomOf="@id/et_memo_category_name" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

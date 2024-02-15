@@ -21,7 +21,7 @@ class MemoFeedFragment : BindingFragment<FragmentMemoFeedBinding>(R.layout.fragm
 
     private fun initAdapter() {
         memoAdapter = MemoAdapter(requireContext())
-        binding.rvMemo.adapter = memoAdapter
+        binding.rvMemoFeed.adapter = memoAdapter
     }
 
     private fun setMemoList() {

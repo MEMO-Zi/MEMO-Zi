@@ -40,19 +40,19 @@ class MemoSearchActivity
 
     private fun setButton() {
         binding.run {
-            btnCancel.setOnClickListener {
+            btnMemoSearchCancel.setOnClickListener {
                 finish()
             }
             btnMemoSearchDelete.setOnClickListener {
-                etSearchText.text.clear()
+                etMemoSearchText.text.clear()
             }
         }
     }
 
     private fun setSearchEvent() {
-        binding.etSearchText.setOnKeyListener { v, keycode, event ->
+        binding.etMemoSearchText.setOnKeyListener { _, keycode, event ->
             if (event.action == KeyEvent.ACTION_DOWN && keycode == KEYCODE_ENTER) {
-                searchMemo(binding.etSearchText.text.toString())
+                searchMemo(binding.etMemoSearchText.text.toString())
                 //todo api 연결  adapter 에 데이터 넘기기
             }
             true

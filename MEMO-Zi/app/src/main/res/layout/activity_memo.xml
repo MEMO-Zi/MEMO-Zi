@@ -30,12 +30,11 @@
             android:id="@+id/layout_memo_background_gradation"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background = "@drawable/background_all_gradation"
+            android:background="@drawable/background_all_gradation"
+            app:layout_constraintBottom_toBottomOf="@id/space_memo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/space_memo"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Space
             android:id="@+id/space_memo"
@@ -44,8 +43,7 @@
             android:layout_marginBottom="25dp"
             app:layout_constraintBottom_toBottomOf="@id/vp_memo_category_list"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <include
             android:id="@+id/include_memo_top_appbar"
@@ -96,8 +94,8 @@
             android:id="@+id/vp_memo_category_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:layout_gravity="center"
+            android:layout_marginTop="15dp"
             app:layout_constraintBottom_toTopOf="@id/indicator_memo_category"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
