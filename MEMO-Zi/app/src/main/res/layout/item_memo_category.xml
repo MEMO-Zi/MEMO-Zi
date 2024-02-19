@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tool="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
 
     <ImageView
-        android:layout_marginHorizontal="@dimen/viewpager_margin"
-        android:id="@+id/category_img"
+        android:id="@+id/iv_category_img"
         android:layout_width="0dp"
         android:layout_height="88dp"
+        android:layout_marginHorizontal="@dimen/viewpager_margin"
         android:layout_marginVertical="@dimen/spacing4"
         android:background="@drawable/shape_border_radius_14"
-        android:elevation="@dimen/spacing8"
         android:clipToOutline="true"
+        android:elevation="@dimen/spacing8"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         android:elevation="10dp"
         android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_11"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@id/category_img"
-        app:layout_constraintEnd_toEndOf="@id/category_img"
+        app:layout_constraintBottom_toBottomOf="@id/iv_category_img"
+        app:layout_constraintEnd_toEndOf="@id/iv_category_img"
         tool:text="투두리스트" />
 </androidx.constraintlayout.widget.ConstraintLayout>
