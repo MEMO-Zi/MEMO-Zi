@@ -48,7 +48,7 @@
                 tool:text="투두리스트" />
 
             <ImageButton
-                android:id="@+id/btn_memo_category_list"
+                android:id="@+id/ib_memo_category_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="3dp"
