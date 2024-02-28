@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.memo_zi.data.model.MemoItem
 import com.memo_zi.databinding.ItemMemoCategoryBinding
 import com.memo_zi.databinding.ItemMemoListAllBinding
-import timber.log.Timber
 
 class MemoAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
@@ -44,7 +43,6 @@ class MemoAdapter(context: Context) : RecyclerView.Adapter<RecyclerView.ViewHold
     fun setMemoList(dataList: List<MemoItem>) {
         memoList.clear()
         memoList.addAll(dataList)
-        Timber.tag("memo").d(dataList.toString())
         notifyDataSetChanged()
     }
 

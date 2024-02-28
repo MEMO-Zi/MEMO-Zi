@@ -9,7 +9,6 @@ import com.memo_zi.R
 import com.memo_zi.databinding.ActivityMemoSearchBinding
 import com.memo_zi.presentation.ui.memo.adapter.MemoSearchAdapter
 import com.memo_zi.util.binding.BindingActivity
-import timber.log.Timber
 
 class MemoSearchActivity
     : BindingActivity<ActivityMemoSearchBinding>(R.layout.activity_memo_search) {
@@ -26,6 +25,7 @@ class MemoSearchActivity
         initFragment()
         initAdapter()
         setMemoList()
+        setButton()
     }
 
     private fun initAdapter() {
@@ -40,16 +40,19 @@ class MemoSearchActivity
 
     private fun setButton() {
         binding.run {
-            btnCancel.setOnClickListener {
-                //todo 디자이너와 이야기 어떤 흐름으로 가는지 처리
+            btnMemoSearchCancel.setOnClickListener {
+                finish()
+            }
+            btnMemoSearchDelete.setOnClickListener {
+                etMemoSearchText.text.clear()
             }
         }
     }
 
     private fun setSearchEvent() {
-        binding.etSearchText.setOnKeyListener { v, keycode, event ->
+        binding.etMemoSearchText.setOnKeyListener { _, keycode, event ->
             if (event.action == KeyEvent.ACTION_DOWN && keycode == KEYCODE_ENTER) {
-                searchMemo(binding.etSearchText.text.toString())
+                searchMemo(binding.etMemoSearchText.text.toString())
                 //todo api 연결  adapter 에 데이터 넘기기
             }
             true

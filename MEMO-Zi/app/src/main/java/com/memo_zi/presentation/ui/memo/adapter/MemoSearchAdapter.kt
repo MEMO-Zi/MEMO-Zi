@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.memo_zi.databinding.ItemMemoSearchSingleBinding
 import com.memo_zi.databinding.ItemMemoSearchTitleBinding
 import com.memo_zi.presentation.model.MemoSearchFeedItem
-import timber.log.Timber
 
 class MemoSearchAdapter(context: Context): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
@@ -45,7 +44,6 @@ class MemoSearchAdapter(context: Context): RecyclerView.Adapter<RecyclerView.Vie
     fun setMemoList(dataList: List<MemoSearchFeedItem>) {
         memoList.clear()
         memoList.addAll(dataList)
-        Timber.tag("memo").d(dataList.toString())
         notifyDataSetChanged()
     }
 

@@ -5,10 +5,10 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import com.memo_zi.presentation.ui.memo.adapter.MemoAdapter
 import com.memo_zi.R
-import com.memo_zi.databinding.FragementMemoFeedBinding
+import com.memo_zi.databinding.FragmentMemoFeedBinding
 import com.memo_zi.util.binding.BindingFragment
 
-class MemoFeedFragment : BindingFragment<FragementMemoFeedBinding>(R.layout.fragement_memo_feed) {
+class MemoFeedFragment : BindingFragment<FragmentMemoFeedBinding>(R.layout.fragment_memo_feed) {
     private val viewModel by viewModels<MemoViewModel>()
     private lateinit var memoAdapter: MemoAdapter
 
@@ -21,7 +21,7 @@ class MemoFeedFragment : BindingFragment<FragementMemoFeedBinding>(R.layout.frag
 
     private fun initAdapter() {
         memoAdapter = MemoAdapter(requireContext())
-        binding.rvMemo.adapter = memoAdapter
+        binding.rvMemoFeed.adapter = memoAdapter
     }
 
     private fun setMemoList() {

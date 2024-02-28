@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.memo_zi.data.model.MemoItem
 import com.memo_zi.databinding.ItemMemoCategoryBinding
-import timber.log.Timber
 
 class MemoCategoryAdapter(
     private val context: Context
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
     private val categoryList = mutableListOf<MemoItem>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MemoListCategoryViewHolder(
             ItemMemoCategoryBinding.inflate(
@@ -32,7 +32,6 @@ class MemoCategoryAdapter(
     fun setCategoryList(dataList: List<MemoItem>){
         categoryList.clear()
         categoryList.addAll(dataList)
-        Timber.tag("memo").d(dataList.toString())
         notifyDataSetChanged()
     }
 
