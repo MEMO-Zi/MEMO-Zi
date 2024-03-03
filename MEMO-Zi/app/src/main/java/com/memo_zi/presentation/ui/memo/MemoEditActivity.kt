@@ -2,16 +2,18 @@ package com.memo_zi.presentation.ui.memo
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import androidx.activity.viewModels
 import androidx.core.widget.addTextChangedListener
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityMemoEditBinding
+import com.memo_zi.presentation.ui.memo.adapter.MemoCategorySelectAdapter
 import com.memo_zi.util.binding.BindingActivity
 
 
 class MemoEditActivity : BindingActivity<ActivityMemoEditBinding>(R.layout.activity_memo_edit) {
-
+    private val viewModel by viewModels<MemoViewModel>()
+    private lateinit var categoryAdapter: MemoCategorySelectAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initLayout()
@@ -19,6 +21,7 @@ class MemoEditActivity : BindingActivity<ActivityMemoEditBinding>(R.layout.activ
 
     private fun initLayout() {
         setupButton()
+        initAdapter()
         setButtonEnable()
     }
 
@@ -46,18 +49,26 @@ class MemoEditActivity : BindingActivity<ActivityMemoEditBinding>(R.layout.activ
         }
     }
 
-    private fun setBottomSheet() {
-        val bottomSheetView =
-            layoutInflater.inflate(R.layout.bottom_sheet_memo_category_select, null)
-        val bottomSheetDialog = BottomSheetDialog(this@MemoEditActivity)
-        val offsetFromTop = MARGIN_BOTTOM_SHEET
-        (bottomSheetDialog as? BottomSheetDialog)?.behavior?.apply {
-            isFitToContents = false
-            expandedOffset = offsetFromTop
-            state = BottomSheetBehavior.STATE_EXPANDED
+    private fun initAdapter() {
+        categoryAdapter = MemoCategorySelectAdapter(this)
+        binding.includeBottomSheetMemoEdit.rcvMemoCategorySelect.adapter = categoryAdapter
+
+        viewModel.memoList.observe(this) { categoryList ->
+            categoryAdapter.setCategoryList(categoryList)
         }
-        bottomSheetDialog.setContentView(bottomSheetView)
-        bottomSheetDialog.show()
+    }
+
+    private fun setBottomSheet() {
+        binding.layoutMemoEditCategorySelectDim.visibility = View.VISIBLE
+        binding.layoutMemoEditBottomSheet.visibility = View.VISIBLE
+        binding.includeBottomSheetMemoEdit.ibMemoCategorySelectCancel.setOnClickListener {
+            binding.layoutMemoEditCategorySelectDim.visibility = View.INVISIBLE
+            binding.layoutMemoEditBottomSheet.visibility = View.INVISIBLE
+        }
+    }
+
+    private fun test() {
+
     }
 
 

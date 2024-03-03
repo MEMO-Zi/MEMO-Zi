@@ -8,8 +8,19 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_memo_edit_category_select_dim"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/black_20"
+            android:elevation="3dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/layout_memo_edit_bottom_sheet"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_start_edit"
@@ -223,5 +234,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/btn_memo_edit_bold" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_memo_edit_bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="98dp"
+            android:visibility="invisible"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/include_bottom_sheet_memo_edit"
+                layout="@layout/bottom_sheet_memo_category_select" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
