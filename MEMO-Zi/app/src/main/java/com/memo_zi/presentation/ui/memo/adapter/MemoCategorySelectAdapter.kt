@@ -8,7 +8,8 @@ import com.memo_zi.data.model.MemoItem
 import com.memo_zi.databinding.ItemMemoCategorySelectBinding
 
 class MemoCategorySelectAdapter(
-    private val context: Context
+    private val context: Context,
+    private val selectedCategory: String
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
     private val categoryList = mutableListOf<MemoItem>()
@@ -17,7 +18,7 @@ class MemoCategorySelectAdapter(
         return MemoCategorySelectViewHolder(
             ItemMemoCategorySelectBinding.inflate(
                 inflater, parent, false
-            )
+            ), selectedCategory
         )
     }
 

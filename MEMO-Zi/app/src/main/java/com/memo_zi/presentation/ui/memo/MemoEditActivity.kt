@@ -13,6 +13,7 @@ import com.memo_zi.util.binding.BindingActivity
 
 class MemoEditActivity : BindingActivity<ActivityMemoEditBinding>(R.layout.activity_memo_edit) {
     private val viewModel by viewModels<MemoViewModel>()
+    private var selectCategory = "투두리스트"
     private lateinit var categoryAdapter: MemoCategorySelectAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +24,11 @@ class MemoEditActivity : BindingActivity<ActivityMemoEditBinding>(R.layout.activ
         setupButton()
         initAdapter()
         setButtonEnable()
+    }
+
+    private fun setupCategoryTitle(text: String) {
+        selectCategory = text
+        binding.tvMemoEditCategoryName.text = selectCategory
     }
 
     private fun setupButton() {
@@ -50,10 +56,10 @@ class MemoEditActivity : BindingActivity<ActivityMemoEditBinding>(R.layout.activ
     }
 
     private fun initAdapter() {
-        categoryAdapter = MemoCategorySelectAdapter(this)
+        categoryAdapter = MemoCategorySelectAdapter(this, selectedCategory = selectCategory)
         binding.includeBottomSheetMemoEdit.rcvMemoCategorySelect.adapter = categoryAdapter
 
-        viewModel.memoList.observe(this) { categoryList ->
+        viewModel.categoryList.observe(this) { categoryList ->
             categoryAdapter.setCategoryList(categoryList)
         }
     }
