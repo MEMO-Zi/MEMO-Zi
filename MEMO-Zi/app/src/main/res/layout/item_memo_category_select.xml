@@ -11,7 +11,15 @@
         android:id="@+id/layout_memo_select_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/g_03"
+            android:layout_marginHorizontal="@dimen/spacing6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/gl_bottom"
             android:layout_width="wrap_content"
