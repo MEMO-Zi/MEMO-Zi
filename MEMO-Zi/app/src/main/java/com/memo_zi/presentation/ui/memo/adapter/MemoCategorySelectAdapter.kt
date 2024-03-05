@@ -9,7 +9,8 @@ import com.memo_zi.databinding.ItemMemoCategorySelectBinding
 
 class MemoCategorySelectAdapter(
     private val context: Context,
-    private val selectedCategory: String
+    private val selectedCategory: String,
+    private val itemClick: (String) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val inflater by lazy { LayoutInflater.from(context) }
     private val categoryList = mutableListOf<MemoItem>()
@@ -24,7 +25,10 @@ class MemoCategorySelectAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
-            is MemoCategorySelectViewHolder -> holder.onBind(categoryList[position] as MemoItem.Category)
+            is MemoCategorySelectViewHolder -> holder.onBind(
+                categoryList[position] as MemoItem.Category,
+                itemClick
+            )
         }
     }
 

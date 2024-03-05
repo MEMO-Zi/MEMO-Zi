@@ -3,6 +3,7 @@ package com.memo_zi.presentation.ui.memo
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.widget.addTextChangedListener
 import com.memo_zi.R
@@ -56,11 +57,23 @@ class MemoEditActivity : BindingActivity<ActivityMemoEditBinding>(R.layout.activ
     }
 
     private fun initAdapter() {
-        categoryAdapter = MemoCategorySelectAdapter(this, selectedCategory = selectCategory)
+        categoryAdapter = MemoCategorySelectAdapter(
+            this,
+            selectedCategory = selectCategory,
+            itemClick = createCategorySelectListener()
+        )
         binding.includeBottomSheetMemoEdit.rcvMemoCategorySelect.adapter = categoryAdapter
 
         viewModel.categoryList.observe(this) { categoryList ->
             categoryAdapter.setCategoryList(categoryList)
+        }
+    }
+
+    private fun createCategorySelectListener(): (String) -> Unit {
+        return { selectedCategory ->
+            selectCategory = selectedCategory
+            binding.tvMemoEditCategoryName.text = selectCategory
+            initAdapter()
         }
     }
 
@@ -72,11 +85,6 @@ class MemoEditActivity : BindingActivity<ActivityMemoEditBinding>(R.layout.activ
             binding.layoutMemoEditBottomSheet.visibility = View.INVISIBLE
         }
     }
-
-    private fun test() {
-
-    }
-
 
     private fun setButtonEnable() {
         binding.run {
