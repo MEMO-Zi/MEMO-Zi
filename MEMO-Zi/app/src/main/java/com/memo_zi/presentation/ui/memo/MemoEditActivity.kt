@@ -3,14 +3,12 @@ package com.memo_zi.presentation.ui.memo
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.widget.addTextChangedListener
 import com.memo_zi.R
 import com.memo_zi.databinding.ActivityMemoEditBinding
 import com.memo_zi.presentation.ui.memo.adapter.MemoCategorySelectAdapter
 import com.memo_zi.util.binding.BindingActivity
-
 
 class MemoEditActivity : BindingActivity<ActivityMemoEditBinding>(R.layout.activity_memo_edit) {
     private val viewModel by viewModels<MemoViewModel>()
