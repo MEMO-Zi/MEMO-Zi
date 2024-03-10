@@ -14,22 +14,14 @@
         app:behavior_hideable="true"
         app:layout_behavior="@string/bottom_sheet_behavior">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="66dp">
-
-        </androidx.constraintlayout.widget.Guideline>
-
         <TextView
+            android:id="@+id/tv_category_select_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing24"
             android:text="@string/category_change"
             android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_15"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@id/gl_top"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,36 +33,30 @@
             android:layout_marginEnd="@dimen/spacing8"
             android:background="@android:color/transparent"
             android:src="@drawable/ic_x_button"
-            app:layout_constraintBottom_toTopOf="@id/gl_top"
+            app:layout_constraintBottom_toBottomOf="@id/tv_category_select_title"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@id/tv_category_select_title" />
+
         <View
+            android:id="@+id/view_category_select"
             android:layout_width="0dp"
             android:layout_height="1dp"
+            android:layout_marginTop="@dimen/spacing24"
             android:background="@color/g_03"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/gl_top"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_category_select_title" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_memo_category_select"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/gl_top"
-            tool:listitem="@layout/item_memo_category_select" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:background="@color/g_04"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/rcv_memo_category_select" />
+            app:layout_constraintTop_toBottomOf="@id/view_category_select"
+            tool:listitem="@layout/item_memo_category_select" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

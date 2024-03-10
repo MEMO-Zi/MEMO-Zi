@@ -15,13 +15,13 @@ class MemoCategorySelectAdapter(
     private val inflater by lazy { LayoutInflater.from(context) }
     private val categoryList = mutableListOf<MemoItem>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return MemoCategorySelectViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
+        MemoCategorySelectViewHolder(
             ItemMemoCategorySelectBinding.inflate(
                 inflater, parent, false
             ), selectedCategory
         )
-    }
+
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {

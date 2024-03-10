@@ -76,11 +76,13 @@ class MemoEditActivity : BindingActivity<ActivityMemoEditBinding>(R.layout.activ
     }
 
     private fun setBottomSheet() {
-        binding.layoutMemoEditCategorySelectDim.visibility = View.VISIBLE
-        binding.layoutMemoEditBottomSheet.visibility = View.VISIBLE
-        binding.includeBottomSheetMemoEdit.ibMemoCategorySelectCancel.setOnClickListener {
-            binding.layoutMemoEditCategorySelectDim.visibility = View.INVISIBLE
-            binding.layoutMemoEditBottomSheet.visibility = View.INVISIBLE
+        binding.run {
+            layoutMemoEditCategorySelectDim.visibility = View.VISIBLE
+            layoutMemoEditBottomSheet.visibility = View.VISIBLE
+            includeBottomSheetMemoEdit.ibMemoCategorySelectCancel.setOnClickListener {
+                layoutMemoEditCategorySelectDim.visibility = View.INVISIBLE
+                layoutMemoEditBottomSheet.visibility = View.INVISIBLE
+            }
         }
     }
 
