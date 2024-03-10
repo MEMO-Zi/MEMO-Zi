@@ -27,7 +27,7 @@ class MemoCategorySelectAdapter(
         when (holder) {
             is MemoCategorySelectViewHolder -> holder.onBind(
                 categoryList[position] as MemoItem.Category,
-                itemClick
+                itemClick =  itemClick
             )
         }
     }
