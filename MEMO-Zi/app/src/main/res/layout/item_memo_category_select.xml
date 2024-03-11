@@ -8,27 +8,42 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_memo_select_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_bottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="50dp" />
+        <View
+            android:id="@+id/view_category_select_var"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/spacing6"
+            android:background="@color/g_01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_memo_select_category_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing16"
+            android:layout_marginTop="@dimen/spacing16"
+            android:layout_marginBottom="13dp"
             android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_15"
-            app:layout_constraintBottom_toTopOf="@id/gl_bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_category_select_var"
             app:layout_constraintTop_toTopOf="parent"
             tool:text="미리보기" />
 
-
+        <View
+            android:id="@+id/view_memo_selected"
+            android:layout_width="@dimen/spacing18"
+            android:layout_height="@dimen/spacing18"
+            android:layout_marginEnd="@dimen/spacing16"
+            android:background="@drawable/ic_check_18"
+            app:layout_constraintBottom_toBottomOf="@id/tv_memo_select_category_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_memo_select_category_title" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
