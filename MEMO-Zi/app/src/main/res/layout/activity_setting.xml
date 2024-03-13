@@ -1,9 +1,328 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.ui.setting.SettingActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.ui.setting.SettingActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_start_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/spacing16" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_end_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/spacing16" />
+
+        <TextView
+            android:id="@+id/tv_setting_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing32"
+            android:text="@string/setting_title"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ssu_light_19"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_setting_information"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing24"
+            android:background="@drawable/shape_border_radius_8"
+            android:elevation="@dimen/spacing5"
+            app:layout_constraintEnd_toStartOf="@id/gl_end_setting"
+            app:layout_constraintStart_toEndOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/tv_setting_title">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_start_setting_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/spacing16" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_bottom_setting_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/spacing16" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_top_setting_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/spacing16" />
+
+            <TextView
+                android:id="@+id/tv_setting_my_information"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_information"
+                android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_14"
+                android:textColor="@color/g_07"
+                app:layout_constraintStart_toEndOf="@id/gl_start_setting_information"
+                app:layout_constraintTop_toTopOf="@id/gl_top_setting_information" />
+
+            <TextView
+                android:id="@+id/tv_setting_user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing8"
+                android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_15"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@id/gl_start_setting_information"
+                app:layout_constraintTop_toBottomOf="@id/tv_setting_my_information"
+                tools:text="1231242314@naver.com" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_setting_kakao_logo"
+                android:layout_width="11dp"
+                android:layout_height="11dp"
+                android:layout_marginTop="@dimen/spacing4"
+                android:background="@drawable/shape_circle_kakao"
+                app:layout_constraintBottom_toBottomOf="@id/gl_bottom_setting_information"
+                app:layout_constraintStart_toEndOf="@id/gl_start_setting_information"
+                app:layout_constraintTop_toBottomOf="@id/tv_setting_user_email">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_kakao_6"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_setting_using_kakao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing5"
+                android:text="@string/setting_using_kakao"
+                android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_8"
+                app:layout_constraintBottom_toBottomOf="@id/layout_setting_kakao_logo"
+                app:layout_constraintStart_toEndOf="@id/layout_setting_kakao_logo"
+                app:layout_constraintTop_toTopOf="@id/layout_setting_kakao_logo" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_chevron"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_setting_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing16"
+            android:text="@string/setting_alarm"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_13"
+            android:textColor="@color/g_07"
+            app:layout_constraintStart_toStartOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/layout_setting_information" />
+
+        <View
+            android:id="@+id/view_setting_bar"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/spacing4"
+            android:background="@color/g_07"
+            app:layout_constraintEnd_toEndOf="@id/gl_end_setting"
+            app:layout_constraintStart_toStartOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/tv_setting_alarm" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_setting_edit_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/gl_end_setting"
+            app:layout_constraintStart_toStartOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/view_setting_bar">
+
+            <TextView
+                android:id="@+id/tv_setting_edit_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/spacing16"
+                android:text="@string/setting_edit_time"
+                android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_15"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_chevron"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_setting_bar2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/g_02"
+            app:layout_constraintEnd_toEndOf="@id/gl_end_setting"
+            app:layout_constraintStart_toStartOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/layout_setting_edit_time" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_setting_popup_alarm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/gl_end_setting"
+            app:layout_constraintStart_toStartOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/view_setting_bar2">
+
+            <TextView
+                android:id="@+id/tv_setting_popup_alarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/spacing16"
+                android:text="@string/setting_popup_alarm"
+                android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_15"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_chevron"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_setting_bar3"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/g_02"
+            app:layout_constraintEnd_toEndOf="@id/gl_end_setting"
+            app:layout_constraintStart_toStartOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/layout_setting_popup_alarm" />
+
+        <TextView
+            android:id="@+id/tv_setting_customer_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="71dp"
+            android:text="@string/setting_customer_service"
+            android:textAppearance="@style/TextAppearance.MEMOZi.ng_bold_13"
+            android:textColor="@color/g_07"
+            app:layout_constraintStart_toStartOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/view_setting_bar3" />
+
+        <View
+            android:id="@+id/view_setting_bar4"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/spacing4"
+            android:background="@color/g_07"
+            app:layout_constraintEnd_toEndOf="@id/gl_end_setting"
+            app:layout_constraintStart_toStartOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/tv_setting_customer_service" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_setting_announcement"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/gl_end_setting"
+            app:layout_constraintStart_toStartOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/view_setting_bar4">
+
+            <TextView
+                android:id="@+id/tv_setting_announcement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/spacing16"
+                android:text="@string/setting_announcement"
+                android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_15"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_chevron"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_setting_bar5"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/g_02"
+            app:layout_constraintEnd_toEndOf="@id/gl_end_setting"
+            app:layout_constraintStart_toStartOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/layout_setting_announcement" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_setting_report"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/gl_end_setting"
+            app:layout_constraintStart_toStartOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/view_setting_bar5">
+
+            <TextView
+                android:id="@+id/tv_setting_report"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/spacing16"
+                android:text="@string/setting_report"
+                android:textAppearance="@style/TextAppearance.MEMOZi.ng_reg_15"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_chevron"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view_setting_bar6"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/g_02"
+            app:layout_constraintEnd_toEndOf="@id/gl_end_setting"
+            app:layout_constraintStart_toStartOf="@id/gl_start_setting"
+            app:layout_constraintTop_toBottomOf="@id/layout_setting_report" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

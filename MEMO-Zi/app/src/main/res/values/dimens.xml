@@ -17,6 +17,7 @@
     <dimen name="spacing26">26dp</dimen>
     <dimen name="spacing28">28dp</dimen>
     <dimen name="spacing30">30dp</dimen>
+    <dimen name="spacing32">32dp</dimen>
 
     <!-- button -->
     <dimen name="button_l_height">40dp</dimen>

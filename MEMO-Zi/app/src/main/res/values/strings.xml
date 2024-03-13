@@ -46,5 +46,17 @@
     <string name="onboarding_intro_popup">일기를 쓸 시간을 설정해 주세요.\n팝업 알림으로 알려드릴 수도 있어요:)</string>
     <string name="onboarding_popup_setting_message">팝업 알림은 안받을래요.</string>
     <string name="onboarding_btn_text">MEMO : Zi 시작하기</string>
+    
+    
+    <!--setting-->
+    <string name="setting_title">설정</string>
+    <string name="setting_information">내 가입정보</string>
+    <string name="setting_using_kakao">카카오 로그인 사용중</string>
+    <string name="setting_alarm">일기 알람</string>
+    <string name="setting_edit_time">시간 수정</string>
+    <string name="setting_popup_alarm">시간 팝업 알람</string>
+    <string name="setting_customer_service">고객센터</string>
+    <string name="setting_announcement">공지 사항</string>
+    <string name="setting_report">문제 신고</string>
 
 </resources>
