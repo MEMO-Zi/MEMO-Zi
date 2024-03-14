@@ -58,5 +58,7 @@
     <string name="setting_customer_service">고객센터</string>
     <string name="setting_announcement">공지 사항</string>
     <string name="setting_report">문제 신고</string>
+    <string name="setting_logout">로그아웃</string>
+    <string name="setting_leave">회원탈퇴</string>
 
 </resources>
